@@ -1,3 +1,5 @@
+package Program;
+
 public class Config {
     /**
      * save game config

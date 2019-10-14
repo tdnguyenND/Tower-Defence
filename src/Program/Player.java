@@ -1,3 +1,5 @@
+package Program;
+
 public class Player {
     private double health;
     private Boolean lose;
