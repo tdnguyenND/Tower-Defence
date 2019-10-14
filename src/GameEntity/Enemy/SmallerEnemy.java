@@ -1,4 +1,4 @@
 package GameEntity.Enemy;
 
-public class SmallerEnemy {
+public class SmallerEnemy extends Enemy {
 }

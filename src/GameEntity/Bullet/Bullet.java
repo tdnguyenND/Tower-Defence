@@ -1,5 +1,7 @@
 package GameEntity.Bullet;
 
-public abstract class Bullet {
+import GameEntity.GameObject;
+
+public abstract class Bullet extends GameObject {
 
 }
