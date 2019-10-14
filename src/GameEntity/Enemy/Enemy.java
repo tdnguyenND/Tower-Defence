@@ -24,13 +24,13 @@ public abstract class Enemy extends GameObject {
 
     public Enemy(double health, double armor,
                  double speed, double damage,
-                 Position position, double width,
-                 double height, int reward) {
+                 double width, double height,
+                 int reward) {
         this.health = health;
         this.armor = armor;
         this.speed = speed;
         this.damage = damage;
-        this.position = position;
+        this.position = Config.startPoint;
         this.width = width;
         this.height = height;
         this.reward = reward;

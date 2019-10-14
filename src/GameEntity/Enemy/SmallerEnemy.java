@@ -6,7 +6,7 @@ public class SmallerEnemy extends Enemy {
     public SmallerEnemy() {
         super(Config.SMALLER_ENEMY_HEALTH, Config.SMALLER_ENEMY_ARMOR,
                 Config.SMALLER_ENEMY_SPEED, Config.SMALLER_ENEMY_DAMAGE,
-                Config.startPoint, Config.SMALLER_ENEMY_WIDTH,
-                Config.SMALLER_ENEMY_HEIGHT, Config.SMALLER_ENEMY_REWARD);
+                Config.SMALLER_ENEMY_WIDTH, Config.SMALLER_ENEMY_HEIGHT,
+                Config.SMALLER_ENEMY_REWARD);
     }
 }
