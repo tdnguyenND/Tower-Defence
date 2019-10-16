@@ -1,12 +1,10 @@
 package GameEntity.Enemy;
 
-import Program.Config;
-
-public class TankerEnemy extends Enemy{
+public class TankerEnemy extends Enemy implements EnemyProperty{
     public TankerEnemy() {
-        super(Config.TANKER_ENEMY_HEALTH, Config.TANKER_ENEMY_ARMOR,
-                Config.TANKER_ENEMY_SPEED, Config.TANKER_ENEMY_DAMAGE,
-                Config.TANKER_ENEMY_WIDTH, Config.TANKER_ENEMY_HEIGHT,
-                Config.TANKER_ENEMY_REWARD);
+        super(TANKER_ENEMY_HEALTH, TANKER_ENEMY_ARMOR,
+                TANKER_ENEMY_SPEED, TANKER_ENEMY_DAMAGE,
+                TANKER_ENEMY_WIDTH, TANKER_ENEMY_HEIGHT,
+                TANKER_ENEMY_REWARD);
     }
 }

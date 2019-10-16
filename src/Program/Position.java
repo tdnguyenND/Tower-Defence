@@ -12,7 +12,7 @@ public class Position {
         this.y = y;
     }
 
-    public void change(double x, double y){
+    public void setPosition(double x, double y){
         /**
          *
          */

@@ -11,8 +11,6 @@ public abstract class Enemy extends GameObject {
     protected double speed;
     protected double damage;
 
-    protected Position position;
-
     protected double width;
     protected double height;
 
@@ -36,13 +34,27 @@ public abstract class Enemy extends GameObject {
         this.reward = reward;
     }
 
+    public void init(){
+        /**
+         * TODO:
+         */
+    };
+
+    public void setLocation(Position pos){
+        /**
+         * TODO:
+         */
+    };
+
     public void doDamage(Player player){
         player.beAttacked(this.damage);
         this.doDestroy();
     }
 
     public void doDestroy(){
-        //TODO: reward
+        /**
+         * TODO:
+         */
     }
 
     public void beAttacked(final double damage){
@@ -53,7 +65,7 @@ public abstract class Enemy extends GameObject {
         /**
          * vector(vX, vY) is the current direction of this crep
          */
-        this.position.change(vX * this.speed * 1.0/Config.GAME_FPS, vY * this.speed * 1.0/Config.GAME_FPS);
+        this.position.setPosition(vX * this.speed * 1.0/Config.GAME_FPS, vY * this.speed * 1.0/Config.GAME_FPS);
     }
 
     public void onUpdate(int x, int y){

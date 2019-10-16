@@ -1,12 +1,10 @@
 package GameEntity.Enemy;
 
-import Program.Config;
-
-public class BossEnemy extends Enemy{
+public class BossEnemy extends Enemy implements EnemyProperty{
     public BossEnemy() {
-        super(Config.BOSS_ENEMY_HEALTH, Config.BOSS_ENEMY_ARMOR,
-                Config.BOSS_ENEMY_SPEED, Config.BOSS_ENEMY_DAMAGE,
-                Config.BOSS_ENEMY_WIDTH, Config.BOSS_ENEMY_HEIGHT,
-                Config.BOSS_ENEMY_REWARD);
+        super(BOSS_ENEMY_HEALTH, BOSS_ENEMY_ARMOR,
+                BOSS_ENEMY_SPEED, BOSS_ENEMY_DAMAGE,
+                BOSS_ENEMY_WIDTH, BOSS_ENEMY_HEIGHT,
+                BOSS_ENEMY_REWARD);
     }
 }

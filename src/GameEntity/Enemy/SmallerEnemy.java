@@ -1,12 +1,10 @@
 package GameEntity.Enemy;
 
-import Program.Config;
-
-public class SmallerEnemy extends Enemy {
+public class SmallerEnemy extends Enemy implements EnemyProperty {
     public SmallerEnemy() {
-        super(Config.SMALLER_ENEMY_HEALTH, Config.SMALLER_ENEMY_ARMOR,
-                Config.SMALLER_ENEMY_SPEED, Config.SMALLER_ENEMY_DAMAGE,
-                Config.SMALLER_ENEMY_WIDTH, Config.SMALLER_ENEMY_HEIGHT,
-                Config.SMALLER_ENEMY_REWARD);
+        super(SMALLER_ENEMY_HEALTH, SMALLER_ENEMY_ARMOR,
+                SMALLER_ENEMY_SPEED, SMALLER_ENEMY_DAMAGE,
+                SMALLER_ENEMY_WIDTH, SMALLER_ENEMY_HEIGHT,
+                SMALLER_ENEMY_REWARD);
     }
 }
