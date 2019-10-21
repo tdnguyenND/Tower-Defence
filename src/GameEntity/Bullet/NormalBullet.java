@@ -1,4 +1,4 @@
 package GameEntity.Bullet;
 
-public class TANKERBullet extends Bullet{
+public class NormalBullet extends Bullet {
 }

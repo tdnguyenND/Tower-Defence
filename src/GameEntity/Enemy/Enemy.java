@@ -11,9 +11,6 @@ public abstract class Enemy extends GameObject {
     protected double speed;
     protected double damage;
 
-    protected double width;
-    protected double height;
-
     public int reward;
 
     public Enemy(){
@@ -32,6 +29,7 @@ public abstract class Enemy extends GameObject {
         this.width = width;
         this.height = height;
         this.reward = reward;
+        this.color = "";
     }
 
     public void init(){
@@ -46,15 +44,15 @@ public abstract class Enemy extends GameObject {
          */
     };
 
-    public void doDamage(Player player){
-        player.beAttacked(this.damage);
-        this.doDestroy();
-    }
-
     public void doDestroy(){
         /**
          * TODO:
          */
+    }
+
+    public void doDamage(Player player){
+        player.beAttacked(this.damage);
+        this.doDestroy();
     }
 
     public void beAttacked(final double damage){
