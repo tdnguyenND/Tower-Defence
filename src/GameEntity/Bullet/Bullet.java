@@ -15,11 +15,10 @@ public abstract class Bullet extends GameObject {
 
     public Bullet(double speed, double damage, double range,
     			  double width, double height) {
+        super(width, height);
     	this.speed = speed;
     	this.damage = damage;
     	this.range = range;
-    	this.width = width;
-    	this.height = height;
     }
 
     
