@@ -10,6 +10,15 @@ public abstract class GameObject implements Action {
 
     protected String color;
 
+    public GameObject(){
+
+    }
+
+    public GameObject(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
     @Override
     public void init(){
         /**

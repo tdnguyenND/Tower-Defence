@@ -21,13 +21,12 @@ public abstract class Enemy extends GameObject {
                  double speed, double damage,
                  double width, double height,
                  int reward) {
+        super(width, height);
         this.health = health;
         this.armor = armor;
         this.speed = speed;
         this.damage = damage;
         this.position = Config.startPoint;
-        this.width = width;
-        this.height = height;
         this.reward = reward;
         this.color = "";
     }
