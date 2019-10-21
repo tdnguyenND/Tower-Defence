@@ -7,9 +7,6 @@ public abstract class Bullet extends GameObject {
     protected double damage;
     protected double range;
 
-    protected double width;
-    protected double height;
-
     public Bullet(){
     }
 
