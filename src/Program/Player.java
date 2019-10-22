@@ -19,4 +19,12 @@ public class Player {
     public boolean isLose(){
         return this.lose;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "health=" + health +
+                ", lose=" + lose +
+                '}';
+    }
 }

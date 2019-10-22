@@ -35,4 +35,14 @@ public abstract class GameObject implements Action {
     public void setLocation(Position pos) {
 
     }
+
+    @Override
+    public String toString() {
+        return "GameObject{" +
+                "position=" + position +
+                ", width=" + width +
+                ", height=" + height +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
