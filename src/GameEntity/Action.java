@@ -8,4 +8,6 @@ public interface Action {
     void doDestroy();
 
     void setLocation(Position pos);
+
+    Position getLocation();
 }

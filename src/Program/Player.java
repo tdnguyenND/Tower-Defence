@@ -12,8 +12,8 @@ public class Player {
         if (health <= 0) lose = true;
     }
 
-    public void beAttacked(final double damage){
-        this.health -= damage;
+    public void beAttacked(){
+        this.health --;
     }
 
     public boolean isLose(){

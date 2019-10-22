@@ -18,5 +18,6 @@ public abstract class Bullet extends GameObject {
     	this.range = range;
     }
 
+
     
 }

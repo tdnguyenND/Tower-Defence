@@ -9,7 +9,6 @@ public abstract class Enemy extends GameObject {
     protected double health;
     protected double armor;
     protected double speed;
-    protected double damage;
 
     public int reward;
 
@@ -18,14 +17,12 @@ public abstract class Enemy extends GameObject {
     }
 
     public Enemy(double health, double armor,
-                 double speed, double damage,
-                 double width, double height,
-                 int reward) {
+                 double speed, double width,
+                 double height, int reward) {
         super(width, height);
         this.health = health;
         this.armor = armor;
         this.speed = speed;
-        this.damage = damage;
         this.position = Config.startPoint;
         this.reward = reward;
         this.color = "";
@@ -50,7 +47,7 @@ public abstract class Enemy extends GameObject {
     }
 
     public void doDamage(Player player){
-        player.beAttacked(this.damage);
+        player.beAttacked();
         this.doDestroy();
     }
 

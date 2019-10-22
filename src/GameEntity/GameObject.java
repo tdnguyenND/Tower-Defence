@@ -37,6 +37,11 @@ public abstract class GameObject implements Action {
     }
 
     @Override
+    public Position getLocation() {
+        return this.position;
+    }
+
+    @Override
     public String toString() {
         return "GameObject{" +
                 "position=" + position +
