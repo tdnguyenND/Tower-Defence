@@ -13,6 +13,7 @@ public abstract class Bullet extends GameObject {
     }
 
     public Bullet(double speed, double damage, double range,
+<<<<<<< HEAD
                   double width, double height) {
         super(width, height);
         this.speed = speed;
@@ -46,6 +47,41 @@ public abstract class Bullet extends GameObject {
         return super.getLocation();
     }
 
+=======
+    			  double width, double height) {
+        super(width, height);
+    	this.speed = speed;
+    	this.damage = damage;
+    	this.range = range;
+    }
+
+    @Override
+    public void init() {
+        /*
+        TODO:
+        */
+    }
+
+    @Override
+    public void doDestroy() {
+        /*
+        TODO:
+        */
+    }
+
+    @Override
+    public void setLocation(Position pos) {
+        /*
+        TODO:
+        */
+    }
+
+    @Override
+    public Position getLocation() {
+        return super.getLocation();
+    }
+
+>>>>>>> master
     public void doDamage(Enemy enemy, Bullet bullet){
         if(bullet.getLocation() == enemy.getLocation()) enemy.beAttacked();
         this.doDestroy();
@@ -64,3 +100,4 @@ public abstract class Bullet extends GameObject {
                 '}';
     }
 }
+

@@ -19,4 +19,18 @@ public class Position {
         this.x += x;
         this.y += y;
     }
+
+    public double distance(Position other){
+        return Math.sqrt(Math.pow(other.x - x, 2) + Math.pow(other.x - x, 2));
+    }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+
 }

@@ -5,8 +5,8 @@ import GameEntity.Enemy.BulletProperty;
 public class MachineGunBullet extends Bullet implements BulletProperty {
 
 	public MachineGunBullet(){
-		super(MACGUN_BULLET_SPEED, MACGUN_BULLET_DAMAGE,
-			  MACGUN_BULLET_RANGE, MACGUN_BULLET_HEIGHT,
-			  MACGUN_BULLET_WIDTH);
+		super(MACHINEGUN_BULLET_SPEED, MACHINEGUN_BULLET_DAMAGE,
+			  MACHINEGUN_BULLET_RANGE, MACHINEGUN_BULLET_HEIGHT,
+			  MACHINEGUN_BULLET_WIDTH);
 	}
 }
