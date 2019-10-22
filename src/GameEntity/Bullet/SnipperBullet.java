@@ -1,6 +1,8 @@
 package GameEntity.Bullet;
 
-public class SnipperBullet extends Bullet implements BulletProperty{
+import GameEntity.Enemy.BulletProperty;
+
+public class SnipperBullet extends Bullet implements BulletProperty {
 
 	public SnipperBullet(){
 		super(SNIPER_BULLET_SPEED, SNIPER_BULLET_DAMAGE,
