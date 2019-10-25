@@ -1,7 +1,5 @@
 package GameEntity.Bullet;
 
-import GameEntity.Enemy.BulletProperty;
-
 public class MachineGunBullet extends Bullet implements BulletProperty {
 
 	public MachineGunBullet(){
