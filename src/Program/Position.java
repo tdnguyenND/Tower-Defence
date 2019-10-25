@@ -12,6 +12,11 @@ public class Position {
         this.y = y;
     }
 
+    public Position(Position other){
+        this.x = other.x;
+        this.y = other.y;
+    }
+
     public void setPosition(double x, double y){
         /**
          *
@@ -19,6 +24,8 @@ public class Position {
         this.x += x;
         this.y += y;
     }
+
+
 
     public double distance(Position other){
         return Math.sqrt(Math.pow(other.x - x, 2) + Math.pow(other.x - x, 2));
