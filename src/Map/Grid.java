@@ -4,8 +4,8 @@ import Program.Config;
 import Program.Position;
 
 public class Grid {
-    protected int width = Config.GRID_WIDTH;
-    protected int height = Config.GRID_HEIGHT;
+    protected static final int width = Config.GRID_WIDTH;
+    protected static final int height = Config.GRID_HEIGHT;
 
     protected Position center;
 
