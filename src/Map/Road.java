@@ -3,6 +3,9 @@ package Map;
 import Program.Position;
 
 public class Road extends Grid {
+    public Road() {
+    }
+
     public Road(Position center) {
         super(center);
     }

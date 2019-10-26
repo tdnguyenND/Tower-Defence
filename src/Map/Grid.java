@@ -20,6 +20,10 @@ public class Grid {
         this.center = new Position((x + 1.0/2) * height, (y + 1.0/2) * width);
     }
 
+    public Position getCenter() {
+        return center;
+    }
+
     @Override
     public String toString() {
         return "Grid{" +

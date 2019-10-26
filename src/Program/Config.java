@@ -16,8 +16,6 @@ public class Config {
 
     public static final int GAME_FPS = 40;
 
-    public static Position startPoint = new Position(0,0);
-
     private Config(){
     }
 }
