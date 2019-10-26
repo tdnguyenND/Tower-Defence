@@ -7,7 +7,7 @@ public interface Action {
 
     void doDestroy();
 
-    void setLocation(Position pos);
+    void setLocation(double x, double y);
 
     Position getLocation();
 }
