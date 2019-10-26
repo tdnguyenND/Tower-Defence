@@ -63,5 +63,6 @@ public abstract class Bullet extends GameObject {
                 ", color='" + color + '\'' +
                 '}';
     }
+
 }
 
