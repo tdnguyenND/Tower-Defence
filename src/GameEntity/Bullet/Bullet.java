@@ -8,16 +8,22 @@ public abstract class Bullet extends GameObject {
     protected double speed;
     protected double damage;
     protected double range;
+    protected double xPos;
+    protected double yPos;
+    protected int[] direction;
 
     public Bullet(){
     }
 
     public Bullet(double speed, double damage, double range,
-                  double width, double height) {
+                  double width, double height, double xPos,
+                  double yPos) {
         super(width, height);
         this.speed = speed;
         this.damage = damage;
         this.range = range;
+        this.xPos = xPos;
+        this.yPos = yPos;
     }
 
     @Override
@@ -39,6 +45,8 @@ public abstract class Bullet extends GameObject {
         /*
         TODO:
         */
+        this.position.setX(xPos);
+        this.position.setY(yPos);
     }
 
     @Override
@@ -46,9 +54,26 @@ public abstract class Bullet extends GameObject {
         return super.getLocation();
     }
 
+    public void updateDirection(){
+        /*
+        TODO: - change direction based on enemy's pos
+        */
+
+    }
+
+    public void update(Enemy enemy, Bullet bullet){
+        /*
+        TODO: - initialize new bullet's direction if present bullet hits enemy
+              - destroy present bullet
+        */
+        if(bullet.getLocation() == enemy.getLocation()){
+            bullet.doDestroy();
+            bullet.updateDirection();
+        }
+    }
+
     public void doDamage(Enemy enemy, Bullet bullet){
-        if(bullet.getLocation() == enemy.getLocation()) enemy.beAttacked();
-        this.doDestroy();
+        if(bullet.getLocation() == enemy.getLocation()) enemy.beAttacked(damage);
     }
 
     @Override
@@ -57,12 +82,14 @@ public abstract class Bullet extends GameObject {
                 "speed=" + speed +
                 ", damage=" + damage +
                 ", range=" + range +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                ", direction=" + direction +
                 ", position=" + position +
                 ", width=" + width +
                 ", height=" + height +
                 ", color='" + color + '\'' +
                 '}';
     }
-
 }
 
