@@ -17,7 +17,4 @@ public abstract class Bullet extends GameObject {
     	this.damage = damage;
     	this.range = range;
     }
-
-
-
 }

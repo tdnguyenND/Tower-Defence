@@ -4,6 +4,8 @@ import GameEntity.GameObject;
 import Program.Player;
 import Map.*;
 
+import java.util.Arrays;
+
 public abstract class Enemy extends GameObject {
     protected double health;
     protected double armor;
@@ -12,17 +14,14 @@ public abstract class Enemy extends GameObject {
     public int reward;
 
     private Map map;
-
     private Grid locationInMap;
-
-    private int currentIndex;
+    private int currentIndex;//in road
 
     private int[] direction;
 
     private Player player;
 
     public Enemy(){
-
     }
 
     public Enemy(double health, double armor,
@@ -49,7 +48,7 @@ public abstract class Enemy extends GameObject {
         try{
             if (map == null) throw new Exception("Map is null");
             this.map = map;
-            this.locationInMap = map.map[Line.startPoint[0]][Line.startPoint[1]];
+            this.locationInMap = map.map[Data.startPoint[0]][Data.startPoint[1]];
             this.position = locationInMap.getCenter();
             updateDirection();
         }
@@ -66,19 +65,19 @@ public abstract class Enemy extends GameObject {
     };
 
     public void updateDirection(){
-        int inCol = Line.line[currentIndex + 1][0] - Line.line[currentIndex][0];
+        int inCol = Data.line[currentIndex + 1][0] - Data.line[currentIndex][0];
         if (inCol > 0){
-            direction = Line.direction[0];
+            direction = Data.direction[0];
         }
         else if (inCol < 0){
-            direction = Line.direction[1];
+            direction = Data.direction[1];
         }
         else {
-            int inRow = Line.line[currentIndex + 1][1] - Line.line[currentIndex][1];
+            int inRow = Data.line[currentIndex + 1][1] - Data.line[currentIndex][1];
             if (inRow > 0){
-                direction = Line.direction[2];
+                direction = Data.direction[2];
             }
-            else direction = Line.direction[3];
+            else direction = Data.direction[3];
         }
     }
 
@@ -97,15 +96,16 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.map[Line.line[currentIndex][0]][Line.line[currentIndex][1]].getCenter())){
+        else if (position.equals(map.map[Data.finishPoint[0]][Data.finishPoint[1]].getCenter())){
             currentIndex++;
-            if (currentIndex >= Line.size){
+            if (currentIndex >= Data.size){
                 /**
                  * TODO:
                  *  -do damage
                  *  -do destroy
                  */
-                doDamage();
+                this.doDamage();
+                this.doDestroy();
             }
             else {
                 updateDirection();
@@ -128,18 +128,36 @@ public abstract class Enemy extends GameObject {
         this.position.setY(y);
     };
 
+    @Override
     public void doDestroy(){
         /**
          * TODO:
+         *  - Call EnemyManage to delete this Enemy
          */
     }
 
     public void doDamage(){
         this.player.beAttacked();
-        this.doDestroy();
     }
 
     public void beAttacked(final double damage){
         this.health -= damage*(50.0/(50+ this.armor));
+    }
+
+    @Override
+    public String toString() {
+        return "Enemy{" +
+                "health=" + health +
+                ", armor=" + armor +
+                ", speed=" + speed +
+                ", reward=" + reward +
+                ", locationInMap=" + locationInMap +
+                ", currentIndex=" + currentIndex +
+                ", direction=" + Arrays.toString(direction) +
+                ", position=" + position +
+                ", width=" + width +
+                ", height=" + height +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
