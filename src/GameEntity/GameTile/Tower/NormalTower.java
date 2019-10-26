@@ -9,14 +9,6 @@ import java.util.ArrayList;
 
 public class NormalTower extends Tower implements TowerProperty{
     public NormalTower(Position pos) {
-        super(pos, NOMAL_TOWER_RANGE);
-    }
-
-    void fire(ArrayList<Enemy> enemyList){
-        if(point){
-            Position x = fireAble(enemyList).getLocation();
-            Bullet bullet = new NormalBullet();
-            //to do...
-        }
+        super(pos, NORMAL_TOWER_RANGE, NORMAL_TOWER_ATTACKRATE, NORMAL_TOWER_DAMAGE, NORMAL_TOWER_COST);
     }
 }

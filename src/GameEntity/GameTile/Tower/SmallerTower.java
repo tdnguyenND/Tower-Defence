@@ -11,14 +11,6 @@ import java.util.ArrayList;
 public class SmallerTower extends Tower implements TowerProperty{
 
     public SmallerTower(Position pos) {
-        super(pos, SMALLER_TOWER_RANGE);
-    }
-
-    void fire(ArrayList<Enemy> enemyList){
-        if(point){
-            Position x = fireAble(enemyList).getLocation();
-            Bullet bullet = new MachineGunBullet();
-            //to do...
-        }
+        super(pos, SMALLER_TOWER_RANGE, SMALLER_TOWER_ATTACKRATE, NORMAL_TOWER_DAMAGE, SMALLER_TOWER_COST);
     }
 }
