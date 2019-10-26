@@ -1,9 +1,7 @@
 package GameEntity.GameTile.Tower;
 
-import GameEntity.Enemy.Enemy;
 import Program.Position;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -17,16 +15,16 @@ public class TowerManager {
     }
 
     public void addTower(String towerType, Position position, int gold){
-        boolean available = true;
-        if(!towerMap.contains(position)) available = false;
+        boolean ableToSetTower = true;
+        if(!towerMap.contains(position)) ableToSetTower = false;
 
         Iterator iterator = towerList.iterator();
         while(iterator.hasNext()){
             Tower tower = (Tower) iterator.next();
-            if(tower.getLocation() == position) available = false;
+            if(tower.getLocation() == position) ableToSetTower = false;
         }
 
-        if(available){
+        if(ableToSetTower){
             switch (towerType){
                 case "NormalTower":
                     if(gold >= towerProperty.NORMAL_TOWER_COST){
