@@ -105,7 +105,7 @@ public abstract class Enemy extends GameObject {
                  *  -do damage
                  *  -do destroy
                  */
-                doDamage(this.player);
+                doDamage();
             }
             else {
                 updateDirection();
@@ -134,8 +134,8 @@ public abstract class Enemy extends GameObject {
          */
     }
 
-    public void doDamage(Player player){
-        player.beAttacked();
+    public void doDamage(){
+        this.player.beAttacked();
         this.doDestroy();
     }
 
