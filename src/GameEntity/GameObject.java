@@ -32,7 +32,7 @@ public abstract class GameObject implements Action {
     }
 
     @Override
-    public void setLocation(Position pos) {
+    public void setLocation(double x, double y) {
 
     }
 
