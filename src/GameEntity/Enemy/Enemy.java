@@ -1,5 +1,6 @@
 package GameEntity.Enemy;
 
+import Debugger.Log;
 import GameEntity.GameObject;
 import Program.Player;
 import Map.*;
@@ -42,25 +43,29 @@ public abstract class Enemy extends GameObject {
         this.currentIndex = 0;
     }
 
-    public static void init(Map _map, Player _player){
+    public static boolean init(Map _map, Player _player){
         /**
          * TODO:
          *  - Load image ....
          */
+        boolean success = true;
         try{
             if (map == null) throw new Exception("Map is null");
             map = _map;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
         try{
             if (player == null) throw new Exception("Player is null");
             player = _player;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
+        return success;
     };
 
     public void updateDirection(){
@@ -95,7 +100,7 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.map[Data.line[currentIndex][0]][Data.line[currentIndex][1]].getCenter())){
+        else if (position.equals(map.finishPoint.getCenter())){
             currentIndex++;
             if (currentIndex >= Data.size){
                 /**
@@ -103,7 +108,8 @@ public abstract class Enemy extends GameObject {
                  *  -do damage
                  *  -do destroy
                  */
-                doDamage(player);
+                doDamage();
+                doDestroy();
             }
             else {
                 updateDirection();
@@ -134,9 +140,8 @@ public abstract class Enemy extends GameObject {
         EnemyManager.deleteEnemy(this);
     }
 
-    public void doDamage(Player player){
+    public void doDamage(){
         player.beAttacked();
-        this.doDestroy();
     }
 
     public void beAttacked(final double damage){

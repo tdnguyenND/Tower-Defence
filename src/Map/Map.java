@@ -10,15 +10,15 @@ public class Map {
     private static final int nRows = height/Config.GRID_HEIGHT;
     private static final int nCols = width/Config.GRID_WIDTH;
 
-    public static Grid startPoint;
-    public static Grid finishPoint;
+    public Grid startPoint;
+    public Grid finishPoint;
 
-    public static Grid[][] map;
+    public Grid[][] map;
 
     public Map(){
     }
 
-    public static void init(){
+    public void init(){
         /**
          * TODO:
          *  - Determine map: where mountain or road

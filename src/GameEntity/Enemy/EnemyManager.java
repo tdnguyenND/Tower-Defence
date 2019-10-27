@@ -1,5 +1,6 @@
 package GameEntity.Enemy;
 
+import Debugger.Log;
 import Map.Map;
 import Program.Player;
 
@@ -14,27 +15,31 @@ public class EnemyManager {
     private static Map map;
     private static Player player;
 
-    public static void init(Player _player, Map _map){
+    public static boolean init(Player _player, Map _map){
         /**
          * TODO:
          *  - initialise Enemy (load static data for all enemy)
          *  - load this static data (player and map)
          *  - declare listEnemy
          */
+        boolean success = true;
         Enemy.init(map, player);
         try{
             if (player == null) throw new Exception("player is null");
             player = _player;
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
         try{
             if (map == null) throw  new Exception("map is null");
             map = _map;
         }catch (Exception e){
+            success = false;
             System.out.println(e.getMessage());
         }
         listEnemy = new ArrayList<Enemy>();
+        return success;
     }
 
     private static void addEnemy(Enemy enemy){

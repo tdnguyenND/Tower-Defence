@@ -5,7 +5,6 @@ public class Player {
     private Boolean lose;
 
     public Player(){
-
     }
 
     public void update(){

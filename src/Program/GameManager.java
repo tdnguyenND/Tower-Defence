@@ -4,21 +4,34 @@ import GameEntity.Enemy.EnemyManager;
 import Map.Map;
 
 public class GameManager {
-    public static void init(){
+
+    public Map map;
+    public Player player;
+
+    public GameManager(){
+        map = new Map();
+        player = new Player();
+    }
+    public void init(){
         /**
          *  TODO:
          *   - Initialize BulletManager, EnemyManager, TowerManager
          */
-        Map.init();
-        Map map = new Map();
-        Player player = new Player();
+        boolean success = true;
 
-        EnemyManager.init(player, map);
+        map.init();
+
         /**
          *  TODO:
+         *   - EnemyManage.init
          *   - BulletManager.init
          *   - TowerManager.init
          */
+        EnemyManager.init(player, map);
+    }
+
+    public static void update(){
+        EnemyManager.update();
 
     }
 }
