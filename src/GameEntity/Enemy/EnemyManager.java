@@ -60,4 +60,13 @@ public class EnemyManager {
         listEnemy.remove(enemy);
     }
 
+    public static void update(){
+        /**
+         * TODO:
+         *  - Create new Enemy
+         *  - Update all Enemy
+         */
+
+        for (Enemy enemy: listEnemy) enemy.update();
+    }
 }
