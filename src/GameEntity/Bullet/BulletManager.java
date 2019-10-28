@@ -16,14 +16,20 @@ public class BulletManager {
             case "NormalBullet":
                 Bullet newBullet = new NormalBullet();
                 bulletList.add(newBullet);
+                break;
             case "MachineGunBullet":
                 Bullet newBullet = new MachineGunBullet();
                 bulletList.add(newBullet);
+                break;
             case "SnipperBullet":
                 Bullet newBullet = new SnipperBullet();
                 bulletList.add(newBullet);
+                break;
         }
     }
+     public static void deleteBullet(Bullet bullet){
+        bulletList.remove(bullet);
+     }
 
 
 }

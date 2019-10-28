@@ -35,9 +35,7 @@ public abstract class Bullet extends GameObject {
 
     @Override
     public void doDestroy() {
-        /*
-        TODO:
-        */
+        BulletManager.deleteBullet(this);
     }
 
     @Override
