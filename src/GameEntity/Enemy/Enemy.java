@@ -1,28 +1,32 @@
 package GameEntity.Enemy;
 
+import Debugger.Log;
 import GameEntity.GameObject;
 import Program.Player;
 import Map.*;
 
 public abstract class Enemy extends GameObject {
-    protected double health;
-    protected double armor;
-    protected double speed;
+    /**
+     *  TODO:
+     *   - Firstly, call init(Player, Map) to load static data( player and map )
+     *   - Call Enemy() to create a new Enemy, its location set automatic in startPoint
+     */
+    private double health;
+    private double armor;
+    private double speed;
 
-    public int reward;
-
-    private Map map;
+    private int reward;
 
     private Grid locationInMap;
-
-    private int currentIndex;
+    private int currentIndex;//current index in road
 
     private int[] direction;
 
-    private Player player;
+    // all Enemy use the same player and map
+    private static Player player;
+    private static Map map;
 
     public Enemy(){
-
     }
 
     public Enemy(double health, double armor,
@@ -34,51 +38,50 @@ public abstract class Enemy extends GameObject {
         this.speed = speed;
         this.reward = reward;
         this.color = "";
-        this.locationInMap = null;
-        this.position = null;
+        this.locationInMap = map.startPoint;
+        this.position = locationInMap.getCenter();
         this.currentIndex = 0;
-        this.map = null;
-        this.player = null;
     }
 
-    public void init(Map map, Player player){
+    public static boolean init(Map _map, Player _player){
         /**
          * TODO:
          *  - Load image ....
          */
+        boolean success = true;
         try{
             if (map == null) throw new Exception("Map is null");
-            this.map = map;
-            this.locationInMap = map.map[Line.startPoint[0]][Line.startPoint[1]];
-            this.position = locationInMap.getCenter();
-            updateDirection();
+            map = _map;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
         try{
             if (player == null) throw new Exception("Player is null");
-            this.player = player;
+            player = _player;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
+        return success;
     };
 
     public void updateDirection(){
-        int inCol = Line.line[currentIndex + 1][0] - Line.line[currentIndex][0];
+        int inCol = Data.line[currentIndex + 1][0] - Data.line[currentIndex][0];
         if (inCol > 0){
-            direction = Line.direction[0];
+            direction = Data.direction[0];
         }
         else if (inCol < 0){
-            direction = Line.direction[1];
+            direction = Data.direction[1];
         }
         else {
-            int inRow = Line.line[currentIndex + 1][1] - Line.line[currentIndex][1];
+            int inRow = Data.line[currentIndex + 1][1] - Data.line[currentIndex][1];
             if (inRow > 0){
-                direction = Line.direction[2];
+                direction = Data.direction[2];
             }
-            else direction = Line.direction[3];
+            else direction = Data.direction[3];
         }
     }
 
@@ -97,15 +100,16 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.map[Line.line[currentIndex][0]][Line.line[currentIndex][1]].getCenter())){
+        else if (position.equals(map.finishPoint.getCenter())){
             currentIndex++;
-            if (currentIndex >= Line.size){
+            if (currentIndex >= Data.size){
                 /**
                  * TODO:
                  *  -do damage
                  *  -do destroy
                  */
-                doDamage(this.player);
+                doDamage();
+                doDestroy();
             }
             else {
                 updateDirection();
@@ -131,12 +135,13 @@ public abstract class Enemy extends GameObject {
     public void doDestroy(){
         /**
          * TODO:
+         *  - Call EnemyManager to delete this enemy
          */
+        EnemyManager.deleteEnemy(this);
     }
 
-    public void doDamage(Player player){
+    public void doDamage(){
         player.beAttacked();
-        this.doDestroy();
     }
 
     public void beAttacked(final double damage){

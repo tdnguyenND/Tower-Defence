@@ -2,7 +2,7 @@ package GameEntity;
 
 import Program.Position;
 
-public abstract class GameObject implements Action {
+public abstract class GameObject {
     protected Position position;
 
     protected double width;
@@ -19,29 +19,24 @@ public abstract class GameObject implements Action {
         this.height = height;
     }
 
-    @Override
-    public void init(){
+    public static void init(){
         /**
          * TODO:
          */
     }
 
-    @Override
     public void doDestroy() {
 
     }
 
-    @Override
     public void setLocation(double x, double y) {
 
     }
 
-    @Override
     public Position getLocation() {
         return this.position;
     }
 
-    @Override
     public String toString() {
         return "GameObject{" +
                 "position=" + position +
