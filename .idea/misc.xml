@@ -4,6 +4,7 @@
     <option name="state" value="project://e2804f05-5315-4fc6-a121-c522a6c26470" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.3" project-jdk-type="JavaSDK">
 =======
 <<<<<<< Updated upstream
@@ -12,6 +13,9 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="11.0.3" project-jdk-type="JavaSDK">
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="11.0.3" project-jdk-type="JavaSDK">
+>>>>>>> origin/gameTile
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
