@@ -1,25 +1,30 @@
 package GameEntity.Enemy;
 
+import Debugger.Log;
 import GameEntity.GameObject;
 import Program.Player;
 import Map.*;
 
-import java.util.Arrays;
-
 public abstract class Enemy extends GameObject {
-    protected double health;
-    protected double armor;
-    protected double speed;
+    /**
+     *  TODO:
+     *   - Firstly, call init(Player, Map) to load static data( player and map )
+     *   - Call Enemy() to create a new Enemy, its location set automatic in startPoint
+     */
+    private double health;
+    private double armor;
+    private double speed;
 
-    public int reward;
+    private int reward;
 
-    private Map map;
     private Grid locationInMap;
-    private int currentIndex;//in road
+    private int currentIndex;//current index in road
 
     private int[] direction;
 
-    private Player player;
+    // all Enemy use the same player and map
+    private static Player player;
+    private static Map map;
 
     public Enemy(){
     }
@@ -33,35 +38,34 @@ public abstract class Enemy extends GameObject {
         this.speed = speed;
         this.reward = reward;
         this.color = "";
-        this.locationInMap = null;
-        this.position = null;
+        this.locationInMap = map.startPoint;
+        this.position = locationInMap.getCenter();
         this.currentIndex = 0;
-        this.map = null;
-        this.player = null;
     }
 
-    public void init(Map map, Player player){
+    public static boolean init(Map _map, Player _player){
         /**
          * TODO:
          *  - Load image ....
          */
+        boolean success = true;
         try{
             if (map == null) throw new Exception("Map is null");
-            this.map = map;
-            this.locationInMap = map.map[Data.startPoint[0]][Data.startPoint[1]];
-            this.position = locationInMap.getCenter();
-            updateDirection();
+            map = _map;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
         try{
             if (player == null) throw new Exception("Player is null");
-            this.player = player;
+            player = _player;
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            success = false;
+            Log.log(e);
         }
+        return success;
     };
 
     public void updateDirection(){
@@ -96,7 +100,7 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.map[Data.finishPoint[0]][Data.finishPoint[1]].getCenter())){
+        else if (position.equals(map.finishPoint.getCenter())){
             currentIndex++;
             if (currentIndex >= Data.size){
                 /**
@@ -104,8 +108,8 @@ public abstract class Enemy extends GameObject {
                  *  -do damage
                  *  -do destroy
                  */
-                this.doDamage();
-                this.doDestroy();
+                doDamage();
+                doDestroy();
             }
             else {
                 updateDirection();
@@ -128,36 +132,19 @@ public abstract class Enemy extends GameObject {
         this.position.setY(y);
     };
 
-    @Override
     public void doDestroy(){
         /**
          * TODO:
-         *  - Call EnemyManage to delete this Enemy
+         *  - Call EnemyManager to delete this enemy
          */
+        EnemyManager.deleteEnemy(this);
     }
 
     public void doDamage(){
-        this.player.beAttacked();
+        player.beAttacked();
     }
 
     public void beAttacked(final double damage){
         this.health -= damage*(50.0/(50+ this.armor));
-    }
-
-    @Override
-    public String toString() {
-        return "Enemy{" +
-                "health=" + health +
-                ", armor=" + armor +
-                ", speed=" + speed +
-                ", reward=" + reward +
-                ", locationInMap=" + locationInMap +
-                ", currentIndex=" + currentIndex +
-                ", direction=" + Arrays.toString(direction) +
-                ", position=" + position +
-                ", width=" + width +
-                ", height=" + height +
-                ", color='" + color + '\'' +
-                '}';
     }
 }
