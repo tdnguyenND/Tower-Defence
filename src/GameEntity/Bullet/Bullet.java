@@ -10,7 +10,7 @@ public abstract class Bullet extends GameObject {
     protected double range;
     protected double xPos;
     protected double yPos;
-    protected int[] direction;
+    protected double[][] direction;
 
     public Bullet(){
     }
@@ -66,15 +66,17 @@ public abstract class Bullet extends GameObject {
         TODO: - initialize new bullet's direction if present bullet hits enemy
               - destroy present bullet
         */
-        if(bullet.getLocation() == enemy.getLocation()){
+        if(bullet.getLocation().equals(enemy.getLocation())){
             bullet.doDestroy();
             bullet.updateDirection();
         }
     }
 
+     /*
     public void doDamage(Enemy enemy, Bullet bullet){
-        if(bullet.getLocation() == enemy.getLocation()) enemy.beAttacked(damage);
+        if(bullet.getLocation().equals(enemy.getLocation())) enemy.beAttacked(damage);
     }
+    */
 
     @Override
     public String toString() {
