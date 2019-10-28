@@ -4,25 +4,28 @@ import Program.Config;
 
 public class Map {
 
-    private int width;
-    private int height;
+    private static final int width = Config.FIELD_WIDTH;
+    private static final int height = Config.FIELD_HEIGHT;
 
-    private int nRows;
-    private int nCols;
+    private static final int nRows = height/Config.GRID_HEIGHT;
+    private static final int nCols = width/Config.GRID_WIDTH;
+
+    public Grid startPoint;
+    public Grid finishPoint;
 
     public Grid[][] map;
 
     public Map(){
-        width = Config.FIELD_WIDTH;
-        height = Config.FIELD_HEIGHT;
-
-        nRows = height/Config.GRID_HEIGHT;
-        nCols = width/Config.GRID_WIDTH;
-
-        map = new Grid[nRows][nCols];
     }
 
     public void init(){
+        /**
+         * TODO:
+         *  - Determine map: where mountain or road
+         *  - Determine start and finish point
+         */
+        map = new Grid[nRows][nCols];
+
         for (int i = 0; i < nRows; i++){
             for (int j = 0; j < nCols; j++){
                 map[i][j] = new Mountain(i, j);
@@ -33,5 +36,7 @@ public class Map {
             int y = Data.line[i][1];
             map[x][y] = new Road(x, y);
         }
+        startPoint = map[Data.line[0][0]][Data.line[0][1]];
+        finishPoint = map[Data.line[Data.size - 1][0]][Data.line[Data.size - 1][1]];
     }
 }
