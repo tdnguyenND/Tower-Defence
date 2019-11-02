@@ -49,6 +49,8 @@ public abstract class Enemy extends GameObject {
          *  - Load image ....
          */
         boolean success = true;
+        map = _map;
+        player = _player;
         try{
             if (map == null) throw new Exception("Map is null");
             map = _map;
