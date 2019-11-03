@@ -1,4 +1,5 @@
 package Drawer.DrawGameObject;
 
-public class DrawBullet {
+public class DrawBullet extends DrawGameObject{
+
 }

@@ -7,8 +7,8 @@ public class Map {
     private static final int width = Config.FIELD_WIDTH;
     private static final int height = Config.FIELD_HEIGHT;
 
-    private static final int nRows = height/Config.GRID_HEIGHT;
-    private static final int nCols = width/Config.GRID_WIDTH;
+    public static final int nRows = Config.ROW;
+    public static final int nCols = Config.COLUMN;
 
     public Grid startPoint;
     public Grid finishPoint;
