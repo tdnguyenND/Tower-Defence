@@ -7,6 +7,8 @@ public abstract class GameObject {
 
     protected double width;
     protected double height;
+    protected double xPos;
+    protected double yPos;
 
     protected String color;
 
@@ -29,19 +31,23 @@ public abstract class GameObject {
 
     }
 
-    public void setLocation(double x, double y) {
-
+    public static void setLocation(double xPos, double yPos) {
+        this.xPos = xPos;
+        this.yPos = yPos;
     }
 
     public Position getLocation() {
         return this.position;
     }
 
+    @Override
     public String toString() {
         return "GameObject{" +
                 "position=" + position +
                 ", width=" + width +
                 ", height=" + height +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
                 ", color='" + color + '\'' +
                 '}';
     }

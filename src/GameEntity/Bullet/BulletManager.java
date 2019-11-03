@@ -27,9 +27,9 @@ public class BulletManager {
                 break;
         }
     }
-     public static void deleteBullet(Bullet bullet){
+    public static void deleteBullet(Bullet bullet){
         bulletList.remove(bullet);
-     }
+    }
 
 
 }

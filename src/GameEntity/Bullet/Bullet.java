@@ -8,26 +8,35 @@ public abstract class Bullet extends GameObject {
     protected double speed;
     protected double damage;
     protected double range;
+    protected double xStart = 0;
+    protected double yStart = 0;
+    protected double xDest = 0;
+    protected double yDest = 0;
+    protected double dx;
+    protected double dy;
     protected double xPos;
     protected double yPos;
-    protected double[][] direction;
 
     public Bullet(){
     }
 
-    public Bullet(double speed, double damage, double range,
-                  double width, double height, double xPos,
-                  double yPos) {
+    public Bullet(double width, double height, double speed, double damage,
+                  double range, double xStart, double yStart, double xDest,
+                  double yDest, double xPos, double yPos) {
         super(width, height);
         this.speed = speed;
         this.damage = damage;
         this.range = range;
+        this.xStart = xStart;
+        this.yStart = yStart;
+        this.xDest = xDest;
+        this.yDest = yDest;
         this.xPos = xPos;
         this.yPos = yPos;
     }
 
     @Override
-    public void init() {
+    public static boolean init() {
         /*
         TODO:
         */
@@ -39,57 +48,27 @@ public abstract class Bullet extends GameObject {
     }
 
     @Override
-    public void setLocation(Position pos) {
-        /*
-        TODO:
-        */
-        this.position.setX(xPos);
-        this.position.setY(yPos);
-    }
-
-    @Override
     public Position getLocation() {
         return super.getLocation();
     }
 
-    public void updateDirection(){
-        /*
-        TODO: - change direction based on enemy's pos
-        */
-
-    }
+    public abstract void calculateVector(double xDest, double yDest);
+    public abstract void move();
 
     public void update(Enemy enemy, Bullet bullet){
         /*
-        TODO: - initialize new bullet's direction if present bullet hits enemy
-              - destroy present bullet
+        TODO:- destroy present bullet
         */
         if(bullet.getLocation().equals(enemy.getLocation())){
             bullet.doDestroy();
-            bullet.updateDirection();
         }
     }
 
-     /*
+    /*
     public void doDamage(Enemy enemy, Bullet bullet){
         if(bullet.getLocation().equals(enemy.getLocation())) enemy.beAttacked(damage);
     }
     */
 
-    @Override
-    public String toString() {
-        return "Bullet{" +
-                "speed=" + speed +
-                ", damage=" + damage +
-                ", range=" + range +
-                ", xPos=" + xPos +
-                ", yPos=" + yPos +
-                ", direction=" + direction +
-                ", position=" + position +
-                ", width=" + width +
-                ", height=" + height +
-                ", color='" + color + '\'' +
-                '}';
-    }
 }
 
