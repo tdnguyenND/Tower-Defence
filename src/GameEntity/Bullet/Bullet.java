@@ -70,5 +70,27 @@ public abstract class Bullet extends GameObject {
     }
     */
 
+    @Override
+    public String toString() {
+        return "Bullet{" +
+                "speed=" + speed +
+                ", damage=" + damage +
+                ", range=" + range +
+                ", xStart=" + xStart +
+                ", yStart=" + yStart +
+                ", xDest=" + xDest +
+                ", yDest=" + yDest +
+                ", dx=" + dx +
+                ", dy=" + dy +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                ", position=" + position +
+                ", width=" + width +
+                ", height=" + height +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
 
