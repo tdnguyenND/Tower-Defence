@@ -57,20 +57,23 @@ public abstract class Bullet extends GameObject {
         GameObject.setLocation(xPos, yPos);
     }
 
-    public void update(Enemy enemy, Bullet bullet){
+    public void update(Enemy target, Bullet bullet){
         /*
         TODO:- destroy present bullet
         */
-        if(bullet.getLocation().equals(enemy.getLocation())){
+        if(target.getLocation().equals(bullet.target.getLocation())){
+            move(xPos, yPos);
+        }
+    }
+
+
+    public void doDamage(Enemy target, Bullet bullet){
+        if(bullet.getLocation().equals(target.getLocation())) {
+            target.beAttacked(damage);
             bullet.doDestroy();
         }
     }
 
-    /*
-    public void doDamage(Enemy enemy, Bullet bullet){
-        if(bullet.getLocation().equals(enemy.getLocation())) enemy.beAttacked(damage);
-    }
-    */
 
     @Override
     public String toString() {
