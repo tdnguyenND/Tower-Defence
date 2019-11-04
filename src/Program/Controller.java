@@ -3,8 +3,6 @@ package Program;
 import Drawer.Drawer;
 import Map.Map;
 import javafx.scene.canvas.GraphicsContext;
-import Map.*;
-import javafx.scene.paint.Color;
 
 public class Controller {
     private Map map;
@@ -15,11 +13,14 @@ public class Controller {
         this.graphicsContext = graphicsContext;
 
         gameManager = new GameManager();
-        gameManager.init();
+        if (gameManager.init()){
+            map = gameManager.map;
+            System.out.println("initialize game manager successful");
+        }else System.out.println("fail to initialize game manager");
 
-        map = gameManager.map;
-
-        Drawer.init(graphicsContext, map, gameManager);
+        if(Drawer.init(graphicsContext, map, gameManager)){
+            System.out.println("initialize drawer successful");
+        } else System.out.println("fail to initialize drawer");
     }
 
     public void start(){

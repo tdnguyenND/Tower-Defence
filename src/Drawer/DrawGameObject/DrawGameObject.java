@@ -11,7 +11,7 @@ public abstract class DrawGameObject {
         graphicsContext = _graphicsContext;
     }
 
-    public static void draw(GameObject gameObject){
+    public static void draw(GameObject gameObject){// should be abstract method
         graphicsContext.setFill(Paint.valueOf(gameObject.getColor()));
         graphicsContext.fillRect(gameObject.getLocation().getX() - gameObject.getHeight()/2, gameObject.getLocation().getY() - gameObject.getWidth()/2,
                 gameObject.getHeight(), gameObject.getWidth());

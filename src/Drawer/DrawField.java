@@ -9,9 +9,10 @@ public class DrawField {
     private static Map map;
     private static GraphicsContext graphicsContext;
 
-    public static void init(GraphicsContext _graphicsContext, Map _map) {
+    public static boolean init(GraphicsContext _graphicsContext, Map _map) {
         map = _map;
         graphicsContext = _graphicsContext;
+        return (map != null);
     }
 
     public static void draw(){

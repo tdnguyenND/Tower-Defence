@@ -9,9 +9,10 @@ import javafx.scene.canvas.GraphicsContext;
 public class DrawEnity {
     private static GameManager gameManager;
 
-    public static void init(GraphicsContext graphicsContext, GameManager _gameManager) {
+    public static boolean init(GraphicsContext graphicsContext, GameManager _gameManager) {
         DrawGameObject.init(graphicsContext);
         gameManager = _gameManager;
+        return (gameManager != null);
     }
 
     public static void draw(){
