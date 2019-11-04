@@ -1,28 +1,29 @@
 package GameEntity.Bullet;
 
 import Debugger.Log;
+import GameEntity.Enemy.Enemy;
+import GameEntity.GameTile.Tower.Tower;
 import Map.Map;
 import GameEntity.GameTile.Tower.TowerManager;
 import Program.Position;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class BulletManager {
-    private static List<Bullet> bulletList = new ArrayList<Bullet>();
+    private static Set<Bullet> bulletList;
 
-    public static void addBullet(String bulletType, Position pos){
+    public static void addBullet(String bulletType, Position pos, Enemy target, Tower tower){
         switch(bulletType){
             case "NormalBullet":
-                Bullet newBullet = new NormalBullet();
+                Bullet newBullet = new NormalBullet(Enemy target, Tower tower);
                 bulletList.add(newBullet);
                 break;
             case "MachineGunBullet":
-                Bullet newBullet = new MachineGunBullet();
+                Bullet newBullet = new MachineGunBullet(Enemy target, Tower tower);
                 bulletList.add(newBullet);
                 break;
             case "SnipperBullet":
-                Bullet newBullet = new SnipperBullet();
+                Bullet newBullet = new SnipperBullet(Enemy target, Tower tower);
                 bulletList.add(newBullet);
                 break;
         }
