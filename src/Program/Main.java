@@ -23,6 +23,10 @@ public class Main extends Application {
 
         controller.start();
 
+        /**
+         * TODO:
+         *  - Add event handler
+         */
         StackPane root = new StackPane(canvas);
         primaryStage.setScene(new Scene(root));
 

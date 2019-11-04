@@ -23,7 +23,7 @@ public class DrawEnity {
          *  -Draw Bullet
          */
         for (Enemy enemy: EnemyManager.listEnemy){
-            DrawGameObject.draw(enemy);
+            DrawEnemy.drawEnemy(enemy);
         }
 
     }

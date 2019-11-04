@@ -36,7 +36,6 @@ public abstract class Enemy extends GameObject {
         this.armor = armor;
         this.speed = speed;
         this.reward = reward;
-        this.color = "";
         this.position = map.startPoint.getCenter();
         this.currentIndex = 0;
     }
@@ -148,5 +147,9 @@ public abstract class Enemy extends GameObject {
 
     public void beAttacked(final double damage){
         this.health -= damage*(50.0/(50+ this.armor));
+        if (this.health <= 0){
+            doDestroy();
+            player.earnMoney(this.reward);
+        }
     }
 }

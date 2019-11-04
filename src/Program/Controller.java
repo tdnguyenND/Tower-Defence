@@ -1,6 +1,8 @@
 package Program;
 
 import Drawer.Drawer;
+import GameEntity.Enemy.Enemy;
+import GameEntity.Enemy.EnemyManager;
 import Map.Map;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -21,6 +23,8 @@ public class Controller {
         if(Drawer.init(graphicsContext, map, gameManager)){
             System.out.println("initialize drawer successful");
         } else System.out.println("fail to initialize drawer");
+
+
     }
 
     public void start(){
