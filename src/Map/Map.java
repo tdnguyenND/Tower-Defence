@@ -3,10 +3,6 @@ package Map;
 import Program.Config;
 
 public class Map {
-
-    private static final int width = Config.FIELD_WIDTH;
-    private static final int height = Config.FIELD_HEIGHT;
-
     public static final int nRows = Config.ROW;
     public static final int nCols = Config.COLUMN;
 
