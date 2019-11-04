@@ -4,7 +4,6 @@ import GameEntity.Enemy.EnemyManager;
 import Map.Map;
 
 public class GameManager {
-
     public Map map;
     public Player player;
 
@@ -12,7 +11,7 @@ public class GameManager {
         map = new Map();
         player = new Player();
     }
-    public void init(){
+    public boolean init(){
         /**
          *  TODO:
          *   - Initialize BulletManager, EnemyManager, TowerManager
@@ -27,11 +26,10 @@ public class GameManager {
          *   - BulletManager.init
          *   - TowerManager.init
          */
-        EnemyManager.init(player, map);
+        return EnemyManager.init(player, map) /* && BulletManager.init && TowerManager.init*/;
     }
 
     public static void update(){
         EnemyManager.update();
-
     }
 }
