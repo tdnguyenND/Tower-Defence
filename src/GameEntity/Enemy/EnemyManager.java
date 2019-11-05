@@ -11,7 +11,7 @@ public class EnemyManager {
      * TODO:
      *  -Call init method first
      */
-    private static ArrayList<Enemy> listEnemy;
+    public static ArrayList<Enemy> listEnemy;
     private static Map map;
     private static Player player;
 
@@ -23,16 +23,20 @@ public class EnemyManager {
          *  - declare listEnemy
          */
         boolean success = true;
+        player = _player;
+        map = _map;
+
         Enemy.init(map, player);
+
         try{
-            if (player == null) throw new Exception("player is null");
+            if (player == null) throw new Exception("EnemyManager.init() error: Player is null");
             player = _player;
         }catch (Exception e){
             success = false;
             Log.log(e);
         }
         try{
-            if (map == null) throw  new Exception("map is null");
+            if (map == null) throw  new Exception("EnemyManager.init() error: Map is null");
             map = _map;
         }catch (Exception e){
             success = false;
@@ -58,6 +62,11 @@ public class EnemyManager {
 
     public static void createBossEnemy(){
         Enemy newEnemy = new BossEnemy();
+        addEnemy(newEnemy);
+    }
+
+    public static void createTankerEnemy(){
+        Enemy newEnemy = new TankerEnemy();
         addEnemy(newEnemy);
     }
 

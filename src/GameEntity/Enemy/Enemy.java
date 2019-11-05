@@ -17,8 +17,7 @@ public abstract class Enemy extends GameObject {
 
     private int reward;
 
-    private Grid locationInMap;
-    private int currentIndex;//current index in road
+    private int currentIndex;//current index in Map.data.road
 
     private int[] direction;
 
@@ -37,18 +36,20 @@ public abstract class Enemy extends GameObject {
         this.armor = armor;
         this.speed = speed;
         this.reward = reward;
-        this.color = "";
-        this.locationInMap = map.startPoint;
-        this.position = locationInMap.getCenter();
+        this.position = map.startPoint.getCenter();
         this.currentIndex = 0;
     }
 
     public static boolean init(Map _map, Player _player){
         /**
-         * TODO:
-         *  - Load image ....
+         * TODO: Load static data
+         *   - map
+         *   - player
+         *   - [image]
          */
         boolean success = true;
+        map = _map;
+        player = _player;
         try{
             if (map == null) throw new Exception("Map is null");
             map = _map;
@@ -100,7 +101,7 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.finishPoint.getCenter())){
+        else if (position.equals(map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter())){
             currentIndex++;
             if (currentIndex >= Data.size){
                 /**
@@ -146,5 +147,9 @@ public abstract class Enemy extends GameObject {
 
     public void beAttacked(final double damage){
         this.health -= damage*(50.0/(50+ this.armor));
+        if (this.health <= 0){
+            doDestroy();
+            player.earnMoney(this.reward);
+        }
     }
 }

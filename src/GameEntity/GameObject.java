@@ -2,13 +2,15 @@ package GameEntity;
 
 import Program.Position;
 
+import javafx.scene.paint.Color;
+
 public abstract class GameObject {
     protected Position position;
 
     protected double width;
     protected double height;
 
-    protected String color;
+    protected Color color;
 
     public GameObject(){
 
@@ -23,6 +25,18 @@ public abstract class GameObject {
         /**
          * TODO:
          */
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public void doDestroy() {
