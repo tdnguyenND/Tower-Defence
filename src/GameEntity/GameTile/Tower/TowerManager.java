@@ -1,5 +1,6 @@
 package GameEntity.GameTile.Tower;
 
+import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Program.GameField;
 import Program.GameManager;
@@ -43,27 +44,21 @@ public class TowerManager implements TowerProperty{
                 if(player.getGold() >= NORMAL_TOWER_COST){
                     tower = new NormalTower(position);
                     towerList.add(tower);
-                    /**
-                     *  setGold??
-                     */
+                    player.setGold(player.getGold() - NORMAL_TOWER_COST);
                 }
             }
             if(towerType.equals("SmallerTower")){
                 if(player.getGold() >= SMALLER_TOWER_COST){
                     tower = new SmallerTower(position);
                     towerList.add(tower);
-                    /**
-                     *  setGold??
-                     */
+                    player.setGold(player.getGold() - SMALLER_TOWER_ATTACKRATE);
                 }
             }
             if(towerType.equals("SniperTower")){
                 if(player.getGold() >= SNIPER_TOWER_COST){
                     tower = new SniperTower(position);
                     towerList.add(tower);
-                    /**
-                     *  setGold??
-                     */
+                    player.setGold(player.getGold() - SNIPER_TOWER_COST);
                 }
             }
         }
@@ -80,11 +75,8 @@ public class TowerManager implements TowerProperty{
 
     public void update(){
         for (Tower tower : towerList){
-            /**
-             * todo
-             *  GameManager has EnemyManager
-             */
-            //tower.checkRange();
+            tower.checkRange(EnemyManager.listEnemy);
+            tower.update();
         }
     }
 }

@@ -56,10 +56,7 @@ public abstract class Tower extends GameObject{
         lastAttacked ++;
         if(lastAttacked > attackRate && target != null && bullet != null){
             lastAttacked = 0;
-            /**
-             *
-             * TODO: fires a bullet
-             */
+            Tower.init();
         }
     }
 
