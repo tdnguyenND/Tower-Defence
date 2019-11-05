@@ -28,23 +28,7 @@ public abstract class Bullet extends GameObject {
         this.range = range;
         this.target = target;
         this.tower = tower;
-    }
-
-    public boolean init() {
-        /*
-        TODO:
-        */
-        boolean success = true;
-        Bullet _bullet = new Bullet;
-        try{
-            if(_bullet == null) throw new Exception("bullet is null");
-            move();
-        }
-        catch (Exception e){
-            success = false;
-            Log.log(e);
-        }
-        return success;
+        calculateVector(target);
     }
 
     @Override
@@ -64,24 +48,29 @@ public abstract class Bullet extends GameObject {
     }
 
     public void move(){
-        xPos += dx;
-        yPos += dy;
-        GameObject.setLocation(xPos, yPos);
+        while(!isHit()) updatePos();
+        doDamage();
+        doDestroy();
+    }
+
+    public void updatePos(){
+        position.setPosition(position.getX() + (int)dx, position.getY() + (int)dy);
+    }
+
+    public boolean isHit(){
+        if(position.distance(target.getLocation()) <= 8) {
+            return true;
+        }
+        return false;
     }
 
     public void update(Enemy target, Bullet bullet){
-        /*
-        TODO:- destroy present bullet
-        */
-        if(target.getLocation().equals(bullet.target.getLocation())){
-            move();
-        }
+
     }
 
-    public void doDamage(Enemy target, Bullet bullet){
-        if(bullet.getLocation().equals(target.getLocation())) {
+    public void doDamage(){
+        if(isHit()) {
             target.beAttacked(damage);
-            bullet.doDestroy();
         }
     }
 

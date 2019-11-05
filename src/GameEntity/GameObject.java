@@ -1,14 +1,13 @@
 package GameEntity;
 
 import Program.Position;
+import javafx.geometry.Pos;
 
 public abstract class GameObject {
     protected Position position;
 
     protected double width;
     protected double height;
-    protected double xPos;
-    protected double yPos;
 
     protected String color;
 
@@ -21,11 +20,10 @@ public abstract class GameObject {
         this.height = height;
     }
 
+    /*
     public static boolean init(){
-        /**
-         * TODO:
-         */
     }
+    */
 
     public double getWidth() {
         return width;
@@ -43,9 +41,8 @@ public abstract class GameObject {
 
     }
 
-    public static void setLocation(double xPos, double yPos) {
-        this.xPos = xPos;
-        this.yPos = yPos;
+    public void setLocation(Position _pos) {
+        position.setPosition(_pos.getX(), _pos.getY());
     }
 
     public Position getLocation() {
@@ -58,8 +55,6 @@ public abstract class GameObject {
                 "position=" + position +
                 ", width=" + width +
                 ", height=" + height +
-                ", xPos=" + xPos +
-                ", yPos=" + yPos +
                 ", color='" + color + '\'' +
                 '}';
     }

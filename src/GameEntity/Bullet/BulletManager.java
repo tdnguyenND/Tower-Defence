@@ -33,4 +33,8 @@ public class BulletManager {
     public static void deleteBullet(Bullet bullet){
         bulletList.remove(bullet);
     }
+
+    public static void update(){
+        for(Bullet bullet: bulletList) bullet.updatePos();
+    }
 }
