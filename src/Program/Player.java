@@ -13,15 +13,19 @@ public class Player {
     }
 
     public void beAttacked(){
-        this.health --;
+        this.health--;
     }
 
     public boolean isLose(){
         return this.lose;
     }
-
+  
     public int getGold() {
         return gold;
+    }
+  
+    public void earnMoney(int reward){
+        gold += reward;
     }
 
     @Override
