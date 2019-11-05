@@ -1,22 +1,35 @@
 package GameEntity.GameTile.Tower;
 
+import GameEntity.GameObject;
+import Program.GameField;
+import Program.GameManager;
+import Program.Player;
 import Program.Position;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class TowerManager {
-    Set<Tower> towerList;
-    Set<Position> towerMap;
-    TowerProperty towerProperty;
+public class TowerManager implements TowerProperty{
+    protected Set<Tower> towerList;
+    Player player;
+    GameManager gameManager;
+
+    public TowerManager(Set<Tower> towerList, Player player) {
+        this.towerList = new HashSet<Tower>();
+        this.player = player;
+    }
 
     public Set<Tower> getTowerList() {
         return towerList;
     }
 
-    public void addTower(String towerType, Position position, int gold){
+    public void setTowerList(Set<Tower> towerList) {
+        this.towerList = towerList;
+    }
+
+    public void addTower(String towerType, Position position){
         boolean ableToSetTower = true;
-        if(!towerMap.contains(position)) ableToSetTower = false;
 
         Iterator iterator = towerList.iterator();
         while(iterator.hasNext()){
@@ -25,27 +38,36 @@ public class TowerManager {
         }
 
         if(ableToSetTower){
-            switch (towerType){
-                case "NormalTower":
-                    if(gold >= towerProperty.NORMAL_TOWER_COST){
-                        Tower tower = new NormalTower(position);
-                        towerList.add(tower);
-                    }
-                    break;
-                case "SmallerTower":
-                    if(gold >= towerProperty.SMALLER_TOWER_COST){
-                        Tower tower = new SmallerTower(position);
-                        towerList.add(tower);
-                    }
-                    break;
-                case "SniperTower":
-                    if(gold >= towerProperty.SNIPER_TOWER_COST){
-                        Tower tower = new SniperTower(position);
-                        towerList.add(tower);
-                    }
-                    break;
+            Tower tower;
+            if(towerType.equals("NormalTower")){
+                if(player.getGold() >= NORMAL_TOWER_COST){
+                    tower = new NormalTower(position);
+                    towerList.add(tower);
+                    /**
+                     *  setGold??
+                     */
+                }
+            }
+            if(towerType.equals("SmallerTower")){
+                if(player.getGold() >= SMALLER_TOWER_COST){
+                    tower = new SmallerTower(position);
+                    towerList.add(tower);
+                    /**
+                     *  setGold??
+                     */
+                }
+            }
+            if(towerType.equals("SniperTower")){
+                if(player.getGold() >= SNIPER_TOWER_COST){
+                    tower = new SniperTower(position);
+                    towerList.add(tower);
+                    /**
+                     *  setGold??
+                     */
+                }
             }
         }
+
     }
 
     public void removeTower(Position position){
@@ -57,8 +79,12 @@ public class TowerManager {
     }
 
     public void update(){
-        /**
-         * TODO: update for towerList
-         */
+        for (Tower tower : towerList){
+            /**
+             * todo
+             *  GameManager has EnemyManager
+             */
+            //tower.checkRange();
+        }
     }
 }

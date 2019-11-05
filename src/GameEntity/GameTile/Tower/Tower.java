@@ -7,37 +7,30 @@ import Program.Position;
 
 import java.util.ArrayList;
 
-public abstract class Tower extends GameObject {
-    protected double range, attackRate;//attackRate time giữa 2 lần bắn
-    protected int damage;
-    protected int cost;
+public abstract class Tower extends GameObject{
+    protected int range, attackRate;//attackRate time giữa 2 lần bắn
     protected Bullet bullet;
 
     protected Enemy target;
-    protected double lastAttacked;//time kể từ lần bắn trc
+    protected int lastAttacked;//time kể từ lần bắn trc
+    protected TowerManager towerManager;
 
-    public Tower(Position pos, double range, double attackRate, int damage, int cost){
+    public Tower(Position pos, int range, int attackRate){
         this.position = pos;
         this.range = range;
-        this.damage = damage;
-        this.cost = cost;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
     }
 
-    public int getCost(){
-        return cost;
-    }
-
-    public double getAttackRate() {
+    public int getAttackRate() {
         return attackRate;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
     public Enemy getTarget() { return target; }
+
+    public void setTarget(Enemy target) {
+        this.target = target;
+    }
 
     public void checkRange(ArrayList<Enemy> enemyList) {
         if (target != null) {
@@ -45,15 +38,18 @@ public abstract class Tower extends GameObject {
             if (distance > range) target = null;
         }
         if (target == null) {
-            int n = enemyList.size();
-            for (int i = 0; i < n; i++) {
-                double distance = position.distance(enemyList.get(i).getLocation());
+            for (Enemy enemy: enemyList) {
+                double distance = position.distance(enemy.getLocation());
                 if (distance <= range) {
-                    target = enemyList.get(i);
+                    target = enemy;
                     break;
                 }
             }
         }
+    }
+
+    public void doDestroy(TowerManager towerManager) {
+        towerManager.removeTower(position);
     }
 
     public void update(){
@@ -72,8 +68,6 @@ public abstract class Tower extends GameObject {
         return "Tower{" +
                 "range=" + range +
                 ", attackRate=" + attackRate +
-                ", damage=" + damage +
-                ", cost=" + cost +
                 ", bullet=" + bullet +
                 ", target=" + target +
                 ", lastAttacked=" + lastAttacked +

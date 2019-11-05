@@ -4,6 +4,6 @@ import Program.Position;
 
 public class SniperTower extends Tower implements TowerProperty{
     public SniperTower(Position pos) {
-        super(pos, SNIPER_TOWER_RANGE, SNIPER_TOWER_ATTACKRATE, SNIPER_TOWER_DAMAGE, SNIPER_TOWER_COST);
+        super(pos, SNIPER_TOWER_RANGE, SNIPER_TOWER_ATTACKRATE);
     }
 }

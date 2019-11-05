@@ -3,6 +3,7 @@ package Program;
 public class Player {
     private double health;
     private Boolean lose;
+    private int gold;
 
     public Player(){
     }
@@ -17,6 +18,10 @@ public class Player {
 
     public boolean isLose(){
         return this.lose;
+    }
+
+    public int getGold() {
+        return gold;
     }
 
     @Override
