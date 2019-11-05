@@ -30,11 +30,12 @@ public abstract class Bullet extends GameObject {
         this.tower = tower;
     }
 
-    public boolean init(Bullet _bullet) {
+    public boolean init() {
         /*
         TODO:
         */
         boolean success = true;
+        Bullet _bullet = new Bullet;
         try{
             if(_bullet == null) throw new Exception("bullet is null");
             move();
