@@ -12,25 +12,25 @@ import java.util.Set;
 public class BulletManager {
     private static Set<Bullet> bulletList;
 
+    public BulletManager() {
+    }
+
     public static void addBullet(String bulletType, Position pos, Enemy target, Tower tower){
-        switch(bulletType){
-            case "NormalBullet":
-                Bullet newBullet = new NormalBullet(Enemy target, Tower tower);
-                bulletList.add(newBullet);
-                break;
-            case "MachineGunBullet":
-                Bullet newBullet = new MachineGunBullet(Enemy target, Tower tower);
-                bulletList.add(newBullet);
-                break;
-            case "SnipperBullet":
-                Bullet newBullet = new SnipperBullet(Enemy target, Tower tower);
-                bulletList.add(newBullet);
-                break;
+        if(bulletType.equals("NormalBullet")) {
+            Bullet newBullet = new NormalBullet(target, tower);
+            bulletList.add(newBullet);
+        }
+        else if(bulletType.equals("MachineGunBullet")) {
+            Bullet newBullet = new MachineGunBullet(target, tower);
+            bulletList.add(newBullet);
+        }
+        else if(bulletType.equals("SnipperBullet")) {
+            Bullet newBullet = new SnipperBullet(target, tower);
+            bulletList.add(newBullet);
         }
     }
+
     public static void deleteBullet(Bullet bullet){
         bulletList.remove(bullet);
     }
-
-
 }

@@ -21,7 +21,7 @@ public abstract class GameObject {
         this.height = height;
     }
 
-    public static void init(){
+    public static boolean init(){
         /**
          * TODO:
          */

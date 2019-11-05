@@ -1,5 +1,6 @@
 package GameEntity.Bullet;
 
+import Debugger.Log;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameObject;
 import GameEntity.GameTile.Tower.Tower;
@@ -29,10 +30,20 @@ public abstract class Bullet extends GameObject {
         this.tower = tower;
     }
 
-    public static boolean init() {
+    public boolean init(Bullet _bullet) {
         /*
         TODO:
         */
+        boolean success = true;
+        try{
+            if(_bullet == null) throw new Exception("bullet is null");
+            move();
+        }
+        catch (Exception e){
+            success = false;
+            Log.log(e);
+        }
+        return success;
     }
 
     @Override
@@ -51,7 +62,7 @@ public abstract class Bullet extends GameObject {
         this.dy = - Math.cos(radian) * speed;
     }
 
-    public void move(double xPos, double yPos){
+    public void move(){
         xPos += dx;
         yPos += dy;
         GameObject.setLocation(xPos, yPos);
@@ -62,10 +73,9 @@ public abstract class Bullet extends GameObject {
         TODO:- destroy present bullet
         */
         if(target.getLocation().equals(bullet.target.getLocation())){
-            move(xPos, yPos);
+            move();
         }
     }
-
 
     public void doDamage(Enemy target, Bullet bullet){
         if(bullet.getLocation().equals(target.getLocation())) {
