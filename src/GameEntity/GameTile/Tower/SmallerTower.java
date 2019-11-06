@@ -1,4 +1,10 @@
 package GameEntity.GameTile.Tower;
 
-public class SmallerTower extends Tower{
+import Program.Position;
+
+public class SmallerTower extends Tower implements TowerProperty{
+
+    public SmallerTower(Position pos) {
+        super(pos, SMALLER_TOWER_RANGE, SMALLER_TOWER_ATTACKRATE);
+    }
 }
