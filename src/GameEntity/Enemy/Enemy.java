@@ -4,6 +4,7 @@ import Debugger.Log;
 import GameEntity.GameObject;
 import Program.Player;
 import Map.*;
+import Program.Position;
 
 public abstract class Enemy extends GameObject {
     /**
@@ -36,8 +37,10 @@ public abstract class Enemy extends GameObject {
         this.armor = armor;
         this.speed = speed;
         this.reward = reward;
-        this.position = map.startPoint.getCenter();
+        this.position = map.startPoint.getCenter().clone();
         this.currentIndex = 0;
+        this.direction = new int[2];
+        updateDirection();
     }
 
     public static boolean init(Map _map, Player _player){
@@ -94,6 +97,10 @@ public abstract class Enemy extends GameObject {
          *  - Check if this enemy go to turf
          *  - DO NOT check if this enemy be shoot -> it's from Bullet
          */
+        /**
+         * TODO:
+         *  -
+         */
         if (health <= 0){
             /**
              * TODO:
@@ -101,9 +108,12 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.equals(map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter())){
+        else if (position.over(map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter(), direction)){
+            Position target = map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter();
+            position.setX(target.getX());
+            position.setY(target.getY());
             currentIndex++;
-            if (currentIndex >= Data.size){
+            if (currentIndex >= Data.size - 1){
                 /**
                  * TODO:
                  *  -do damage

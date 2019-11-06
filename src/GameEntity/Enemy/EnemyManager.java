@@ -80,7 +80,12 @@ public class EnemyManager {
          *  - Create new Enemy
          *  - Update all Enemy
          */
-
-        for (Enemy enemy: listEnemy) enemy.update();
+        if (listEnemy.isEmpty() == false){
+            System.out.println(listEnemy.get(0));
+            for (Enemy enemy: listEnemy) enemy.update();
+        }
+        else {
+            EnemyManager.createTankerEnemy();
+        }
     }
 }
