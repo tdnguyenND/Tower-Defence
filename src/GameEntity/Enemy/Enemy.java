@@ -149,7 +149,7 @@ public abstract class Enemy extends GameObject {
         this.health -= damage*(50.0/(50+ this.armor));
         if (this.health <= 0){
             doDestroy();
-            player.earnMoney(this.reward);
+            //player.earnMoney(this.reward);
         }
     }
 }

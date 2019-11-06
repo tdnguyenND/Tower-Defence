@@ -23,9 +23,9 @@ public class Player {
     public int getGold() {
         return gold;
     }
-  
-    public void earnMoney(int reward){
-        gold += reward;
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     @Override
