@@ -37,4 +37,8 @@ public class BulletManager {
     public static void update(){
         for(Bullet bullet: bulletList) bullet.updatePos();
     }
+
+    public static void reset(){
+        bulletList.clear();
+    }
 }

@@ -48,7 +48,7 @@ public abstract class Bullet extends GameObject {
     }
 
     public void move(){
-        while(!isHit()) updatePos();
+        if (!isHit()) updatePos();
         doDamage();
         doDestroy();
     }
@@ -62,10 +62,6 @@ public abstract class Bullet extends GameObject {
             return true;
         }
         return false;
-    }
-
-    public void update(Enemy target, Bullet bullet){
-
     }
 
     public void doDamage(){
