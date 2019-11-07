@@ -27,7 +27,7 @@ public class TowerManager implements TowerProperty{
         if(!(grid instanceof Mountain)) ableToSetTower = false;
 
         //Does this place have a tower yet?
-        if (grid.getContain() != null) ableToSetTower = false;
+        if (grid.isFilled()) ableToSetTower = false;
 
         if(ableToSetTower){
             Tower tower;
@@ -35,7 +35,7 @@ public class TowerManager implements TowerProperty{
                 if(player.getGold() >= NORMAL_TOWER_COST){
                     tower = new NormalTower(grid.getCenter());
                     towerList.add(tower);
-                    grid.setContain(tower);
+                    grid.setFilled(true);
 
                     player.setGold(player.getGold() - NORMAL_TOWER_COST);
                 }
@@ -44,7 +44,7 @@ public class TowerManager implements TowerProperty{
                 if(player.getGold() >= SMALLER_TOWER_COST){
                     tower = new SmallerTower(grid.getCenter());
                     towerList.add(tower);
-                    grid.setContain(tower);
+                    grid.setFilled(true);
 
                     player.setGold(player.getGold() - SMALLER_TOWER_ATTACKRATE);
                 }
@@ -53,7 +53,7 @@ public class TowerManager implements TowerProperty{
                 if(player.getGold() >= SNIPER_TOWER_COST){
                     tower = new SniperTower(grid.getCenter());
                     towerList.add(tower);
-                    grid.setContain(tower);
+                    grid.setFilled(true);
 
                     player.setGold(player.getGold() - SNIPER_TOWER_COST);
                 }

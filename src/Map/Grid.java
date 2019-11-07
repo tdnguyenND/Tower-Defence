@@ -1,6 +1,5 @@
 package Map;
 
-import GameEntity.GameObject;
 import Program.Config;
 import Program.Position;
 
@@ -10,7 +9,7 @@ public class Grid {
 
     protected Position center;
 
-    protected GameObject contain;
+    protected boolean filled;
 
     public Grid() {
     }
@@ -27,12 +26,12 @@ public class Grid {
         return center;
     }
 
-    public GameObject getContain() {
-        return contain;
+    public boolean isFilled() {
+        return filled;
     }
 
-    public void setContain(GameObject contain) {
-        this.contain = contain;
+    public void setFilled(boolean filled) {
+        this.filled = filled;
     }
 
     @Override
