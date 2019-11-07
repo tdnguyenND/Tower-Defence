@@ -1,18 +1,14 @@
 package GameEntity.GameTile.Tower;
 
-import GameEntity.Enemy.EnemyManager;
+import Map.*;
 import GameEntity.GameObject;
-import Program.GameField;
-import Program.GameManager;
-import Program.Player;
-import Program.Position;
+import Program.*;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class TowerManager implements TowerProperty{
-    protected Set<Tower> towerList;
+    public static Set<Tower> towerList;
     Player player;
     GameManager gameManager;
 
@@ -32,10 +28,14 @@ public class TowerManager implements TowerProperty{
     public void addTower(String towerType, Position position){
         boolean ableToSetTower = true;
 
-        Iterator iterator = towerList.iterator();
-        while(iterator.hasNext()){
-            Tower tower = (Tower) iterator.next();
-            if(tower.getLocation() == position) ableToSetTower = false;
+        //is this place a Mountain?
+        int i = (int)Math.ceil(position.getX() / Config.GRID_WIDTH);    //calculate position to grid
+        int j = (int)Math.ceil(position.getY() / Config.GRID_HEIGHT);
+        if(!(gameManager.map.map[i][j] instanceof Mountain)) ableToSetTower = false;
+
+        //Does this place have a tower yet?
+        for(Tower tower: towerList){
+            if(tower.getLocation().equals(position)) ableToSetTower = false;
         }
 
         if(ableToSetTower){
@@ -73,9 +73,8 @@ public class TowerManager implements TowerProperty{
         towerList.clear();
     }
 
-    public void update(){
+    public static void update(){
         for (Tower tower : towerList){
-            tower.checkRange(EnemyManager.listEnemy);
             tower.update();
         }
     }

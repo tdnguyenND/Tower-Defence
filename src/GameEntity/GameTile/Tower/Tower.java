@@ -2,17 +2,20 @@ package GameEntity.GameTile.Tower;
 
 import GameEntity.Bullet.Bullet;
 import GameEntity.Enemy.Enemy;
+import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Program.Position;
 
 import java.util.ArrayList;
 
 public abstract class Tower extends GameObject{
-    protected int range, attackRate;//attackRate time giữa 2 lần bắn
-    protected Bullet bullet;
-
+    protected int range;
     protected Enemy target;
+
+    protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
+
+    protected EnemyManager enemyManager;
     protected TowerManager towerManager;
 
     public Tower(Position pos, int range, int attackRate){
@@ -48,15 +51,30 @@ public abstract class Tower extends GameObject{
         }
     }
 
-    public void doDestroy(TowerManager towerManager) {
+    public void doDestroy() {
         towerManager.removeTower(position);
     }
 
+    //update lastAttacked, update target and fire a bullet
     public void update(){
+        //update lastAttacked
         lastAttacked ++;
-        if(lastAttacked > attackRate && target != null && bullet != null){
+
+        //update target
+        checkRange(EnemyManager.listEnemy);
+
+        //fire a bullet
+        if(lastAttacked > attackRate && target != null){
             lastAttacked = 0;
-            Tower.init();
+            if(this instanceof NormalTower){
+                BulletManger.addBullet("NormalBullet", target, this);
+            }
+            if(this instanceof SmallerTower){
+                BulletManger.addBullet("MachineGunBullet", target, this);
+            }
+            if(this instanceof SniperTower){
+                BulletManger.addBullet("NormalBullet", target, this);
+            }
         }
     }
 
@@ -65,7 +83,6 @@ public abstract class Tower extends GameObject{
         return "Tower{" +
                 "range=" + range +
                 ", attackRate=" + attackRate +
-                ", bullet=" + bullet +
                 ", target=" + target +
                 ", lastAttacked=" + lastAttacked +
                 '}';
