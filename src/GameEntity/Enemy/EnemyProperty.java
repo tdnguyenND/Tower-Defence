@@ -29,4 +29,6 @@ public interface EnemyProperty {
     double BOSS_ENEMY_HEIGHT = 14;
     int BOSS_ENEMY_REWARD = 25;
 
+    int[] listNewEnemy = {1, 1, 1, 2, 2, 3, 3, 3, 4};
+    int stageSize = listNewEnemy.length;
 }

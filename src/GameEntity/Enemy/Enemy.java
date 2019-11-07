@@ -162,4 +162,8 @@ public abstract class Enemy extends GameObject {
             player.earnMoney(this.reward);
         }
     }
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
 }
