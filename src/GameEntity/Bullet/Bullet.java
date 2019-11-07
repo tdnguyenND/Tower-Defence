@@ -77,7 +77,7 @@ public abstract class Bullet extends GameObject {
             doDamage();
             doDestroy();
         }
-        if(position.getX() > tower.getRange() || position.getY() > tower.getRange())
+        if(position.distance(target.getLocation()) > tower.getRange())
             doDestroy();
     }
 
