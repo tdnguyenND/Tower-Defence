@@ -49,8 +49,6 @@ public abstract class Bullet extends GameObject {
 
     public void move(){
         if (!isHit()) updatePos();
-        doDamage();
-        doDestroy();
     }
 
     public void updatePos(){
@@ -65,9 +63,22 @@ public abstract class Bullet extends GameObject {
     }
 
     public void doDamage(){
-        if(isHit()) {
             target.beAttacked(damage);
+    }
+
+    public void update(){
+        /**
+         * TODO: - move
+         *       - check isHit -> do dmg, doDes
+         *       - check out of range -> do destroy
+         */
+        move();
+        if(isHit()){
+            doDamage();
+            doDestroy();
         }
+        if(position.getX() > tower.getRange() || position.getY() > tower.getRange())
+            doDestroy();
     }
 
 

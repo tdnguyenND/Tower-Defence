@@ -15,7 +15,7 @@ public class BulletManager {
     public BulletManager() {
     }
 
-    public static void addBullet(String bulletType, Position pos, Enemy target, Tower tower){
+    public static void addBullet(String bulletType, Enemy target, Tower tower){
         if(bulletType.equals("NormalBullet")) {
             Bullet newBullet = new NormalBullet(target, tower);
             bulletList.add(newBullet);
@@ -35,7 +35,7 @@ public class BulletManager {
     }
 
     public static void update(){
-        for(Bullet bullet: bulletList) bullet.updatePos();
+        for(Bullet bullet: bulletList) bullet.update();
     }
 
     public static void reset(){

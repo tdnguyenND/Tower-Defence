@@ -39,6 +39,8 @@ public abstract class Tower extends GameObject {
 
     public Enemy getTarget() { return target; }
 
+    public  double getRange() { return range; }
+
     public void checkRange(ArrayList<Enemy> enemyList) {
         if (target != null) {
             double distance = target.getLocation().distance(this.position);
