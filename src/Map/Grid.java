@@ -1,5 +1,6 @@
 package Map;
 
+import GameEntity.GameObject;
 import Program.Config;
 import Program.Position;
 
@@ -8,6 +9,8 @@ public class Grid {
     protected static final int height = Config.GRID_HEIGHT;
 
     protected Position center;
+
+    protected GameObject contain;
 
     public Grid() {
     }
@@ -22,6 +25,14 @@ public class Grid {
 
     public Position getCenter() {
         return center;
+    }
+
+    public GameObject getContain() {
+        return contain;
+    }
+
+    public void setContain(GameObject contain) {
+        this.contain = contain;
     }
 
     @Override

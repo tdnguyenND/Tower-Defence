@@ -1,7 +1,6 @@
 package GameEntity.GameTile.Tower;
 
 import Map.*;
-import GameEntity.GameObject;
 import Program.*;
 
 import java.util.HashSet;
@@ -9,67 +8,64 @@ import java.util.Set;
 
 public class TowerManager implements TowerProperty{
     public static Set<Tower> towerList;
-    Player player;
-    GameManager gameManager;
+    private static Player player;
 
-    public TowerManager(Set<Tower> towerList, Player player) {
-        this.towerList = new HashSet<Tower>();
-        this.player = player;
+    public static boolean init(Player _player){
+        player = _player;
+        towerList = new HashSet<Tower>();
+        return true;
     }
 
-    public Set<Tower> getTowerList() {
-        return towerList;
+    public static void addTower(Tower tower){
+        towerList.add(tower);
     }
 
-    public void setTowerList(Set<Tower> towerList) {
-        this.towerList = towerList;
-    }
-
-    public void addTower(String towerType, Position position){
+    public static void createTower(String towerType, Grid grid){
         boolean ableToSetTower = true;
 
         //is this place a Mountain?
-        int i = (int)Math.ceil(position.getX() / Config.GRID_WIDTH);    //calculate position to grid
-        int j = (int)Math.ceil(position.getY() / Config.GRID_HEIGHT);
-        if(!(gameManager.map.map[i][j] instanceof Mountain)) ableToSetTower = false;
+        if(!(grid instanceof Mountain)) ableToSetTower = false;
 
         //Does this place have a tower yet?
-        for(Tower tower: towerList){
-            if(tower.getLocation().equals(position)) ableToSetTower = false;
-        }
+        if (grid.getContain() != null) ableToSetTower = false;
 
         if(ableToSetTower){
             Tower tower;
             if(towerType.equals("NormalTower")){
                 if(player.getGold() >= NORMAL_TOWER_COST){
-                    tower = new NormalTower(position);
+                    tower = new NormalTower(grid.getCenter());
                     towerList.add(tower);
+                    grid.setContain(tower);
+
                     player.setGold(player.getGold() - NORMAL_TOWER_COST);
                 }
             }
-            if(towerType.equals("SmallerTower")){
+            else if(towerType.equals("SmallerTower")){
                 if(player.getGold() >= SMALLER_TOWER_COST){
-                    tower = new SmallerTower(position);
+                    tower = new SmallerTower(grid.getCenter());
                     towerList.add(tower);
+                    grid.setContain(tower);
+
                     player.setGold(player.getGold() - SMALLER_TOWER_ATTACKRATE);
                 }
             }
-            if(towerType.equals("SniperTower")){
+            else {
                 if(player.getGold() >= SNIPER_TOWER_COST){
-                    tower = new SniperTower(position);
+                    tower = new SniperTower(grid.getCenter());
                     towerList.add(tower);
+                    grid.setContain(tower);
+
                     player.setGold(player.getGold() - SNIPER_TOWER_COST);
                 }
             }
         }
-
     }
 
-    public void removeTower(Position position){
-        towerList.remove(position);
+    public static void removeTower(Tower tower){
+        towerList.remove(tower);
     }
 
-    public void reset() {
+    public static void reset() {
         towerList.clear();
     }
 

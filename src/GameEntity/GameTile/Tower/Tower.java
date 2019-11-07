@@ -1,6 +1,5 @@
 package GameEntity.GameTile.Tower;
 
-import GameEntity.Bullet.Bullet;
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
@@ -15,10 +14,9 @@ public abstract class Tower extends GameObject{
     protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
 
-    protected EnemyManager enemyManager;
-    protected TowerManager towerManager;
-
-    public Tower(Position pos, int range, int attackRate){
+    public Tower(int height, int width, Position pos, int range, int attackRate){
+        this.height = height;
+        this.width = width;
         this.position = pos;
         this.range = range;
         this.attackRate = attackRate;
@@ -29,7 +27,9 @@ public abstract class Tower extends GameObject{
         return attackRate;
     }
 
-    public Enemy getTarget() { return target; }
+    public Enemy getTarget() {
+        return target;
+    }
 
     public void setTarget(Enemy target) {
         this.target = target;
@@ -52,7 +52,7 @@ public abstract class Tower extends GameObject{
     }
 
     public void doDestroy() {
-        towerManager.removeTower(position);
+        TowerManager.removeTower(this);
     }
 
     //update lastAttacked, update target and fire a bullet

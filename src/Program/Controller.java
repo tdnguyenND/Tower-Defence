@@ -1,8 +1,8 @@
 package Program;
 
 import Drawer.Drawer;
-import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
+import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -18,6 +18,8 @@ public class Controller {
         if (gameManager.init()){
             map = gameManager.map;
             System.out.println("initialize game manager successful");
+            EnemyManager.createNormalEnemy();
+            TowerManager.createTower("NormalTower", map.map[0][0]);
         }else System.out.println("fail to initialize game manager");
 
         if(Drawer.init(graphicsContext, map, gameManager)){
