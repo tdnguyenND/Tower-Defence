@@ -34,8 +34,11 @@ public class BulletManager {
         bulletList.remove(bullet);
     }
 
-    public static void update(){
-        for(Bullet bullet: bulletList) bullet.update();
+    public static void update(String bulletType, Enemy target, Tower tower){
+        if(bulletList.isEmpty() == false){
+            for(Bullet bullet: bulletList) bullet.update();
+        }
+        else BulletManager.addBullet(bulletType, target, tower);
     }
 
     public static void reset(){
