@@ -20,6 +20,10 @@ public class Player {
         return this.lose;
     }
 
+    public int getGold() {
+        return gold;
+    }
+
     public void earnMoney(int reward){
         gold += reward;
     }

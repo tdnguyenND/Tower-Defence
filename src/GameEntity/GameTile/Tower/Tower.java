@@ -1,45 +1,40 @@
 package GameEntity.GameTile.Tower;
 
-import GameEntity.Bullet.Bullet;
+import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
+import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Program.Position;
 
 import java.util.ArrayList;
 
-public abstract class Tower extends GameObject {
-    protected double range, attackRate;//attackRate time giữa 2 lần bắn
-    protected int damage;
-    protected int cost;
-    protected Bullet bullet;
-
+public abstract class Tower extends GameObject{
+    protected int range;
     protected Enemy target;
-    protected double lastAttacked;//time kể từ lần bắn trc
 
-    public Tower(Position pos, double range, double attackRate, int damage, int cost){
+    protected int attackRate;//attackRate time giữa 2 lần bắn
+    protected int lastAttacked;//time kể từ lần bắn trc
+
+    public Tower(int height, int width, Position pos, int range, int attackRate){
+        this.height = height;
+        this.width = width;
         this.position = pos;
         this.range = range;
-        this.damage = damage;
-        this.cost = cost;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
     }
 
-    public int getCost(){
-        return cost;
-    }
-
-    public double getAttackRate() {
+    public int getAttackRate() {
         return attackRate;
     }
 
-    public int getDamage() {
-        return damage;
+    public Enemy getTarget() {
+        return target;
     }
 
-    public Enemy getTarget() { return target; }
-
-    public  double getRange() { return range; }
+    public void setTarget(Enemy target) {
+        this.target = target;
+    }
 
     public void checkRange(ArrayList<Enemy> enemyList) {
         if (target != null) {
@@ -47,25 +42,40 @@ public abstract class Tower extends GameObject {
             if (distance > range) target = null;
         }
         if (target == null) {
-            int n = enemyList.size();
-            for (int i = 0; i < n; i++) {
-                double distance = position.distance(enemyList.get(i).getLocation());
+            for (Enemy enemy: enemyList) {
+                double distance = position.distance(enemy.getLocation());
                 if (distance <= range) {
-                    target = enemyList.get(i);
+                    target = enemy;
                     break;
                 }
             }
         }
     }
 
+    public void doDestroy() {
+        TowerManager.removeTower(this);
+    }
+
+    //update lastAttacked, update target and fire a bullet
     public void update(){
+        //update lastAttacked
         lastAttacked ++;
-        if(lastAttacked > attackRate && target != null && bullet != null){
+
+        //update target
+        checkRange(EnemyManager.listEnemy);
+
+        //fire a bullet
+        if(lastAttacked > attackRate && target != null){
             lastAttacked = 0;
-            /**
-             *
-             * TODO: fires a bullet
-             */
+            if(this instanceof NormalTower){
+                BulletManager.addBullet("NormalBullet", target, this);
+            }
+            if(this instanceof SmallerTower){
+                BulletManager.addBullet("MachineGunBullet", target, this);
+            }
+            if(this instanceof SniperTower){
+                BulletManager.addBullet("NormalBullet", target, this);
+            }
         }
     }
 
@@ -74,9 +84,6 @@ public abstract class Tower extends GameObject {
         return "Tower{" +
                 "range=" + range +
                 ", attackRate=" + attackRate +
-                ", damage=" + damage +
-                ", cost=" + cost +
-                ", bullet=" + bullet +
                 ", target=" + target +
                 ", lastAttacked=" + lastAttacked +
                 '}';

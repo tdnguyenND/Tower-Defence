@@ -7,13 +7,15 @@ import java.util.Set;
 
 public class BulletManager {
     private static Set<Bullet> bulletList;
-    private static Enemy target;
-    private static Tower tower;
 
     public BulletManager() {
     }
 
-    public static void addBullet(String bulletType){
+    public static boolean init(){
+        return true;
+    }
+
+    public static void addBullet(String bulletType, Enemy target, Tower tower){
         if(bulletType.equals("NormalBullet")) {
             Bullet newBullet = new NormalBullet(target, tower);
             bulletList.add(newBullet);
@@ -37,9 +39,6 @@ public class BulletManager {
             for(Bullet bullet: bulletList) bullet.update();
         }
         else{
-            BulletManager.addBullet("NormalBullet");
-            BulletManager.addBullet("MachineGunBullet");
-            BulletManager.addBullet("SniperBullet");
         }
     }
 

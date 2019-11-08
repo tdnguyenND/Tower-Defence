@@ -1,6 +1,8 @@
 package Program;
 
+import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.EnemyManager;
+import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 
 public class GameManager {
@@ -26,7 +28,7 @@ public class GameManager {
          *   - BulletManager.init
          *   - TowerManager.init
          */
-        return EnemyManager.init(player, map) /* && BulletManager.init && TowerManager.init*/;
+        return EnemyManager.init(player, map)  && BulletManager.init() && TowerManager.init(player);
     }
 
     public static void update(){
