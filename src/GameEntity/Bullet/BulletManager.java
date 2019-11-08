@@ -39,8 +39,7 @@ public class BulletManager {
     public static void update(){
         if(!bulletList.isEmpty()){
             for(Bullet bullet: bulletList) bullet.update();
-        }
-        else{
+            bulletList.removeIf(Bullet::isDestroy);
         }
     }
 

@@ -1,6 +1,5 @@
 package GameEntity.Bullet;
 
-import Debugger.Log;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameObject;
 import GameEntity.GameTile.Tower.Tower;
@@ -14,6 +13,8 @@ public abstract class Bullet extends GameObject {
     protected Tower tower;
     protected double dx;
     protected double dy;
+
+    private boolean destroy;
 
     public Bullet(Enemy target, Tower tower){
         this.target = target;
@@ -30,11 +31,12 @@ public abstract class Bullet extends GameObject {
         this.tower = tower;
         this.position = tower.getLocation().clone();
         calculateVector(target);
+        destroy = false;
     }
 
     @Override
     public void doDestroy() {
-        BulletManager.deleteBullet(this);
+        destroy = true;
     }
 
     public Position getLocation() {
@@ -72,10 +74,13 @@ public abstract class Bullet extends GameObject {
             doDamage();
             doDestroy();
         }
-        if(position.distance(target.getLocation()) > tower.getRange())
+        else if(position.distance(tower.getLocation()) > tower.getRange())
             doDestroy();
     }
 
+    public boolean isDestroy() {
+        return destroy;
+    }
 
     @Override
     public String toString() {

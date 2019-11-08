@@ -22,7 +22,7 @@ public abstract class Enemy extends GameObject {
 
     private int[] direction;
 
-    public boolean die = false;
+    private boolean destroy;
 
     // all Enemy use the same player and map
     private static Player player;
@@ -43,6 +43,7 @@ public abstract class Enemy extends GameObject {
         this.currentIndex = 0;
         this.direction = new int[2];
         updateDirection();
+        destroy = false;
     }
 
     public static boolean init(Map _map, Player _player){
@@ -150,7 +151,7 @@ public abstract class Enemy extends GameObject {
          * TODO:
          *  - Call EnemyManager to delete this enemy
          */
-        die = true;
+        destroy = true;
     }
 
     public void doDamage(){
@@ -165,7 +166,7 @@ public abstract class Enemy extends GameObject {
         }
     }
 
-    public int getCurrentIndex() {
-        return currentIndex;
+    public boolean isDestroy() {
+        return destroy;
     }
 }

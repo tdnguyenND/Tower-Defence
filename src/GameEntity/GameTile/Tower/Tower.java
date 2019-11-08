@@ -7,14 +7,14 @@ import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Program.Position;
 
-import java.util.ArrayList;
-
 public abstract class Tower extends GameObject{
     protected int range;
     protected Enemy target;
 
     protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
+
+    private boolean destroy;
 
     public int getRange(){
         return this.range;
@@ -27,6 +27,7 @@ public abstract class Tower extends GameObject{
         this.range = range;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
+        destroy = false;
     }
 
     public int getAttackRate() {
@@ -35,7 +36,7 @@ public abstract class Tower extends GameObject{
 
     public void checkRange() {
         if (target != null) {
-            if (target.die) target = null;
+            if (target.isDestroy()) target = null;
             else{
                 double distance = target.getLocation().distance(this.position);
                 if (distance > range) target = null;
@@ -53,7 +54,7 @@ public abstract class Tower extends GameObject{
     }
 
     public void doDestroy() {
-        TowerManager.removeTower(this);
+        destroy = true;
     }
 
     //update lastAttacked, update target and fire a bullet

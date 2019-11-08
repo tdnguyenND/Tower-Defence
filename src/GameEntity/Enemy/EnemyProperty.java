@@ -1,7 +1,7 @@
 package GameEntity.Enemy;
 
 public interface EnemyProperty {
-    double NORMAL_ENEMY_HEALTH = 45;
+    double NORMAL_ENEMY_HEALTH = 100;
     double NORMAL_ENEMY_ARMOR= 10;
     int NORMAL_ENEMY_SPEED = 2;
     double NORMAL_ENEMY_WIDTH = 10;
@@ -28,7 +28,4 @@ public interface EnemyProperty {
     double BOSS_ENEMY_WIDTH = 14;
     double BOSS_ENEMY_HEIGHT = 14;
     int BOSS_ENEMY_REWARD = 25;
-
-    int[] listNewEnemy = {1, 1, 1, 2, 2, 3, 3, 3, 4};
-    int stageSize = listNewEnemy.length;
 }

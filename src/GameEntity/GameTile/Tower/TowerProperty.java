@@ -1,7 +1,7 @@
 package GameEntity.GameTile.Tower;
 
 public interface TowerProperty {
-    int NORMAL_TOWER_RANGE = 70;
+    int NORMAL_TOWER_RANGE = 80;
     int NORMAL_TOWER_ATTACKRATE = 10;
     int NORMAL_TOWER_COST = 100;
     int NORMAL_TOWER_WIDTH = 30;
