@@ -14,6 +14,7 @@ public class EnemyManager {
     public static ArrayList<Enemy> listEnemy;
     private static Map map;
     private static Player player;
+    private static int counter = 0;
 
     public static boolean init(Player _player, Map _map){
         /**
@@ -80,7 +81,24 @@ public class EnemyManager {
          *  - Create new Enemy
          *  - Update all Enemy
          */
-
-        for (Enemy enemy: listEnemy) enemy.update();
+        counter++;
+        if (!listEnemy.isEmpty()){
+            int size = listEnemy.size();
+            for (int i = 0; i < size; i++){
+                listEnemy.get(i).update();
+                /**
+                 * TODO:
+                 *  Dangerous here: remove an enemy then the next enemy does not update
+                 */
+                if (size > listEnemy.size()) {
+                    i--;
+                    size--;
+                }
+            }
+        }
+        if (counter >= 40){
+            createNormalEnemy();
+            counter -= 40;
+        }
     }
 }

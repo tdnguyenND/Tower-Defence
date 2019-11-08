@@ -54,6 +54,19 @@ public class Position {
         return Objects.hash(x, y);
     }
 
+    public boolean over(Position other, int[] direction){
+        boolean result = true;
+        if (direction[0]!= 0){
+            if ((this.x - other.x) * direction[0] > 0) result = true;
+            else result = false;
+        }
+        else {
+            if ((this.y - other.y) * direction[1] > 0) result = true;
+            else result = false;
+        }
+        return result;
+    }
+
     public double distance(Position other){
         return Math.sqrt(Math.pow(other.x - x, 2) + Math.pow(other.x - x, 2));
     }
@@ -66,5 +79,8 @@ public class Position {
                 '}';
     }
 
-
+    @Override
+    public Position clone(){
+        return new Position(this.x, this.y);
+    }
 }
