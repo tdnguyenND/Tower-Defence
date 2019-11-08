@@ -1,6 +1,7 @@
 package GameEntity;
 
 import Program.Position;
+import javafx.geometry.Pos;
 
 import javafx.scene.paint.Color;
 
@@ -21,11 +22,10 @@ public abstract class GameObject {
         this.height = height;
     }
 
-    public static void init(){
-        /**
-         * TODO:
-         */
+    /*
+    public static boolean init(){
     }
+    */
 
     public double getWidth() {
         return width;
@@ -43,14 +43,15 @@ public abstract class GameObject {
 
     }
 
-    public void setLocation(double x, double y) {
-
+    public void setLocation(Position _pos) {
+        position.setPosition(_pos.getX(), _pos.getY());
     }
 
     public Position getLocation() {
         return this.position;
     }
 
+    @Override
     public String toString() {
         return "GameObject{" +
                 "position=" + position +
