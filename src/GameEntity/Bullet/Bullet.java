@@ -48,18 +48,11 @@ public abstract class Bullet extends GameObject {
     }
 
     public void move(){
-        if (!isHit()) updatePos();
-    }
-
-    public void updatePos(){
         position.setPosition(position.getX() + (int)dx, position.getY() + (int)dy);
     }
 
     public boolean isHit(){
-        if(position.distance(target.getLocation()) <= 8) {
-            return true;
-        }
-        return false;
+        return (position.distance(target.getLocation()) <= target.getWidth());
     }
 
     public void doDamage(){

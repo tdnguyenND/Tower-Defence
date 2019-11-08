@@ -4,8 +4,8 @@ import GameEntity.Enemy.Enemy;
 import GameEntity.GameObject;
 import GameEntity.GameTile.Tower.Tower;
 
-public class SnipperBullet extends Bullet implements BulletProperty {
-	public SnipperBullet(Enemy target, Tower tower){
+public class Sniper extends Bullet implements BulletProperty {
+	public Sniper(Enemy target, Tower tower){
 		super(SNIPER_BULLET_SPEED, SNIPER_BULLET_DAMAGE,
 			  SNIPER_BULLET_RANGE, SNIPER_BULLET_HEIGHT,
 			  SNIPER_BULLET_WIDTH, target, tower);

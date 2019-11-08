@@ -1,11 +1,7 @@
 package GameEntity.Bullet;
 
-import Debugger.Log;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameTile.Tower.Tower;
-import Map.Map;
-import GameEntity.GameTile.Tower.TowerManager;
-import Program.Position;
 
 import java.util.Set;
 
@@ -26,8 +22,8 @@ public class BulletManager {
             Bullet newBullet = new MachineGunBullet(target, tower);
             bulletList.add(newBullet);
         }
-        else if(bulletType.equals("SnipperBullet")) {
-            Bullet newBullet = new SnipperBullet(target, tower);
+        else if(bulletType.equals("SniperBullet")) {
+            Bullet newBullet = new Sniper(target, tower);
             bulletList.add(newBullet);
         }
     }
@@ -37,13 +33,13 @@ public class BulletManager {
     }
 
     public static void update(){
-        if(bulletList.isEmpty() == false){
+        if(!bulletList.isEmpty()){
             for(Bullet bullet: bulletList) bullet.update();
         }
         else{
             BulletManager.addBullet("NormalBullet");
             BulletManager.addBullet("MachineGunBullet");
-            BulletManager.addBullet("SnipperBullet");
+            BulletManager.addBullet("SniperBullet");
         }
     }
 
