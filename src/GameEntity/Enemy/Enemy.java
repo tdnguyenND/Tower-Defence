@@ -22,6 +22,8 @@ public abstract class Enemy extends GameObject {
 
     private int[] direction;
 
+    public boolean die = false;
+
     // all Enemy use the same player and map
     private static Player player;
     private static Map map;
@@ -148,7 +150,7 @@ public abstract class Enemy extends GameObject {
          * TODO:
          *  - Call EnemyManager to delete this enemy
          */
-        EnemyManager.deleteEnemy(this);
+        die = true;
     }
 
     public void doDamage(){
@@ -156,7 +158,7 @@ public abstract class Enemy extends GameObject {
     }
 
     public void beAttacked(final double damage){
-        this.health -= damage*(50.0/(50+ this.armor));
+        this.health -= damage;
         if (this.health <= 0){
             doDestroy();
             //player.earnMoney(this.reward);

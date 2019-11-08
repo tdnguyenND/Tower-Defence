@@ -10,7 +10,7 @@ public interface EnemyProperty {
 
     double TANKER_ENEMY_HEALTH = 300;
     double TANKER_ENEMY_ARMOR= 15;
-    int TANKER_ENEMY_SPEED = 12;
+    int TANKER_ENEMY_SPEED = 2;
     double TANKER_ENEMY_WIDTH = 16;
     double TANKER_ENEMY_HEIGHT = 16;
     int TANKER_ENEMY_REWARD = 5;

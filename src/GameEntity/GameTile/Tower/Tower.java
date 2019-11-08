@@ -16,6 +16,10 @@ public abstract class Tower extends GameObject{
     protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
 
+    public int getRange(){
+        return this.range;
+    }
+
     public Tower(int height, int width, Position pos, int range, int attackRate){
         this.height = height;
         this.width = width;
@@ -29,21 +33,16 @@ public abstract class Tower extends GameObject{
         return attackRate;
     }
 
-    public Enemy getTarget() {
-        return target;
-    }
-
-    public void setTarget(Enemy target) {
-        this.target = target;
-    }
-
-    public void checkRange(ArrayList<Enemy> enemyList) {
+    public void checkRange() {
         if (target != null) {
-            double distance = target.getLocation().distance(this.position);
-            if (distance > range) target = null;
+            if (target.die) target = null;
+            else{
+                double distance = target.getLocation().distance(this.position);
+                if (distance > range) target = null;
+            }
         }
         if (target == null) {
-            for (Enemy enemy: enemyList) {
+            for (Enemy enemy: EnemyManager.listEnemy) {
                 double distance = position.distance(enemy.getLocation());
                 if (distance <= range) {
                     target = enemy;
@@ -60,10 +59,11 @@ public abstract class Tower extends GameObject{
     //update lastAttacked, update target and fire a bullet
     public void update(){
         //update lastAttacked
-        lastAttacked ++;
+        if (target != null)  lastAttacked ++;
+        else lastAttacked = 0;
 
         //update target
-        checkRange(EnemyManager.listEnemy);
+        checkRange();
 
         //fire a bullet
         if(lastAttacked > attackRate && target != null){

@@ -20,7 +20,7 @@ public class Controller extends AnimationTimer {
             map = gameManager.map;
             System.out.println("initialize game manager successful");
             EnemyManager.createNormalEnemy();
-            TowerManager.createTower("NormalTower", map.map[0][0]);
+            TowerManager.createTower("NormalTower", map.map[13][3]);
         }else System.out.println("fail to initialize game manager");
 
         if(Drawer.init(graphicsContext, map, gameManager)){
@@ -38,6 +38,11 @@ public class Controller extends AnimationTimer {
          */
         GameManager.update();
         Drawer.draw();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void start(){

@@ -1,8 +1,8 @@
 package GameEntity.Bullet;
 
 public interface BulletProperty{
-	double NORMAL_BULLET_SPEED = 25;
-    double NORMAL_BULLET_DAMAGE = 50;
+	double NORMAL_BULLET_SPEED = 10;
+    double NORMAL_BULLET_DAMAGE = 30;
     double NORMAL_BULLET_RANGE = 30;
     double NORMAL_BULLET_WIDTH = 2;
     double NORMAL_BULLET_HEIGHT = 2;

@@ -19,7 +19,7 @@ public class Grid {
     }
 
     public Grid(int x, int y){
-        this.center = new Position((int)(x + 1.0/2) * height, (int)(y + 1.0/2) * width);
+        this.center = new Position((int)((x + 1.0/2) * height), (int)((y + 1.0/2) * width));
     }
 
     public Position getCenter() {

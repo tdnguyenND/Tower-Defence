@@ -28,6 +28,7 @@ public abstract class Bullet extends GameObject {
         this.range = range;
         this.target = target;
         this.tower = tower;
+        this.position = tower.getLocation().clone();
         calculateVector(target);
     }
 
@@ -44,11 +45,12 @@ public abstract class Bullet extends GameObject {
         double radian = Math.atan2(target.getLocation().getX() - tower.getLocation().getX(),
                                    target.getLocation().getY() - tower.getLocation().getY());
         this.dx = Math.sin(radian) * speed;
-        this.dy = - Math.cos(radian) * speed;
+        this.dy = Math.cos(radian) * speed;
     }
 
     public void move(){
-        position.setPosition(position.getX() + (int)dx, position.getY() + (int)dy);
+        position.setX(position.getX() + (int)dx);
+        position.setY(position.getY() + (int)dy);
     }
 
     public boolean isHit(){

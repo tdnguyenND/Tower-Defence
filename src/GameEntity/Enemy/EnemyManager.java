@@ -86,15 +86,8 @@ public class EnemyManager {
             int size = listEnemy.size();
             for (int i = 0; i < size; i++){
                 listEnemy.get(i).update();
-                /**
-                 * TODO:
-                 *  Dangerous here: remove an enemy then the next enemy does not update
-                 */
-                if (size > listEnemy.size()) {
-                    i--;
-                    size--;
-                }
             }
+            listEnemy.removeIf(enemy -> enemy.die);
         }
         if (counter >= 40){
             createNormalEnemy();

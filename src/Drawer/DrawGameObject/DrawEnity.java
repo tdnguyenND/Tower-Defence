@@ -1,5 +1,7 @@
 package Drawer.DrawGameObject;
 
+import GameEntity.Bullet.Bullet;
+import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameTile.Tower.Tower;
@@ -29,6 +31,9 @@ public class DrawEnity {
         }
         for (Tower tower: TowerManager.towerList){
             DrawTower.drawTower(tower);
+        }
+        for (Bullet bullet: BulletManager.bulletList){
+            DrawBullet.drawBullet(bullet);
         }
     }
 }

@@ -3,15 +3,17 @@ package GameEntity.Bullet;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameTile.Tower.Tower;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class BulletManager {
-    private static Set<Bullet> bulletList;
+    public static Set<Bullet> bulletList;
 
     public BulletManager() {
     }
 
     public static boolean init(){
+        bulletList = new HashSet<Bullet>();
         return true;
     }
 
