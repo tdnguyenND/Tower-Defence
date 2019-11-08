@@ -9,6 +9,8 @@ public class Grid {
 
     protected Position center;
 
+    protected boolean filled;
+
     public Grid() {
     }
 
@@ -22,6 +24,14 @@ public class Grid {
 
     public Position getCenter() {
         return center;
+    }
+
+    public boolean isFilled() {
+        return filled;
+    }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
     }
 
     @Override

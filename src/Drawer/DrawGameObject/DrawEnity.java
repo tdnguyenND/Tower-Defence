@@ -2,6 +2,8 @@ package Drawer.DrawGameObject;
 
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
+import GameEntity.GameTile.Tower.Tower;
+import GameEntity.GameTile.Tower.TowerManager;
 import Program.GameManager;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -25,6 +27,8 @@ public class DrawEnity {
         for (Enemy enemy: EnemyManager.listEnemy){
             DrawEnemy.drawEnemy(enemy);
         }
-
+        for (Tower tower: TowerManager.towerList){
+            DrawTower.drawTower(tower);
+        }
     }
 }
