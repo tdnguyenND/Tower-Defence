@@ -28,10 +28,10 @@ public class InputManager{
             double y = mouseEvent.getY();
             if(chooseTower){
                 chooseTower = false;
-                int i = (int) Math.ceil(x / Config.GRID_WIDTH);
-                int j = (int) Math.ceil(y / Config.GRID_HEIGHT);
+                int i = (int) Math.ceil(x * 1.0 / Config.GRID_WIDTH);
+                int j = (int) Math.ceil(y * 1.0 / Config.GRID_HEIGHT);
 
-                TowerManager.createTower(towerType, map.map[i][j]);
+                TowerManager.createTower(towerType, map.map[j - 1][i -1]);
                 System.out.println("dat " + towerType + " Thap tai " + x + " " + y);
             }
             else{
@@ -48,15 +48,7 @@ public class InputManager{
     public void chooseTower(Event event){
         String id = ((Control)event.getSource()).getId();
         towerType = id;
-        if(chooseTower) {
-            System.out.println(towerType);
-            chooseTower = false;
-        }
-        else{
-            chooseTower = true;
-        }
-        if(chooseTower) System.out.println("chon thap");
-        else System.out.println("chon thap");
+        chooseTower = !chooseTower;
     }
 
 }

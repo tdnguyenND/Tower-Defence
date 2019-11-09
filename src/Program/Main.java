@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     BorderPane root;
-    InputManager inputManager = new InputManager();
+    InputManager inputManager;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -42,6 +42,7 @@ public class Main extends Application {
 
 
         controller.start();
+        inputManager = new InputManager(controller.gameManager.map);
 
         /**
          * TODO:

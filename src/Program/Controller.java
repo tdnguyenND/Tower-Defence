@@ -17,7 +17,7 @@ import java.awt.*;
 
 public class Controller extends AnimationTimer {
     private Map map;
-    private GameManager gameManager;
+    public GameManager gameManager;
     private GraphicsContext graphicsContext;
 
     public Controller(GraphicsContext graphicsContext) {
