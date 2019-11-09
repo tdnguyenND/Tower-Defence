@@ -1,25 +1,45 @@
 package Program;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.FontSmoothingType;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+    BorderPane root;
+    InputManager inputManager = new InputManager();
     @Override
     public void start(Stage primaryStage) throws Exception{
-        final Canvas canvas = new Canvas(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
+
+        root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+
+        primaryStage.setTitle(Config.GAME_NAME);
+        primaryStage.setScene(new Scene(root,Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT));
+
+        Canvas canvas = new Canvas(Config.FIELD_WIDTH, Config.FIELD_HEIGHT);
+        root.getChildren().add(canvas);
+        canvas.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                inputManager.MouseHandling(mouseEvent);
+            }
+        });
+
+
+
         final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+
         Controller controller = new Controller(graphicsContext);
 
-        canvas.setFocusTraversable(true);
-        graphicsContext.setFontSmoothingType(FontSmoothingType.LCD);
+//        canvas.setFocusTraversable(true);
+//        graphicsContext.setFontSmoothingType(FontSmoothingType.LCD);
 
-        primaryStage.setResizable(false);
-        primaryStage.setTitle(Config.GAME_NAME);
 
         controller.start();
 
@@ -27,8 +47,6 @@ public class Main extends Application {
          * TODO:
          *  - Add event handler
          */
-        StackPane root = new StackPane(canvas);
-        primaryStage.setScene(new Scene(root));
 
         primaryStage.show();
     }

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Tower-Defence">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tower_Defence</output-path>
+    <root id="root">
+      <element id="archive" name="Tower_Defence.jar">
+        <element id="module-output" name="Tower-Defence" />
+      </element>
+    </root>
+  </artifact>
+</component>

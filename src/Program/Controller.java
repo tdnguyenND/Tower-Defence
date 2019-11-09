@@ -1,11 +1,19 @@
 package Program;
 
+import Drawer.DrawGameObject.DrawTower;
 import Drawer.Drawer;
 import GameEntity.Enemy.EnemyManager;
+import GameEntity.GameTile.Tower.NormalTower;
 import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import javafx.animation.AnimationTimer;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+
+import java.awt.*;
 
 public class Controller extends AnimationTimer {
     private Map map;
@@ -21,6 +29,7 @@ public class Controller extends AnimationTimer {
             System.out.println("initialize game manager successful");
             EnemyManager.createNormalEnemy();
             TowerManager.createTower("NormalTower", map.map[13][3]);
+
         }else System.out.println("fail to initialize game manager");
 
         if(Drawer.init(graphicsContext, map, gameManager)){
