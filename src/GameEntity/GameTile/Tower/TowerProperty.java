@@ -13,7 +13,7 @@ public interface TowerProperty {
     int SMALLER_TOWER_WIDTH = 20;
     int SMALLER_TOWER_HEIGHT = 20;
 
-    int SNIPER_TOWER_RANGE = 70;
+    int SNIPER_TOWER_RANGE = 110;
     int SNIPER_TOWER_ATTACKRATE = 15;
     int SNIPER_TOWER_COST = 170;
     int SNIPER_TOWER_WIDTH = 45;

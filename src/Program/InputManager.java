@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class InputManager{
@@ -32,23 +34,20 @@ public class InputManager{
                 int j = (int) Math.ceil(y * 1.0 / Config.GRID_HEIGHT);
 
                 TowerManager.createTower(towerType, map.map[j - 1][i -1]);
-                System.out.println("dat " + towerType + " Thap tai " + x + " " + y);
+                //System.out.println("dat " + towerType + " Thap tai " + x + " " + y);
             }
             else{
-                System.out.println("khong dat duoc thap " + x + " " + y);
+                //System.out.println("khong dat duoc thap " + x + " " + y);
             }
 
 
     }
-//    @FXML
-//    Button btn;
-    public void setTowerType(ActionEvent event){
 
-    }
     public void chooseTower(Event event){
         String id = ((Control)event.getSource()).getId();
         towerType = id;
         chooseTower = !chooseTower;
     }
+
 
 }
