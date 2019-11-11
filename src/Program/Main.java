@@ -30,16 +30,9 @@ public class Main extends Application {
                 inputManager.MouseHandling(mouseEvent);
             }
         });
-
-
-
         final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         Controller controller = new Controller(graphicsContext);
-
-//        canvas.setFocusTraversable(true);
-//        graphicsContext.setFontSmoothingType(FontSmoothingType.LCD);
-
 
         controller.start();
         inputManager = new InputManager(controller.gameManager.map);

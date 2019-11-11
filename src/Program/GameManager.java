@@ -1,14 +1,9 @@
 package Program;
 
-import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 public class GameManager {
     public Map map;

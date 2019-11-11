@@ -46,7 +46,7 @@ public class TowerManager implements TowerProperty{
                     towerList.add(tower);
                     grid.setFilled(true);
 
-                    player.setGold(player.getGold() - SMALLER_TOWER_ATTACKRATE);
+                    player.setGold(player.getGold() - SMALLER_TOWER_COST);
                 }
             }
             else {

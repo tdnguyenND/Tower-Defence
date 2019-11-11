@@ -1,19 +1,10 @@
 package Program;
 
-import Drawer.DrawGameObject.DrawTower;
 import Drawer.Drawer;
 import GameEntity.Enemy.EnemyManager;
-import GameEntity.GameTile.Tower.NormalTower;
-import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import javafx.animation.AnimationTimer;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-
-import java.awt.*;
 
 public class Controller extends AnimationTimer {
     private Map map;
@@ -27,12 +18,9 @@ public class Controller extends AnimationTimer {
         if (gameManager.init()){
             map = gameManager.map;
             System.out.println("initialize game manager successful");
-            EnemyManager.createNormalEnemy();
-            TowerManager.createTower("NormalTower", map.map[13][3]);
-
         }else System.out.println("fail to initialize game manager");
 
-        if(Drawer.init(graphicsContext, map, gameManager)){
+        if(Drawer.init(graphicsContext, map, gameManager, gameManager.player )){
             System.out.println("initialize drawer successful");
         } else System.out.println("fail to initialize drawer");
     }
@@ -45,10 +33,15 @@ public class Controller extends AnimationTimer {
          *  - Draw
          *  - Sleep
          */
+        long previousTime = System.nanoTime();
+
         GameManager.update();
         Drawer.draw();
-        try {
-            Thread.sleep(100);
+
+        long time = System.nanoTime() - previousTime;
+
+        if (time < Config.COUNT) try{
+            Thread.sleep((long)(Config.COUNT - time)/1000000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

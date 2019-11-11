@@ -76,7 +76,7 @@ public abstract class Tower extends GameObject{
                 BulletManager.addBullet("MachineGunBullet", target, this);
             }
             if(this instanceof SniperTower){
-                BulletManager.addBullet("NormalBullet", target, this);
+                BulletManager.addBullet("SniperBullet", target, this);
             }
         }
     }

@@ -86,9 +86,9 @@ public class EnemyManager {
             for (Enemy enemy: listEnemy) enemy.update();
             listEnemy.removeIf(Enemy::isDestroy);
         }
-        if (counter >= 40){
+        if (counter >= 20){
             createNormalEnemy();
-            counter -= 40;
+            counter -= 20;
         }
     }
 }
