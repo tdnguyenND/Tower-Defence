@@ -8,7 +8,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import java.io.File;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class Main extends Application {
 
@@ -44,6 +48,14 @@ public class Main extends Application {
          */
 
         primaryStage.show();
+
+        String musicFile = "1318.wav";
+        Media m = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer player = new MediaPlayer(m);
+        MediaView mv = new MediaView(player);
+        root.getChildren().add(mv);
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+        player.play();
     }
     public static void main(String[] args) {
         Application.launch(args);
