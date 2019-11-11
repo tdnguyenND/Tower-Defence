@@ -13,9 +13,9 @@ public interface BulletProperty{
     double MACHINEGUN_BULLET_WIDTH = 1;
     double MACHINEGUN_BULLET_HEIGHT = 1;
 
-    double SNIPER_BULLET_SPEED = 15;
+    double SNIPER_BULLET_SPEED = 20;
     double SNIPER_BULLET_DAMAGE = 500;
     double SNIPER_BULLET_RANGE = 50;
-    double SNIPER_BULLET_WIDTH = 4;
-    double SNIPER_BULLET_HEIGHT = 4;
+    double SNIPER_BULLET_WIDTH = 3;
+    double SNIPER_BULLET_HEIGHT = 3;
 }
