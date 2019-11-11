@@ -32,7 +32,6 @@ public class GameManager {
         return EnemyManager.init(player, map) && TowerManager.init(player)  && BulletManager.init();
     }
 
-
     public static void update(){
         EnemyManager.update();
         TowerManager.update();

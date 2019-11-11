@@ -1,18 +1,15 @@
 package Program;
 
 import Drawer.Drawer;
-import GameEntity.Enemy.EnemyManager;
 import Map.Map;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Controller extends AnimationTimer {
     private Map map;
-    public GameManager gameManager;
-    private GraphicsContext graphicsContext;
+    GameManager gameManager;
 
-    public Controller(GraphicsContext graphicsContext) {
-        this.graphicsContext = graphicsContext;
+    Controller(GraphicsContext _graphicsContext) {
 
         gameManager = new GameManager();
         if (gameManager.init()){
@@ -20,7 +17,7 @@ public class Controller extends AnimationTimer {
             System.out.println("initialize game manager successful");
         }else System.out.println("fail to initialize game manager");
 
-        if(Drawer.init(graphicsContext, map, gameManager, gameManager.player )){
+        if(Drawer.init(_graphicsContext, map, gameManager, gameManager.player )){
             System.out.println("initialize drawer successful");
         } else System.out.println("fail to initialize drawer");
     }

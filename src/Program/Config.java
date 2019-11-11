@@ -1,7 +1,7 @@
 package Program;
 
 public class Config {
-    public static final String GAME_NAME = "Tower-Defence";
+    static final String GAME_NAME = "Tower-Defence";
     /**
      * save game config
      */
@@ -18,7 +18,7 @@ public class Config {
     public static int SCREEN_HEIGHT = FIELD_HEIGHT;
 
     public static final int GAME_FPS = 40;
-    public static final double COUNT = 1000000000.0/40;
+    public static final double COUNT = 1000000000.0/GAME_FPS;
 
     private Config(){
     }

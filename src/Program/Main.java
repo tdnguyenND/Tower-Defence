@@ -1,13 +1,11 @@
 package Program;
 
 import javafx.application.Application;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Control;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -25,7 +23,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root,Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT));
 
         Canvas canvas = new Canvas(Config.FIELD_WIDTH, Config.FIELD_HEIGHT);
-        //root.setCenter(canvas);
         root.getChildren().add(canvas);
         canvas.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -48,9 +45,6 @@ public class Main extends Application {
 
         primaryStage.show();
     }
-
-
-
     public static void main(String[] args) {
         Application.launch(args);
     }

@@ -5,6 +5,7 @@ import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
+import Map.Grid;
 import Program.Position;
 
 public abstract class Tower extends GameObject{
@@ -14,16 +15,19 @@ public abstract class Tower extends GameObject{
     protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
 
-    private boolean destroy;
+    protected Grid positionInMap;
+
+    protected boolean destroy;
 
     public int getRange(){
         return this.range;
     }
 
-    public Tower(int height, int width, Position pos, int range, int attackRate){
+    public Tower(int height, int width, Grid pos, int range, int attackRate){
         this.height = height;
         this.width = width;
-        this.position = pos;
+        this.positionInMap = pos;
+        this.position = pos.getCenter();
         this.range = range;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
