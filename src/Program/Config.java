@@ -20,6 +20,8 @@ public class Config {
     public static final int GAME_FPS = 40;
     public static final double COUNT = 1000000000.0/GAME_FPS;
 
+
+
     private Config(){
     }
 }
