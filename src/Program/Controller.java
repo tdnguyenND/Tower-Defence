@@ -27,7 +27,7 @@ public class Controller extends AnimationTimer {
         } else System.out.println("fail to initialize drawer");
 
         onPause = false;
-        onMenu = true;
+        onMenu = false;
     }
 
     @Override
