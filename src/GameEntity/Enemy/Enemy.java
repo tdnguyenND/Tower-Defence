@@ -14,7 +14,7 @@ public abstract class Enemy extends GameObject {
      */
     private double health;
     private double armor;
-    private int speed;
+    private double speed;
 
     private int reward;
 
@@ -134,7 +134,7 @@ public abstract class Enemy extends GameObject {
     }
 
     public void move(){
-        setLocation(this.position.getX() + speed*direction[0], this.position.getY() + speed * direction[1]);
+        setLocation(this.position.getX() + (int)speed*direction[0], this.position.getY() + (int)speed * direction[1]);
     }
 
     public void setLocation(int x, int y){

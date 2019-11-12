@@ -15,6 +15,8 @@ public class EnemyManager {
     private static Map map;
     private static Player player;
     private static int counter = 0;
+    private static int currentWave;
+    private static int currentEnemyInWave;
 
     public static boolean init(Player _player, Map _map){
         /**
@@ -43,7 +45,9 @@ public class EnemyManager {
             success = false;
             System.out.println(e.getMessage());
         }
-        listEnemy = new ArrayList<Enemy>();
+        listEnemy = new ArrayList<>();
+        currentWave = 0;
+        currentEnemyInWave = 0;
         return success;
     }
 
@@ -71,10 +75,6 @@ public class EnemyManager {
         addEnemy(newEnemy);
     }
 
-    public static void deleteEnemy(Enemy enemy){
-        listEnemy.remove(enemy);
-    }
-
     public static void update(){
         /**
          * TODO:
@@ -86,9 +86,37 @@ public class EnemyManager {
             for (Enemy enemy: listEnemy) enemy.update();
             listEnemy.removeIf(Enemy::isDestroy);
         }
-        if (counter >= 20){
-            createNormalEnemy();
-            counter -= 20;
+        if (counter >= EnemyConfig.defaultCounter){
+            if (currentEnemyInWave < EnemyData.wave[currentWave].length){
+                switch (EnemyData.wave[currentWave][currentEnemyInWave]){
+                    case 1:
+                        createNormalEnemy();
+                        break;
+                    case 2:
+                        createSmallerEnemy();
+                        break;
+                    case 3:
+                        createTankerEnemy();
+                        break;
+                    case 4:
+                        createBossEnemy();
+                        break;
+                }
+                currentEnemyInWave++;
+                counter = 0;
+            }
+            else {
+                currentWave++;
+                if (currentWave >= EnemyData.wave.length){
+                    currentWave = 0;
+                    currentEnemyInWave = 0;
+                    counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+                }
+                else {
+                    currentEnemyInWave = 0;
+                    counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 package Program;
 
+import Music.MusicManager;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +39,8 @@ public class Main extends Application {
 
         Controller controller = new Controller(graphicsContext);
 
+        MusicManager.init(root);
+
         controller.start();
         inputManager = new InputManager(controller.gameManager.map);
 
@@ -48,15 +51,7 @@ public class Main extends Application {
          */
 
         primaryStage.show();
-
-        String musicFile = "1318.wav";
-        String path = (new File(musicFile)).toURI().toString();
-        Media media = new Media(path);
-        MediaPlayer player = new MediaPlayer(media);
-        MediaView mv = new MediaView(player);
-        root.getChildren().add(mv);
-        player.setCycleCount(MediaPlayer.INDEFINITE);
-        player.play();
+        MusicManager.play();
     }
     public static void main(String[] args) {
         Application.launch(args);

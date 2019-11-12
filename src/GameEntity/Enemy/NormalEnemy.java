@@ -2,12 +2,12 @@ package GameEntity.Enemy;
 
 import javafx.scene.paint.Color;
 
-public class NormalEnemy extends Enemy implements EnemyProperty {
+public class NormalEnemy extends Enemy{
 
     public NormalEnemy() {
-        super(NORMAL_ENEMY_HEALTH, NORMAL_ENEMY_ARMOR,
-                NORMAL_ENEMY_SPEED, NORMAL_ENEMY_WIDTH,
-                NORMAL_ENEMY_HEIGHT, NORMAL_ENEMY_REWARD);
+        super(EnemyConfig.NORMAL_ENEMY_HEALTH, EnemyConfig.NORMAL_ENEMY_ARMOR,
+                EnemyConfig.NORMAL_ENEMY_SPEED, EnemyConfig.NORMAL_ENEMY_WIDTH,
+                EnemyConfig.NORMAL_ENEMY_HEIGHT, EnemyConfig.NORMAL_ENEMY_REWARD);
         color = Color.BLUE;
     }
 }
