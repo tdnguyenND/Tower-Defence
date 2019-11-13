@@ -21,6 +21,7 @@ public class Map {
          *  - Determine start and finish point
          */
         map = new Grid[nRows][nCols];
+        Data.init();
 
         for (int i = 0; i < nRows; i++){
             for (int j = 0; j < nCols; j++){
@@ -28,11 +29,11 @@ public class Map {
             }
         }
         for (int i = 0; i < Data.size; i++) {
-            int x = Data.line[i][0];
-            int y = Data.line[i][1];
+            int x = Data.line.get(i).get(0);
+            int y = Data.line.get(i).get(1);
             map[x][y] = new Road(x, y);
         }
-        startPoint = map[Data.line[0][0]][Data.line[0][1]];
-        finishPoint = map[Data.line[Data.size - 1][0]][Data.line[Data.size - 1][1]];
+        startPoint = map[Data.line.get(0).get(0)][Data.line.get(0).get(1)];
+        finishPoint = map[Data.line.get(Data.size - 1).get(0)][Data.line.get(Data.size - 1).get(1)];
     }
 }
