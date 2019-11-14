@@ -1,6 +1,7 @@
 package Program;
 
 import Drawer.Drawer;
+import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,6 +21,7 @@ public class Controller extends AnimationTimer {
             map = gameManager.map;
             player = gameManager.player;
             System.out.println("initialize game manager successful");
+            TowerManager.createTower("InfernoTower", map.map[6][2]);
         }else System.out.println("fail to initialize game manager");
 
         if(Drawer.init(_graphicsContext, map, gameManager, gameManager.player )){

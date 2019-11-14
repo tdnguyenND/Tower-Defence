@@ -1,6 +1,7 @@
 package GameEntity.Bullet;
 
 import GameEntity.Enemy.Enemy;
+import GameEntity.GameTile.Tower.InfernoTower;
 import GameEntity.GameTile.Tower.Tower;
 
 import java.util.HashSet;
@@ -27,7 +28,11 @@ public class BulletManager {
             bulletList.add(newBullet);
         }
         else if(bulletType.equals("SniperBullet")) {
-            Bullet newBullet = new Sniper(target, tower);
+            Bullet newBullet = new SniperBullet(target, tower);
+            bulletList.add(newBullet);
+        }
+        else if (tower instanceof InfernoTower){
+            Bullet newBullet = new InfernoBullet(target, (InfernoTower)tower);
             bulletList.add(newBullet);
         }
     }

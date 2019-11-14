@@ -9,6 +9,7 @@ public class Player {
     private int gold;
 
     public Player(){
+        this.health = 50;
     }
 
     public void beAttacked(){

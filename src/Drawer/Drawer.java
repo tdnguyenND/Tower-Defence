@@ -1,10 +1,12 @@
 package Drawer;
 
 import Drawer.DrawGameObject.*;
+import Program.Config;
 import Program.GameManager;
 import Map.*;
 import Program.Player;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 public class Drawer {
     protected static GraphicsContext graphicsContext;
