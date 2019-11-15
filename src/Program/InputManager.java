@@ -10,7 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
+import java.awt.*;
 
 public class InputManager{
     protected Map map;
@@ -44,7 +48,7 @@ public class InputManager{
     }
 
     public void chooseTower(Event event){
-        String id = ((Control)event.getSource()).getId();
+        String id = ((ImageView)event.getSource()).getId();
         towerType = id;
         chooseTower = !chooseTower;
     }

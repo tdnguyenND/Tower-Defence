@@ -15,7 +15,7 @@ public class Config {
     public static int FIELD_HEIGHT = ROW * GRID_HEIGHT;
 
     public static int SCREEN_WIDTH = FIELD_WIDTH + 110;
-    public static int SCREEN_HEIGHT = FIELD_HEIGHT;
+    public static int SCREEN_HEIGHT = FIELD_HEIGHT+110;
 
     public static final int GAME_FPS = 40;
 
