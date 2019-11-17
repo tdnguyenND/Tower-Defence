@@ -22,7 +22,7 @@ public class Controller extends AnimationTimer {
     private Player player;
     private boolean onPause;
     private boolean onMenu;
-    public static int SPEED = 2;
+    public static int SPEED = 1;
     private double COUNT = 1000000000.0/Config.GAME_FPS;
 
     private Stage stage;

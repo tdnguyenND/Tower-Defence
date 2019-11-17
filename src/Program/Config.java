@@ -17,7 +17,7 @@ public class Config {
     public static int SCREEN_WIDTH = FIELD_WIDTH ;
     public static int SCREEN_HEIGHT = FIELD_HEIGHT + 100;
 
-    public static final int GAME_FPS = 20;
+    public static final int GAME_FPS = 30;
     public static final double COUNT = 1000000000.0/GAME_FPS;
 
     private Config(){
