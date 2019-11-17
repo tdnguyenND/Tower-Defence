@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import java.io.File;
@@ -13,6 +14,7 @@ import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import Drawer.DrawGameObject.DrawEnemy;
 
 public class Main extends Application {
 
@@ -62,6 +64,9 @@ public class Main extends Application {
         root.getChildren().add(mv);
         player.setCycleCount(MediaPlayer.INDEFINITE);
         player.play();
+
+        Image enemyImage;
+
     }
 
 

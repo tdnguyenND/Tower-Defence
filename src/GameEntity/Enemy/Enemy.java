@@ -20,13 +20,21 @@ public abstract class Enemy extends GameObject {
 
     private int currentIndex;//current index in Map.data.road
 
-    private int[] direction;
+    private static int[] direction;
 
     private boolean destroy;
 
     // all Enemy use the same player and map
     private static Player player;
     private static Map map;
+
+    public static int[] getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int[] direction) {
+        this.direction = direction;
+    }
 
     public Enemy(){
     }
