@@ -8,5 +8,7 @@ public class DrawTower extends DrawGameObject {
         graphicsContext.setFill(Color.WHITE);
         graphicsContext.fillRect(tower.getLocation().getY() - tower.getWidth()/2,tower.getLocation().getX() - tower.getHeight()/2,
                 tower.getHeight(), tower.getWidth());
+        graphicsContext.strokeOval(tower.getLocation().getY() - tower.getRange(),tower.getLocation().getX() - tower.getRange(),
+                tower.getRange() * 2, tower.getRange() * 2);
     }
 }

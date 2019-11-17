@@ -26,6 +26,7 @@ public class InfernoTower extends Tower{
         type = 1;
         listTarget = new HashSet<>();
         currentAttackDuplicate = 0;
+        switchType();
     }
 
     public int getCurrentAttackDuplicate() {

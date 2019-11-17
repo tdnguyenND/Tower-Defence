@@ -16,7 +16,7 @@ public interface BulletProperty{
     double SNIPER_BULLET_WIDTH = 12;
     double SNIPER_BULLET_HEIGHT = 12;
 
-    double INFERNO_BULLET_TYPE1_DAMAGE = 18;
+    double INFERNO_BULLET_TYPE1_DAMAGE = 23;
     double INFERNO_BULLET_TYPE2_MIN_DAMAGE = 15;
     double INFERNO_BULLET_TYPE2_MAX_DAMAGE = 70;
     double INFERNO_BULLET_WIDTH = 10;

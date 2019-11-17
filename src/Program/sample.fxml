@@ -15,7 +15,12 @@
         <VBox id="tower-area" prefHeight="442.0" prefWidth="115.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
             <children>
                 <!--            <Button fx:id="buyNormalTower" mnemonicParsing="false" onMouseClicked="#BuyTower" text="Normal Tower" />-->
-                <Button fx:id="NormalTower" mnemonicParsing="false" onAction="#chooseTower" prefHeight="53.0" prefWidth="110.0" text="NormalTower">
+                <Button fx:id="NormalTower"
+                        mnemonicParsing="false"
+                        onAction="#chooseTower"
+                        prefHeight="53.0"
+                        prefWidth="110.0"
+                        text="NormalTower">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
