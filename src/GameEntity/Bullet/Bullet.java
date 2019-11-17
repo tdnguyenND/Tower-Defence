@@ -8,13 +8,15 @@ import Program.Position;
 public abstract class Bullet extends GameObject {
     protected double speed;
     protected double damage;
-    protected double range;
-    protected Enemy target;
+    public Enemy target;
     protected Tower tower;
     protected double dx;
     protected double dy;
 
-    private boolean destroy;
+    protected boolean destroy;
+
+    public Bullet(){
+    }
 
     public Bullet(Enemy target, Tower tower){
         this.target = target;
@@ -22,15 +24,14 @@ public abstract class Bullet extends GameObject {
     }
 
     public Bullet(double width, double height, double speed, double damage,
-                  double range, Enemy target, Tower tower) {
+                  Enemy target, Tower tower) {
         super(width, height);
         this.speed = speed;
         this.damage = damage;
-        this.range = range;
         this.target = target;
         this.tower = tower;
         this.position = tower.getLocation().clone();
-        calculateVector(target);
+        calculateVector();
         destroy = false;
     }
 
@@ -43,9 +44,9 @@ public abstract class Bullet extends GameObject {
         return super.getLocation();
     }
 
-    public void calculateVector(Enemy target) {
-        double radian = Math.atan2(target.getLocation().getX() - tower.getLocation().getX(),
-                                   target.getLocation().getY() - tower.getLocation().getY());
+    public void calculateVector() {
+        double radian = Math.atan2(target.getLocation().getX() - position.getX(),
+                                   target.getLocation().getY() - position.getY());
         this.dx = Math.sin(radian) * speed;
         this.dy = Math.cos(radian) * speed;
     }
@@ -69,8 +70,10 @@ public abstract class Bullet extends GameObject {
          *       - check isHit -> do dmg, doDes
          *       - check out of range -> do destroy
          */
+        calculateVector();
         move();
         if(isHit()){
+            setLocation(target.getLocation());
             doDamage();
             doDestroy();
         }
@@ -87,7 +90,6 @@ public abstract class Bullet extends GameObject {
         return "Bullet{" +
                 "speed=" + speed +
                 ", damage=" + damage +
-                ", range=" + range +
                 ", dx=" + dx +
                 ", dy=" + dy +
                 ", position=" + position +

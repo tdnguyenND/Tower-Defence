@@ -5,13 +5,11 @@ import Program.Config;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class DrawField {
+public class DrawField extends Drawer {
     private static Map map;
-    private static GraphicsContext graphicsContext;
 
-    public static boolean init(GraphicsContext _graphicsContext, Map _map) {
+    public static boolean init(Map _map) {
         map = _map;
-        graphicsContext = _graphicsContext;
         return (map != null);
     }
 
@@ -19,7 +17,7 @@ public class DrawField {
         for (int i = 0; i < map.nRows; i++){
             for (int j = 0; j < map.nCols; j++) {
                 if (map.map[i][j] instanceof Mountain){
-                    graphicsContext.setFill(Color.BLACK);
+                    graphicsContext.setFill(Color.DARKGREEN);
                 }
                 else graphicsContext.setFill(Color.RED);
 

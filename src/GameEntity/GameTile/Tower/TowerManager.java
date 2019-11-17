@@ -33,27 +33,36 @@ public class TowerManager implements TowerProperty{
             Tower tower;
             if(towerType.equals("NormalTower")){
                 if(player.getGold() >= NORMAL_TOWER_COST){
-                    tower = new NormalTower(grid.getCenter());
+                    tower = new NormalTower(grid);
                     towerList.add(tower);
-                    grid.setFilled(true);
+                    grid.setContain(tower);
 
                     player.setGold(player.getGold() - NORMAL_TOWER_COST);
                 }
             }
             else if(towerType.equals("SmallerTower")){
                 if(player.getGold() >= SMALLER_TOWER_COST){
-                    tower = new SmallerTower(grid.getCenter());
+                    tower = new SmallerTower(grid);
                     towerList.add(tower);
-                    grid.setFilled(true);
+                    grid.setContain(tower);
 
-                    player.setGold(player.getGold() - SMALLER_TOWER_ATTACKRATE);
+                    player.setGold(player.getGold() - SMALLER_TOWER_COST);
+                }
+            }
+            else if (towerType.equals("InfernoTower")){
+                if (player.getGold()>= INFERNO_TOWER_COST){
+                    tower = new InfernoTower(grid);
+                    towerList.add(tower);
+                    grid.setContain(tower);
+
+                    player.setGold(player.getGold() - INFERNO_TOWER_COST);
                 }
             }
             else {
                 if(player.getGold() >= SNIPER_TOWER_COST){
-                    tower = new SniperTower(grid.getCenter());
+                    tower = new SniperTower(grid);
                     towerList.add(tower);
-                    grid.setFilled(true);
+                    grid.setContain(tower);
 
                     player.setGold(player.getGold() - SNIPER_TOWER_COST);
                 }

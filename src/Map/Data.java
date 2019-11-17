@@ -1,11 +1,67 @@
 package Map;
 
+import Debugger.Log;
+import Program.Config;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Data {
-    public static int[][] line = {{14, 4}, {13, 4}, {12, 4}, {11, 4}, {10, 4}, {9, 4}, {9, 3}, {9, 2}, {9, 1}, {8, 1},
-            {7, 1}, {6, 1}, {5, 1}, {4, 1}, {3, 1}, {2, 1}, {2, 2}, {2, 3}, {2, 4}, {2, 5}, {2, 6}, {2, 7}, {2, 8}, {2, 9},
-            {2, 10}, {3, 10}, {4, 10}, {5, 10}, {6, 10}, {7, 10}, {8, 10}, {9, 10}, {10, 10}, {10, 11}, {10, 12}, {10, 13},
-            {10, 14}, {10, 15}, {9, 15}, {8, 15}, {7, 15}, {6, 15}, {5, 15}, {4, 15}, {3, 15}, {2, 15}, {1, 15},{0, 15}};
-    public static int size = line.length;
+    public static final String mapPath = "data/map.txt";
+    public static ArrayList<ArrayList<Integer>> line;
+    public static int size;
+
+    private static ArrayList<ArrayList<Integer>> findLine(int[][] map, int startX, int startY){
+        ArrayList<ArrayList<Integer>> line = new ArrayList<>();
+        ArrayList<Integer> ele = new ArrayList<>();
+        ele.add(startX);
+        ele.add(startY);
+        line.add(ele);
+
+        for (int i = Math.max(0, startX - 1); i <= Math.min(Config.ROW - 1, startX + 1); i++){
+            for (int j = Math.max(0, startY - 1); j <= Math.min(Config.COLUMN - 1, startY + 1); j++){
+                if ((i + j - startX - startY) % 2 == 0) continue;
+                if (map[i][j] != 0){
+                    map[i][j] = 0;
+                    line.addAll(findLine(map, i, j));
+                    return line;
+                }
+            }
+        }
+        return line;
+    }
+
+    public static final void init(){
+        try{
+            Scanner sc = new Scanner(new File(mapPath));
+            int[][] map = new int[Config.ROW][Config.COLUMN];
+
+            int startX = -1, startY = -1;
+
+            line = new ArrayList<>();
+            for (int i = 0; i < Config.ROW; i++){
+                for (int j = 0; j < Config.COLUMN; j ++){
+                    map[i][j] = sc.nextInt();
+                    if (map[i][j] == 3){
+                        startX = i;
+                        startY = j;
+                    }
+                    System.out.print(map[i][j] + " ");
+                }
+                System.out.println();
+            }
+
+            map[startX][startY] = 0;
+            line = findLine(map, startX, startY);
+            size = line.size();
+
+            Log.log(line);
+        }catch (FileNotFoundException ex){
+            System.out.println("File not exist");;
+        }
+    }
 
     public static int[][] direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 

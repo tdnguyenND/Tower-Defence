@@ -1,11 +1,12 @@
 package GameEntity.GameTile.Tower;
 
+import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.BulletManager;
 
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
-import Program.Position;
+import Map.Grid;
 
 public abstract class Tower extends GameObject{
     protected int range;
@@ -14,20 +15,26 @@ public abstract class Tower extends GameObject{
     protected int attackRate;//attackRate time giữa 2 lần bắn
     protected int lastAttacked;//time kể từ lần bắn trc
 
-    private boolean destroy;
+    protected Grid positionInMap;
+
+    protected boolean destroy;
+    private int level;
 
     public int getRange(){
         return this.range;
     }
 
-    public Tower(int height, int width, Position pos, int range, int attackRate){
+    public Tower(int height, int width, Grid pos, int range, int attackRate){
         this.height = height;
         this.width = width;
-        this.position = pos;
+        this.positionInMap = pos;
+        this.position = pos.getCenter();
         this.range = range;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
-        destroy = false;
+        this.destroy = false;
+        this.target = null;
+        this.level = 1;
     }
 
     public int getAttackRate() {
@@ -76,9 +83,21 @@ public abstract class Tower extends GameObject{
                 BulletManager.addBullet("MachineGunBullet", target, this);
             }
             if(this instanceof SniperTower){
-                BulletManager.addBullet("NormalBullet", target, this);
+                BulletManager.addBullet("SniperBullet", target, this);
+            }
+            if (this instanceof InfernoTower){
+                BulletManager.addBullet("InfernoBullet", target, this);
             }
         }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void upgrade(){
+        level++;
+
     }
 
     @Override
