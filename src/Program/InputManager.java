@@ -23,9 +23,11 @@ public class InputManager{
     protected static String towerType;
 
     protected static boolean sellTower = false;
+
     protected static boolean x2Speed = false;
 
     private static boolean upgrade = false;
+
     public InputManager(){
 
     }
@@ -34,6 +36,7 @@ public class InputManager{
     }
 
     public static void MouseHandling(MouseEvent mouseEvent) {
+        System.out.println("click on map");
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
 
@@ -55,9 +58,11 @@ public class InputManager{
         }
     }
 
-    private static void sellTower(int i, int j) {
-            sellTower = false;
-            TowerManager.removeTower(map.map[j - 1][i -1]);
+    public void chooseTypeTower(MouseEvent event) {
+        String id = ((Button)event.getSource()).getId();
+        towerType = id;
+        System.out.println("buy " + towerType);
+        chooseTypeTower = !chooseTypeTower;
     }
 
     public static void buyTower(int i, int j){
@@ -68,14 +73,14 @@ public class InputManager{
     }
 
 
-    public static void chooseTypeTower(Event event){
-        String id = ((ImageView)event.getSource()).getId();
-        towerType = id;
-        chooseTypeTower = !chooseTypeTower;
-    }
 
     public void wantToSellTower(MouseEvent mouseEvent) {
         sellTower = !sellTower;
+    }
+
+    private static void sellTower(int i, int j) {
+        sellTower = false;
+        TowerManager.removeTower(map.map[j - 1][i -1]);
     }
 
     public void doubleSpeed(MouseEvent mouseEvent){
@@ -90,5 +95,10 @@ public class InputManager{
             System.out.println("*2");
         }
 
+    }
+
+
+    public void Pause(MouseEvent mouseEvent) {
+        Controller.onPause = !Controller.onPause;
     }
 }

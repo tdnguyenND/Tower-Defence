@@ -5,6 +5,7 @@ import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import Music.MusicManager;
 import Program.GameStatus.GameStatus;
+import Program.GameStatus.Menu;
 import Program.GameStatus.Playing;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
@@ -15,19 +16,22 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Controller extends AnimationTimer {
 
     private Map map;
     GameManager gameManager;
     private Player player;
-    private boolean onPause;
-    private boolean onMenu;
+    public static boolean onMenu;
+    public static boolean onPause;
+    public static boolean onPlay;
     public static int SPEED = 1;
     private double COUNT = 1000000000.0/Config.GAME_FPS;
 
     private Stage stage;
 
-    private GameStatus playing;
+    public static GameStatus playing;
     private GameStatus menu;
     private GameStatus lose;
     private GameStatus win;
@@ -60,6 +64,7 @@ public class Controller extends AnimationTimer {
         GameStatus.setStage(stage);
 
         playing = new Playing();
+        menu  = new Menu();
     }
 
     @Override
@@ -84,7 +89,12 @@ public class Controller extends AnimationTimer {
              *      + Quit
              */
             onMenu = false;
-            playing.load();
+            try {
+                menu.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
         else if(onPause){
             /**
@@ -106,6 +116,11 @@ public class Controller extends AnimationTimer {
              *      + Replay
              *      + Quit
              */
+            try {
+                lose.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else if (player.isWin()){
             /**
@@ -114,8 +129,13 @@ public class Controller extends AnimationTimer {
              *      Such as: Drawer.drawWinScreen
              *  - Create Button: like Lose Screen
              */
+            try {
+                win.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        else{
+        else if(onPlay) {
             /**
              * TODO:
              *  - On Active Screen
