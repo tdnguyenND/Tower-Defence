@@ -2,11 +2,11 @@ package GameEntity.Enemy;
 
 import javafx.scene.paint.Color;
 
-public class SmallerEnemy extends Enemy implements EnemyProperty {
+public class SmallerEnemy extends Enemy{
     public SmallerEnemy() {
-        super(SMALLER_ENEMY_HEALTH, SMALLER_ENEMY_ARMOR,
-                SMALLER_ENEMY_SPEED, SMALLER_ENEMY_WIDTH,
-                SMALLER_ENEMY_HEIGHT, SMALLER_ENEMY_REWARD);
+        super(EnemyConfig.SMALLER_ENEMY_HEALTH, EnemyConfig.SMALLER_ENEMY_ARMOR,
+                EnemyConfig.SMALLER_ENEMY_SPEED, EnemyConfig.SMALLER_ENEMY_WIDTH,
+                EnemyConfig.SMALLER_ENEMY_HEIGHT, EnemyConfig.SMALLER_ENEMY_REWARD);
         color = Color.YELLOW;
     }
 }

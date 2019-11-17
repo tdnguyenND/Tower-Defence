@@ -19,8 +19,15 @@ import java.awt.*;
 public class InputManager{
     protected Map map;
 
-    protected static boolean chooseTower = false;
+    protected static boolean chooseTypeTower = false;
     protected static String towerType;
+
+    protected static boolean sellTower = false;
+    protected static boolean x2Speed = false;
+
+    private static boolean upgrade = false;
+
+
 
     public InputManager(){
 
@@ -30,28 +37,61 @@ public class InputManager{
     }
 
     public void MouseHandling(MouseEvent mouseEvent) {
-            double x = mouseEvent.getX();
-            double y = mouseEvent.getY();
-            if(chooseTower){
-                chooseTower = false;
-                int i = (int) Math.ceil(x * 1.0 / Config.GRID_WIDTH);
-                int j = (int) Math.ceil(y * 1.0 / Config.GRID_HEIGHT);
+        double x = mouseEvent.getX();
+        double y = mouseEvent.getY();
 
-                TowerManager.createTower(towerType, map.map[j - 1][i -1]);
-                //System.out.println("dat " + towerType + " Thap tai " + x + " " + y);
+        int i = (int) Math.ceil(x * 1.0 / Config.GRID_WIDTH);
+        int j = (int) Math.ceil(y * 1.0 / Config.GRID_HEIGHT);
+
+        if(! map.map[j - 1][i -1].isFilled()){
+            buyTower(i, j);
+        }
+        else{
+            if(sellTower)
+                sellTower(i , j);
+            else if(upgrade){
+                /**
+                 *  -TODO
+                 *   upgrade tower;
+                 */
             }
-            else{
-                //System.out.println("khong dat duoc thap " + x + " " + y);
-            }
-
-
+        }
     }
 
-    public void chooseTower(Event event){
+    private void sellTower(int i, int j) {
+            sellTower = false;
+            TowerManager.removeTower(map.map[j - 1][i -1]);
+    }
+
+    public void buyTower(int i, int j){
+        if(chooseTypeTower){
+            chooseTypeTower = false;
+            TowerManager.createTower(towerType, map.map[j - 1][i -1]);
+        }
+    }
+
+
+    public void chooseTypeTower(Event event){
         String id = ((ImageView)event.getSource()).getId();
         towerType = id;
-        chooseTower = !chooseTower;
+        chooseTypeTower = !chooseTypeTower;
     }
 
+    public void wantToSellTower(MouseEvent mouseEvent) {
+        sellTower = !sellTower;
+    }
 
+    public void doubleSpeed(MouseEvent mouseEvent){
+        if(x2Speed){
+            x2Speed = !x2Speed;
+            Controller.SPEED = Controller.SPEED / 2;
+            System.out.println("/2");
+        }
+        else{
+            x2Speed = !x2Speed;
+            Controller.SPEED = Controller.SPEED * 2;
+            System.out.println("*2");
+        }
+
+    }
 }

@@ -1,25 +1,37 @@
 package Program;
 
+import javafx.scene.layout.BorderPane;
+
 public class Player {
-    private double health;
-    private Boolean lose;
+    private double health = 100;
+    private boolean lose;
+    private boolean win;
     private int gold;
 
     public Player(){
     }
 
-    public void update(){
-        if (health <= 0) lose = true;
-    }
-
     public void beAttacked(){
         this.health--;
+        if (health < 0) setLose(true);
+    }
+
+    public boolean isWin() {
+        return win;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
     }
 
     public boolean isLose(){
         return this.lose;
     }
-  
+
+    public void setLose(boolean lose){
+        this.lose = lose;
+    }
+
     public int getGold() {
         return gold;
     }

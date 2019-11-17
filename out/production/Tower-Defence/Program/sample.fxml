@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -10,29 +11,39 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.InputManager">
-   <right>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </right>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.InputManager">
    <bottom>
-      <Pane prefHeight="80.0" prefWidth="738.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="110.0" prefWidth="804.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="NormalTower" fitHeight="101.0" fitWidth="177.0" layoutX="524.0" layoutY="-21.0" onMouseClicked="#chooseTower" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="NormalTower" fitHeight="101.0" fitWidth="177.0" layoutX="524.0" layoutY="4.0" onMouseClicked="#chooseTypeTower" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../data/images/dede8ae5755d9c7427b443b8af8a4939--app-design-clash-royale-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="SmallerTower" fitHeight="110.0" fitWidth="65.0" layoutX="591.0" layoutY="-21.0" onMouseClicked="#chooseTower" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="SmallerTower" fitHeight="110.0" fitWidth="65.0" layoutX="599.0" layoutY="2.0" onMouseClicked="#chooseTypeTower" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../data/images/dede8ae5755d9c7427b443b8af8a4939--app-design-clash-royale-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="SniperTower" fitHeight="102.0" fitWidth="77.0" layoutX="656.0" layoutY="-21.0" onMouseClicked="#chooseTower" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="SniperTower" fitHeight="102.0" fitWidth="77.0" layoutX="664.0" onMouseClicked="#chooseTypeTower" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../data/images/dede8ae5755d9c7427b443b8af8a4939--app-design-clash-royale-removebg-preview.png" />
                </image>
             </ImageView>
+            <Button fx:id="sell" layoutX="337.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#wantToSellTower" text="Sell" />
+            <Button layoutX="416.0" layoutY="51.0" mnemonicParsing="false" text="upgrade" />
          </children>
       </Pane>
    </bottom>
+   <top>
+      <Pane prefHeight="69.0" prefWidth="804.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="33.0" layoutY="21.0" text="500" />
+            <Button layoutX="611.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#doubleSpeed" text="x2" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Canvas height="602.0" width="743.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
