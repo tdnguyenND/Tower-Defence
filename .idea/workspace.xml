@@ -4,10 +4,23 @@
     <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawGameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawGameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/GameTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/GameTile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameObject.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
