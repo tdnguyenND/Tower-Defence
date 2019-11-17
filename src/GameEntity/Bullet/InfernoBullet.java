@@ -14,10 +14,10 @@ public class InfernoBullet extends Bullet{
         this.speed = 0;
         double damage;
         if (tower.getType() == 2){
-            damage = BulletProperty.INFERNO_BULLET_TYPE1_DAMAGE;
+            damage = BulletProperty.INFERNO_BULLET_TYPE1_DAMAGE + (tower.getLevel() - 1) * BulletProperty.INFERNO_BULLET_TYPE1_DMG_ADDITION;
         }
         else {
-            damage = Math.min(BulletProperty.INFERNO_BULLET_TYPE2_MAX_DAMAGE, BulletProperty.INFERNO_BULLET_TYPE2_MIN_DAMAGE + tower.getCurrentAttackDuplicate() * 5);
+            damage = Math.min(BulletProperty.INFERNO_BULLET_TYPE2_MAX_DAMAGE + (tower.getLevel() - 1) * BulletProperty.INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION , BulletProperty.INFERNO_BULLET_TYPE2_MIN_DAMAGE + tower.getCurrentAttackDuplicate() * 5 + (tower.getLevel() - 1) * BulletProperty.INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION);
         }
         this.damage = damage * 1.0/tower.getAttackRate();
         this.target = target;

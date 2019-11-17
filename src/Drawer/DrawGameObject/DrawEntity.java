@@ -1,5 +1,6 @@
 package Drawer.DrawGameObject;
 
+import Drawer.Drawer;
 import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
@@ -10,11 +11,10 @@ import Program.GameManager;
 import javafx.scene.canvas.GraphicsContext;
 
 
-public class DrawEnity {
+public class DrawEntity extends Drawer {
     private static GameManager gameManager;
 
-    public static boolean init(GraphicsContext graphicsContext, GameManager _gameManager) {
-        DrawGameObject.init(graphicsContext);
+    public static boolean init(GameManager _gameManager) {
         gameManager = _gameManager;
         return (gameManager != null);
     }

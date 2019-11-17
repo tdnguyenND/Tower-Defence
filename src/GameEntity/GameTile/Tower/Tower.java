@@ -18,6 +18,7 @@ public abstract class Tower extends GameObject{
     protected Grid positionInMap;
 
     protected boolean destroy;
+    private int level;
 
     public int getRange(){
         return this.range;
@@ -33,6 +34,7 @@ public abstract class Tower extends GameObject{
         this.lastAttacked = 0;
         this.destroy = false;
         this.target = null;
+        this.level = 1;
     }
 
     public int getAttackRate() {
@@ -87,6 +89,15 @@ public abstract class Tower extends GameObject{
                 BulletManager.addBullet("InfernoBullet", target, this);
             }
         }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void upgrade(){
+        level++;
+
     }
 
     @Override

@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class InputManager{
-    protected Map map;
+    protected static Map map;
 
     protected static boolean chooseTower = false;
     protected static String towerType;
@@ -21,11 +21,11 @@ public class InputManager{
     public InputManager(){
 
     }
-    public InputManager(Map map){
-        this.map = map;
+    public static void setMap(Map map){
+        InputManager.map = map;
     }
 
-    public void MouseHandling(MouseEvent mouseEvent) {
+    public static void MouseHandling(MouseEvent mouseEvent) {
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
         if(chooseTower){

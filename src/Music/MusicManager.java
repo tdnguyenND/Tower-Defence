@@ -1,6 +1,7 @@
 package Music;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -22,7 +23,7 @@ public class MusicManager {
         }
     }
 
-    public static void init(BorderPane root){
+    public static void init(Pane root){
         Media[] media = new Media[3];
         mediaPlayer = new MediaPlayer[3];
 

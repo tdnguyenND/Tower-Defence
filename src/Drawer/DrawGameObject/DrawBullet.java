@@ -5,7 +5,7 @@ import GameEntity.Bullet.InfernoBullet;
 import Program.Config;
 import javafx.scene.paint.Color;
 
-public class DrawBullet extends DrawGameObject{
+public class DrawBullet extends DrawEntity{
     public static void drawBullet(Bullet bullet){
         graphicsContext.setFill(Color.PINK);
         if (bullet instanceof InfernoBullet){
