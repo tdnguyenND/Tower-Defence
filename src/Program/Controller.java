@@ -1,9 +1,19 @@
 package Program;
 
 import Drawer.Drawer;
+import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
+import Music.MusicManager;
+import Program.GameStatus.GameStatus;
+import Program.GameStatus.Playing;
 import javafx.animation.AnimationTimer;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class Controller extends AnimationTimer {
 
@@ -15,21 +25,41 @@ public class Controller extends AnimationTimer {
     public static int SPEED = 2;
     private double COUNT = 1000000000.0/Config.GAME_FPS;
 
-    Controller(GraphicsContext _graphicsContext) {
+    private Stage stage;
+
+    private GameStatus playing;
+    private GameStatus menu;
+    private GameStatus lose;
+    private GameStatus win;
+
+    private Canvas playingCanvas;
+
+    InputManager inputManager;
+
+    Controller(Stage stage) {
+        this.stage = stage;
 
         gameManager = new GameManager();
+
         if (gameManager.init()){
             map = gameManager.map;
             player = gameManager.player;
             System.out.println("initialize game manager successful");
+            TowerManager.createTower("InfernoTower", map.map[6][2]);
         }else System.out.println("fail to initialize game manager");
 
-        if(Drawer.init(_graphicsContext, map, gameManager, gameManager.player )){
+        InputManager.setMap(gameManager.map);
+
+        if(Drawer.init(map, gameManager, gameManager.player )){
             System.out.println("initialize drawer successful");
         } else System.out.println("fail to initialize drawer");
 
         onPause = false;
-        onMenu = false;
+        onMenu = true;
+
+        GameStatus.setStage(stage);
+
+        playing = new Playing();
     }
 
     @Override
@@ -53,6 +83,8 @@ public class Controller extends AnimationTimer {
              *      + Guide (if you create this button, add new attribute onGuide and new control to guide screen)
              *      + Quit
              */
+            onMenu = false;
+            playing.load();
         }
         else if(onPause){
             /**
@@ -63,6 +95,7 @@ public class Controller extends AnimationTimer {
              *      + Resume
              *      + Quit
              */
+            Drawer.draw();
         }
         else if (player.isLose()) {
             /**
@@ -106,7 +139,6 @@ public class Controller extends AnimationTimer {
     }
 
     public void start(){
-        Drawer.draw();
         super.start();
     }
 }

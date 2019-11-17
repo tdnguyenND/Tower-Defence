@@ -1,12 +1,12 @@
 package GameEntity.GameTile.Tower;
 
+import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.BulletManager;
 
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Map.Grid;
-import Program.Position;
 
 public abstract class Tower extends GameObject{
     protected int range;
@@ -18,6 +18,7 @@ public abstract class Tower extends GameObject{
     protected Grid positionInMap;
 
     protected boolean destroy;
+    private int level;
 
     public int getRange(){
         return this.range;
@@ -31,7 +32,9 @@ public abstract class Tower extends GameObject{
         this.range = range;
         this.attackRate = attackRate;
         this.lastAttacked = 0;
-        destroy = false;
+        this.destroy = false;
+        this.target = null;
+        this.level = 1;
     }
 
     public int getAttackRate() {
@@ -82,7 +85,19 @@ public abstract class Tower extends GameObject{
             if(this instanceof SniperTower){
                 BulletManager.addBullet("SniperBullet", target, this);
             }
+            if (this instanceof InfernoTower){
+                BulletManager.addBullet("InfernoBullet", target, this);
+            }
         }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void upgrade(){
+        level++;
+
     }
 
     @Override

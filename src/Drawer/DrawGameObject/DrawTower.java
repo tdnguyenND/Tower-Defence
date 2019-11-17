@@ -3,10 +3,12 @@ package Drawer.DrawGameObject;
 import GameEntity.GameTile.Tower.Tower;
 import javafx.scene.paint.Color;
 
-public class DrawTower extends DrawGameObject {
+public class DrawTower extends DrawEntity {
     public static void drawTower(Tower tower){
         graphicsContext.setFill(Color.WHITE);
         graphicsContext.fillRect(tower.getLocation().getY() - tower.getWidth()/2,tower.getLocation().getX() - tower.getHeight()/2,
                 tower.getHeight(), tower.getWidth());
+        graphicsContext.strokeOval(tower.getLocation().getY() - tower.getRange(),tower.getLocation().getX() - tower.getRange(),
+                tower.getRange() * 2, tower.getRange() * 2);
     }
 }

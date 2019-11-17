@@ -49,6 +49,15 @@ public class TowerManager implements TowerProperty{
                     player.setGold(player.getGold() - SMALLER_TOWER_COST);
                 }
             }
+            else if (towerType.equals("InfernoTower")){
+                if (player.getGold()>= INFERNO_TOWER_COST){
+                    tower = new InfernoTower(grid);
+                    towerList.add(tower);
+                    grid.setContain(tower);
+
+                    player.setGold(player.getGold() - INFERNO_TOWER_COST);
+                }
+            }
             else {
                 if(player.getGold() >= SNIPER_TOWER_COST){
                     tower = new SniperTower(grid);

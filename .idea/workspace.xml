@@ -2,31 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8307b7ab-02d3-4543-bebe-6ce573f0bb46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGold.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/Concussive.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/Ethereal.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/Kinetic.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Drawer/DrawGold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/Concussive.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/Ethereal.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/Kinetic.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/MusicConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/MusicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/InfernoBullet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/SniperBullet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/InfernoTower.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/GameStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Lose.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Win.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/SniperBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program/GameStatus/GameStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program/GameStatus/Lose.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program/GameStatus/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program/GameStatus/Playing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Program/GameStatus/Win.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Debugger/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Debugger/Log.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawField.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawBullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnity.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawGameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawGameObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/Drawer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/Drawer.class" afterDir="false" />
@@ -35,16 +34,12 @@
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/BulletProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/BulletProperty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/MachineGunBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/MachineGunBullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/NormalBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/Sniper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/Sniper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Bullet/Sniper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyProperty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/GameTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/GameTile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/NormalTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/SmallerTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/SmallerTower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/SniperTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/SniperTower.class" afterDir="false" />
@@ -52,48 +47,48 @@
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/TowerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/TowerManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/TowerProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/GameTile/Tower/TowerProperty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Mountain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Mountain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Road.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Road.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStage.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/InputManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/InputManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Position.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/data/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/data/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Drawer/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/Drawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/MachineGunBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/MachineGunBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/Sniper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/NormalBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Sniper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyProperty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/MusicManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/InputManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Debugger/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Debugger/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/map.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +130,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\Tower-Defence\data" />
+      <recent name="C:\Dev\Tower-Defence\src\Map" />
       <recent name="C:\Dev\Tower-Defence" />
       <recent name="C:\Dev\Tower-Defence\src" />
       <recent name="C:\Dev\Tower-Defence\src\Program" />
@@ -215,7 +212,12 @@
       <workItem from="1573453795259" duration="9640000" />
       <workItem from="1573468290512" duration="2493000" />
       <workItem from="1573544915296" duration="2236000" />
-      <workItem from="1573547168819" duration="5013000" />
+      <workItem from="1573547168819" duration="11744000" />
+      <workItem from="1573610040591" duration="498000" />
+      <workItem from="1573649609988" duration="232000" />
+      <workItem from="1573864661852" duration="1455000" />
+      <workItem from="1573992154000" duration="3429000" />
+      <workItem from="1573996860097" duration="4251000" />
     </task>
     <servers />
   </component>
@@ -234,5 +236,56 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEntity.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Program/Controller.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Map/Map.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Map/Data.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Map/Data.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Map/Data.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="mapFile.toURI().toString()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

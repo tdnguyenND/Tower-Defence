@@ -76,7 +76,7 @@ public abstract class Enemy extends GameObject {
     };
 
     public void updateDirection(){
-        int inCol = Data.line[currentIndex + 1][0] - Data.line[currentIndex][0];
+        int inCol = Data.line.get(currentIndex + 1).get(0) - Data.line.get(currentIndex).get(0);
         if (inCol > 0){
             direction = Data.direction[0];
         }
@@ -84,7 +84,7 @@ public abstract class Enemy extends GameObject {
             direction = Data.direction[1];
         }
         else {
-            int inRow = Data.line[currentIndex + 1][1] - Data.line[currentIndex][1];
+            int inRow = Data.line.get(currentIndex + 1).get(1) - Data.line.get(currentIndex).get(1);
             if (inRow > 0){
                 direction = Data.direction[2];
             }
@@ -111,8 +111,8 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.over(map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter(), direction)){
-            Position target = map.map[Data.line[currentIndex + 1][0]][Data.line[currentIndex + 1][1]].getCenter();
+        else if (position.over(map.map[Data.line.get(currentIndex + 1).get(0)][Data.line.get(currentIndex + 1).get(1)].getCenter(), direction)){
+            Position target = map.map[Data.line.get(currentIndex + 1).get(0)][Data.line.get(currentIndex + 1).get(1)].getCenter();
             position.setX(target.getX());
             position.setY(target.getY());
             currentIndex++;

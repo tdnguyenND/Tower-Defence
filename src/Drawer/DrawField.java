@@ -5,13 +5,11 @@ import Program.Config;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class DrawField {
+public class DrawField extends Drawer {
     private static Map map;
-    private static GraphicsContext graphicsContext;
 
-    public static boolean init(GraphicsContext _graphicsContext, Map _map) {
+    public static boolean init(Map _map) {
         map = _map;
-        graphicsContext = _graphicsContext;
         return (map != null);
     }
 

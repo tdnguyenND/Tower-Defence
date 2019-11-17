@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
 import java.awt.*;
 
 public class InputManager{
-    protected Map map;
+    protected static Map map;
 
     protected static boolean chooseTypeTower = false;
     protected static String towerType;
@@ -26,17 +26,14 @@ public class InputManager{
     protected static boolean x2Speed = false;
 
     private static boolean upgrade = false;
-
-
-
     public InputManager(){
 
     }
-    public InputManager(Map map){
-        this.map = map;
+    public static void setMap(Map map){
+        InputManager.map = map;
     }
 
-    public void MouseHandling(MouseEvent mouseEvent) {
+    public static void MouseHandling(MouseEvent mouseEvent) {
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
 
@@ -58,12 +55,12 @@ public class InputManager{
         }
     }
 
-    private void sellTower(int i, int j) {
+    private static void sellTower(int i, int j) {
             sellTower = false;
             TowerManager.removeTower(map.map[j - 1][i -1]);
     }
 
-    public void buyTower(int i, int j){
+    public static void buyTower(int i, int j){
         if(chooseTypeTower){
             chooseTypeTower = false;
             TowerManager.createTower(towerType, map.map[j - 1][i -1]);
@@ -71,7 +68,7 @@ public class InputManager{
     }
 
 
-    public void chooseTypeTower(Event event){
+    public static void chooseTypeTower(Event event){
         String id = ((ImageView)event.getSource()).getId();
         towerType = id;
         chooseTypeTower = !chooseTypeTower;

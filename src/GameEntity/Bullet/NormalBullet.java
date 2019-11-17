@@ -8,6 +8,7 @@ public class NormalBullet extends Bullet implements BulletProperty {
 	public NormalBullet(Enemy target, Tower tower) {
 		super(NORMAL_BULLET_WIDTH, NORMAL_BULLET_HEIGHT,
 			  NORMAL_BULLET_SPEED, NORMAL_BULLET_DAMAGE,
-			  NORMAL_BULLET_RANGE, target, tower);
+			  target, tower);
+		this.damage += (tower.getLevel() - 1) * BulletProperty.NORMAL_BULLET_DMG_ADDITION;
 	}
 }
