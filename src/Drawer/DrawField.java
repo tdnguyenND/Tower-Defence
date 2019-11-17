@@ -17,7 +17,7 @@ public class DrawField extends Drawer {
         for (int i = 0; i < map.nRows; i++){
             for (int j = 0; j < map.nCols; j++) {
                 if (map.map[i][j] instanceof Mountain){
-                    graphicsContext.setFill(Color.BLACK);
+                    graphicsContext.setFill(Color.DARKGREEN);
                 }
                 else graphicsContext.setFill(Color.RED);
 
