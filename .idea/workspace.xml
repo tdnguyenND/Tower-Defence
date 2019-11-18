@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8307b7ab-02d3-4543-bebe-6ce573f0bb46" name="Default Changelist" comment="">
+    <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/image/background-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/inferno-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/inferno-tower-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/lose-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/macgun-tower-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/normal-tower-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/pause-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/playagain-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/sell-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/smaller-tower-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/towerRound_roofB_W.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleB_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleC_W.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleD_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/upgrade-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/win-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/x2-06.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing$1.class" afterDir="false" />
@@ -30,6 +47,7 @@
       <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Playing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/InputManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Main.java" afterDir="false" />
+
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +135,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8307b7ab-02d3-4543-bebe-6ce573f0bb46" name="Default Changelist" comment="" />
+      <changelist id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="" />
       <created>1572278498743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -197,6 +215,7 @@
           <line>39</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
+
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

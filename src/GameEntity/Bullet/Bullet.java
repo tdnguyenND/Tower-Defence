@@ -95,7 +95,7 @@ public abstract class Bullet extends GameObject {
                 ", position=" + position +
                 ", width=" + width +
                 ", height=" + height +
-                ", color='" + color + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

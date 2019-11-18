@@ -28,6 +28,14 @@ public abstract class Enemy extends GameObject {
     private static Player player;
     private static Map map;
 
+    public int[] getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int[] direction) {
+        this.direction = direction;
+    }
+
     public Enemy(){
     }
 

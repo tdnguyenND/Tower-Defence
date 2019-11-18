@@ -2,6 +2,7 @@ package GameEntity;
 
 import Program.Position;
 
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public abstract class GameObject {
@@ -10,7 +11,7 @@ public abstract class GameObject {
     protected double width;
     protected double height;
 
-    protected Color color;
+    protected Image image;
 
     public GameObject(){
 
@@ -34,8 +35,8 @@ public abstract class GameObject {
         return height;
     }
 
-    public Color getColor() {
-        return color;
+    public Image getImage() {
+        return image;
     }
 
     public void doDestroy() {
@@ -56,7 +57,7 @@ public abstract class GameObject {
                 "position=" + position +
                 ", width=" + width +
                 ", height=" + height +
-                ", color='" + color + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
