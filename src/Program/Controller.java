@@ -1,31 +1,24 @@
 package Program;
 
 import Drawer.Drawer;
-import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
-import Music.MusicManager;
 import Program.GameStatus.*;
 import javafx.animation.AnimationTimer;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Controller extends AnimationTimer {
 
-    private Map map;
+    public static Map map;
     GameManager gameManager;
     private static Player player;
     public static boolean onMenu;
     public static boolean onPause;
     public static boolean onPlay;
-    public static int SPEED = 1;
-    private double COUNT = 1000000000.0/Config.GAME_FPS;
+    public static double COUNT = 1000000000.0/Config.GAME_FPS;
 
     private Stage stage;
 
@@ -33,10 +26,6 @@ public class Controller extends AnimationTimer {
     private GameStatus menu;
     private GameStatus lose;
     private GameStatus win;
-
-    private Canvas playingCanvas;
-
-    InputManager inputManager;
 
     Controller(Stage stage) {
         this.stage = stage;
@@ -101,8 +90,6 @@ public class Controller extends AnimationTimer {
              *      + Guide (if you create this button, add new attribute onGuide and new control to guide screen)
              *      + Quit
              */
-            onMenu = false;
-
         }
         else if(onPause){
             /**
@@ -158,7 +145,6 @@ public class Controller extends AnimationTimer {
 
         long time = System.nanoTime() - previousTime;
 
-        COUNT = COUNT/SPEED;
         if (time < COUNT) try{
             Thread.sleep((long)(COUNT - time)/1000000);
         } catch (InterruptedException e) {
@@ -168,5 +154,9 @@ public class Controller extends AnimationTimer {
 
     public void start(){
         super.start();
+    }
+
+    public static void pause(MouseEvent event) {
+        onPause = !onPause;
     }
 }

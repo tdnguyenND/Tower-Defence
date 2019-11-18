@@ -1,11 +1,7 @@
 package Program.GameStatus;
 
-import Drawer.Drawer;
-import Music.MusicManager;
-import Program.Config;
 import Program.Controller;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -19,7 +15,7 @@ public class Win extends GameStatus {
          * -TODO : "you Win"
          */
         root.setBackground(Background.EMPTY);
-        root.setStyle("-fx-background-image: url('data/images/background-01.png');");
+        root.setStyle("-fx-background-image: url('/data/images/background-01.png');");
 
         Button next_btn = new Button("replay");
         next_btn.setLayoutX(300);
@@ -35,7 +31,6 @@ public class Win extends GameStatus {
                 Controller.playing.use();
             }
         });
-
 
         Button quit_btn = new Button("Quit");
         quit_btn.setLayoutX(300);

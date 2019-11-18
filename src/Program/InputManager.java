@@ -1,27 +1,19 @@
 package Program;
 
+import GameEntity.GameTile.Tower.InfernoTower;
 import GameEntity.GameTile.Tower.Tower;
 import GameEntity.GameTile.Tower.TowerManager;
-import Map.Map;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.fxml.FXML;
-import javafx.scene.Node;
+import Map.*;
+import Music.MusicManager;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-
-import java.awt.*;
 
 public class InputManager{
     protected static Map map;
 
     protected static boolean chooseTypeTower = false;
     protected static String towerType;
+    public static Grid selected;
 
     protected static boolean sellTower = false;
 
@@ -43,12 +35,16 @@ public class InputManager{
         int i = (int) Math.ceil(x * 1.0 / Config.GRID_WIDTH);
         int j = (int) Math.ceil(y * 1.0 / Config.GRID_HEIGHT);
 
-        if(! map.map[j - 1][i -1].isFilled()){
+        selected = map.map[j - 1][i - 1];
+
+        if(! selected.isFilled()){
             buyTower(i, j);
         }
         else{
-            if(sellTower)
+            if(sellTower){
                 sellTower(i , j);
+                selected = null;
+            }
             else if(upgrade){
                 /**
                  *  -TODO
@@ -57,14 +53,13 @@ public class InputManager{
                 if (map.map[i][j].getContain() instanceof Tower){
                     ((Tower)map.map[i][j].getContain()).upgrade();
                 }
-
+                selected = null;
             }
         }
     }
 
-    public void chooseTypeTower(MouseEvent event) {
-        String id = ((Button)event.getSource()).getId();
-        towerType = id;
+    public static void chooseTypeTower(MouseEvent event) {
+        towerType = ((Button)event.getSource()).getId();
         chooseTypeTower = !chooseTypeTower;
     }
 
@@ -75,9 +70,7 @@ public class InputManager{
         }
     }
 
-
-
-    public void wantToSellTower(MouseEvent mouseEvent) {
+    public static void wantToSellTower(MouseEvent mouseEvent) {
         sellTower = !sellTower;
     }
 
@@ -86,22 +79,30 @@ public class InputManager{
         TowerManager.removeTower(map.map[j - 1][i -1]);
     }
 
-    public void doubleSpeed(MouseEvent mouseEvent){
+    public static void doubleSpeed(MouseEvent mouseEvent){
         if(x2Speed){
             x2Speed = false;
-            Controller.SPEED = Controller.SPEED / 2;
-            System.out.println("/2");
+            Controller.COUNT = Controller.COUNT * 2;
         }
         else{
             x2Speed = true;
-            Controller.SPEED = Controller.SPEED * 2;
-            System.out.println("*2");
+            Controller.COUNT = Controller.COUNT / 2;
         }
-
     }
 
+    public static void upgrade(MouseEvent mouseEvent){
+        if (selected!= null && selected.getContain() != null && selected.getContain() instanceof Tower){
+            ((Tower)selected.getContain()).upgrade();
+        }
+    }
 
-    public void Pause(MouseEvent mouseEvent) {
-        Controller.onPause = !Controller.onPause;
+    public static void switchType(MouseEvent mouseEvent){
+        if (selected != null && selected.getContain() != null && selected.getContain() instanceof InfernoTower){
+            ((InfernoTower)selected.getContain()).switchType();
+        }
+    }
+
+    public static void switchMusic(MouseEvent mouseEvent){
+        MusicManager.switchVersion();
     }
 }

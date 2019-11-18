@@ -36,12 +36,10 @@ public class MusicManager {
         }
     }
 
-    public static void switchVersion(int currentVersion) {
-        if (currentVersion != MusicManager.currentVersion) {
-            stop();
-            MusicManager.currentVersion = currentVersion;
-            play();
-        }
+    public static void switchVersion() {
+        stop();
+        MusicManager.currentVersion = (MusicManager.currentVersion + 1) % 3;
+        play();
     }
 
     public static void play(){

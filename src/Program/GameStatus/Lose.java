@@ -1,17 +1,10 @@
 package Program.GameStatus;
 
-import Drawer.Drawer;
-import Program.Config;
 import Program.Controller;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
-
-import java.awt.*;
-import java.io.IOException;
 
 public class Lose extends GameStatus {
     @Override
@@ -22,7 +15,7 @@ public class Lose extends GameStatus {
          */
         root.setBackground(Background.EMPTY);
 
-        root.setStyle("-fx-background-image: url('data/images/background-01.png')");
+        root.setStyle("-fx-background-image: url('/data/images/background-01.png')");
         Button replay_btn = new Button("-");
         replay_btn.setLayoutX(300);
         replay_btn.setLayoutY(300);
