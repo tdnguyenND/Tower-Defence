@@ -16,7 +16,7 @@ public class DrawField extends Drawer {
     }
 
     public static void draw(){
-        File file = new File("image/background-03.png");
+        File file = new File("src/data/image/background-03.png");
         String localURL = file.toURI().toString();
         Image image = new Image(localURL);
         graphicsContext.drawImage(image, 0, 0);

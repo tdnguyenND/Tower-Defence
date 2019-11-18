@@ -11,7 +11,7 @@ public class NormalEnemy extends Enemy{
         super(EnemyConfig.NORMAL_ENEMY_HEALTH, EnemyConfig.NORMAL_ENEMY_ARMOR,
                 EnemyConfig.NORMAL_ENEMY_SPEED, EnemyConfig.NORMAL_ENEMY_WIDTH,
                 EnemyConfig.NORMAL_ENEMY_HEIGHT, EnemyConfig.NORMAL_ENEMY_REWARD);
-        File file = new File("image/normal-enemy.png");
+        File file = new File("src/data/image/normal-enemy.png");
         String localURL = file.toURI().toString();
         image = new Image(localURL);
     }

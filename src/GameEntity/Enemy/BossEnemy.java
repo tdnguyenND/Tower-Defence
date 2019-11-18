@@ -10,7 +10,7 @@ public class BossEnemy extends Enemy{
         super(EnemyConfig.BOSS_ENEMY_HEALTH, EnemyConfig.BOSS_ENEMY_ARMOR,
                 EnemyConfig.BOSS_ENEMY_SPEED, EnemyConfig.BOSS_ENEMY_WIDTH,
                 EnemyConfig.BOSS_ENEMY_HEIGHT, EnemyConfig.BOSS_ENEMY_REWARD);
-        File file = new File("image/boss-enemy.png");
+        File file = new File("src/data/image/boss-enemy.png");
         String localURL = file.toURI().toString();
         image = new Image(localURL);
     }

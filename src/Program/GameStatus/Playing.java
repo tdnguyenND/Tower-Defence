@@ -8,6 +8,7 @@ import Program.Config;
 import Program.Controller;
 import Program.InputManager;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -77,10 +78,12 @@ public class Playing extends GameStatus {
     }
 
     private void loadX2SpeedButton(){
-        x2SpeedBtn = new Button("x2");
+        x2SpeedBtn = new Button();
 
-        x2SpeedBtn.setLayoutX(79.0);
-        x2SpeedBtn.setLayoutY(545.0);
+        x2SpeedBtn.setPrefSize(35, 35);
+        x2SpeedBtn.setStyle("-fx-background-image: url('/data/image/x2-06.png'); -fx-background-size: 100% 100%");
+        x2SpeedBtn.setLayoutX(120);
+        x2SpeedBtn.setLayoutY(510.0);
         x2SpeedBtn.setOnMouseClicked(InputManager::doubleSpeed);
         x2SpeedBtn.setMnemonicParsing(false);
 
@@ -90,11 +93,12 @@ public class Playing extends GameStatus {
     private void loadNormalButton(){
         normalBtn = new Button();
 
+        normalBtn.setPrefSize(120, 40);
+        normalBtn.setStyle("-fx-background-image: url('/data/image/normal-05.png'); -fx-background-size: 100% 100%");
         normalBtn.setId("NormalTower");
-        normalBtn.setLayoutX(513.0);
-        normalBtn.setLayoutY(514.0);
+        normalBtn.setLayoutX(170.0);
+        normalBtn.setLayoutY(510.0);
         normalBtn.setMnemonicParsing(false);
-        normalBtn.setText("Normal Tower");
         normalBtn.setOnMouseClicked(InputManager::chooseTypeTower);
 
         root.getChildren().add(normalBtn);
@@ -102,11 +106,12 @@ public class Playing extends GameStatus {
     private void loadSmallerButton(){
         smallerBtn = new Button();
 
+        smallerBtn.setPrefSize(120, 40);
+        smallerBtn.setStyle("-fx-background-image: url('/data/image/macgun-05.png'); -fx-background-size: 100% 100%");
         smallerBtn.setId("SmallerTower");
-        smallerBtn.setLayoutX(513.0);
-        smallerBtn.setLayoutY(545.0);
+        smallerBtn.setLayoutX(590.0);
+        smallerBtn.setLayoutY(510.0);
         smallerBtn.setMnemonicParsing(false);
-        smallerBtn.setText("SmallerTower");
         smallerBtn.setOnMouseClicked(InputManager::chooseTypeTower);
 
         root.getChildren().add(smallerBtn);
@@ -114,11 +119,12 @@ public class Playing extends GameStatus {
     private void loadSniperButton(){
         sniperBtn = new Button();
 
+        sniperBtn.setPrefSize(120, 40);
+        sniperBtn.setStyle("-fx-background-image: url('/data/image/sniper-05.png'); -fx-background-size: 100% 100%");
         sniperBtn.setId("SniperTower");
-        sniperBtn.setLayoutX(410.0);
-        sniperBtn.setLayoutY(514.0);
+        sniperBtn.setLayoutX(310.0);
+        sniperBtn.setLayoutY(510.0);
         sniperBtn.setMnemonicParsing(false);
-        sniperBtn.setText("Sniper Tower");
         sniperBtn.setOnMouseClicked(InputManager::chooseTypeTower);
 
         root.getChildren().add(sniperBtn);
@@ -127,11 +133,12 @@ public class Playing extends GameStatus {
     private void loadInfernoButton(){
         infernoBtn = new Button();
 
+        infernoBtn.setPrefSize(120, 40);
+        infernoBtn.setStyle("-fx-background-image: url('/data/image/inferno-05.png'); -fx-background-size: 100% 100%");
         infernoBtn.setId("InfernoTower");
-        infernoBtn.setLayoutX(407.0);
-        infernoBtn.setLayoutY(545.0);
+        infernoBtn.setLayoutX(450.0);
+        infernoBtn.setLayoutY(510.0);
         infernoBtn.setMnemonicParsing(false);
-        infernoBtn.setText("Inferno Tower");
         infernoBtn.setOnMouseClicked(InputManager::chooseTypeTower);
 
         root.getChildren().add(infernoBtn);
@@ -140,11 +147,12 @@ public class Playing extends GameStatus {
     private void loadSellButton(){
         sellBtn = new Button();
 
-        sellBtn.setLayoutX(124.0);
-        sellBtn.setLayoutY(545.0);
+        sellBtn.setStyle("-fx-background-image: url('/data/image/sell-06.png'); -fx-background-size: 100% 100%");
+        sellBtn.setPrefSize(35, 35);
+        sellBtn.setLayoutX(120);
+        sellBtn.setLayoutY(555.0);
         sellBtn.setMnemonicParsing(false);
         sellBtn.setOnMouseClicked(InputManager::wantToSellTower);
-        sellBtn.setText("Sell");
 
         root.getChildren().add(sellBtn);
     }
@@ -152,23 +160,25 @@ public class Playing extends GameStatus {
     private void loadPauseButton(){
         pauseBtn = new Button();
 
-        pauseBtn.setLayoutX(185.0);
-        pauseBtn.setLayoutY(545.0);
+        pauseBtn.setStyle("-fx-background-image: url('/data/image/pause-06.png'); -fx-background-size: 100% 100%");
+        pauseBtn.setPrefSize(35, 35);
+        pauseBtn.setLayoutX(170);
+        pauseBtn.setLayoutY(555.0);
         pauseBtn.setMnemonicParsing(false);
         pauseBtn.setOnMouseClicked(Controller::pause);
-        pauseBtn.setText("Pause");
 
         root.getChildren().add(pauseBtn);
 
     }
 
     private void loadUpgradeButton(){
-        upgradeBtn = new Button("upgrade");
+        upgradeBtn = new Button();
 
         upgradeBtn.setId("upgrade");
-
-        upgradeBtn.setLayoutY(500);
-        upgradeBtn.setLayoutX(300);
+        upgradeBtn.setStyle("-fx-background-image: url('/data/image/upgrade-06.png'); -fx-background-size: 100% 100%");
+        upgradeBtn.setPrefSize(50, 35);
+        upgradeBtn.setLayoutY(555);
+        upgradeBtn.setLayoutX(215);
         upgradeBtn.setMnemonicParsing(false);
         upgradeBtn.setOnMouseClicked(InputManager::upgrade);
         upgradeBtn.setVisible(false);

@@ -29,7 +29,9 @@ public class Menu extends GameStatus {
             }
         });
 
-        Button quit_btn = new Button("Quit");
+        Button quit_btn = new Button();
+        quit_btn.setStyle("-fx-background-image: url('/data/image/exit-04.png');");
+        quit_btn.setPrefSize(196, 50);
         quit_btn.setLayoutX(300);
         quit_btn.setLayoutY(400);
         quit_btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
