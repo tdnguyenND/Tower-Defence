@@ -42,6 +42,10 @@ public class Grid {
         this.filled = true;
     }
 
+    public GameObject getContain() {
+        return contain;
+    }
+
     @Override
     public String toString() {
         return "Grid{" +

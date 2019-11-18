@@ -48,9 +48,7 @@ public class Data {
                         startX = i;
                         startY = j;
                     }
-                    System.out.print(map[i][j] + " ");
                 }
-                System.out.println();
             }
 
             map[startX][startY] = 0;

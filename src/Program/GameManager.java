@@ -7,13 +7,13 @@ import Map.Map;
 
 public class GameManager {
     public Map map;
-    public Player player;
+    public static Player player;
     //private GraphicsContext graphicsContext;
 
     public GameManager(){
         map = new Map();
         player = new Player();
-        player.setGold(500);
+        player.setGold(Config.defaultPlayerGold);
     }
     public boolean init(){
         /**
@@ -36,5 +36,12 @@ public class GameManager {
         EnemyManager.update();
         TowerManager.update();
         BulletManager.update();
+    }
+
+    public static void restart(){
+        EnemyManager.restart();
+        TowerManager.restart();
+        BulletManager.restart();
+        player.restart();
     }
 }

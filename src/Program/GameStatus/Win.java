@@ -3,6 +3,7 @@ package Program.GameStatus;
 import Drawer.Drawer;
 import Music.MusicManager;
 import Program.Config;
+import Program.Controller;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,8 +18,6 @@ public class Win extends GameStatus {
         /**
          * -TODO : "you Win"
          */
-
-        Scene scene = new Scene(root, Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
         root.setBackground(Background.EMPTY);
         root.setStyle("-fx-background-image: url('data/images/background-01.png');");
 
@@ -32,6 +31,8 @@ public class Win extends GameStatus {
                 /**
                  *  -TODO
                  */
+                Controller.restart();
+                Controller.playing.use();
             }
         });
 
@@ -47,8 +48,5 @@ public class Win extends GameStatus {
         });
 
         root.getChildren().addAll(next_btn, quit_btn);
-
-        stage.setScene(scene);
-
     }
 }

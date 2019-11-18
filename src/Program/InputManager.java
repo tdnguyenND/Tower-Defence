@@ -1,5 +1,6 @@
 package Program;
 
+import GameEntity.GameTile.Tower.Tower;
 import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import javafx.event.ActionEvent;
@@ -36,7 +37,6 @@ public class InputManager{
     }
 
     public static void MouseHandling(MouseEvent mouseEvent) {
-        System.out.println("click on map");
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
 
@@ -54,6 +54,10 @@ public class InputManager{
                  *  -TODO
                  *   upgrade tower;
                  */
+                if (map.map[i][j].getContain() instanceof Tower){
+                    ((Tower)map.map[i][j].getContain()).upgrade();
+                }
+
             }
         }
     }
@@ -61,7 +65,6 @@ public class InputManager{
     public void chooseTypeTower(MouseEvent event) {
         String id = ((Button)event.getSource()).getId();
         towerType = id;
-        System.out.println("buy " + towerType);
         chooseTypeTower = !chooseTypeTower;
     }
 
@@ -85,12 +88,12 @@ public class InputManager{
 
     public void doubleSpeed(MouseEvent mouseEvent){
         if(x2Speed){
-            x2Speed = !x2Speed;
+            x2Speed = false;
             Controller.SPEED = Controller.SPEED / 2;
             System.out.println("/2");
         }
         else{
-            x2Speed = !x2Speed;
+            x2Speed = true;
             Controller.SPEED = Controller.SPEED * 2;
             System.out.println("*2");
         }

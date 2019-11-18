@@ -34,7 +34,6 @@ public class Playing extends GameStatus {
         Node node = FXMLLoader.load(getClass().getResource("/Program/GameStatus/playingState.fxml"));
         root.getChildren().add(node);
         root.getChildren().add(canvas);
-
-        stage.setScene(new Scene(root, Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT));
     }
+
 }

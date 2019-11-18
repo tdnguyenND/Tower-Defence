@@ -4,9 +4,7 @@ import Drawer.Drawer;
 import GameEntity.GameTile.Tower.TowerManager;
 import Map.Map;
 import Music.MusicManager;
-import Program.GameStatus.GameStatus;
-import Program.GameStatus.Menu;
-import Program.GameStatus.Playing;
+import Program.GameStatus.*;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -22,7 +20,7 @@ public class Controller extends AnimationTimer {
 
     private Map map;
     GameManager gameManager;
-    private Player player;
+    private static Player player;
     public static boolean onMenu;
     public static boolean onPause;
     public static boolean onPlay;
@@ -47,14 +45,13 @@ public class Controller extends AnimationTimer {
 
         if (gameManager.init()){
             map = gameManager.map;
-            player = gameManager.player;
+            player = GameManager.player;
             System.out.println("initialize game manager successful");
-            TowerManager.createTower("InfernoTower", map.map[6][2]);
         }else System.out.println("fail to initialize game manager");
 
         InputManager.setMap(gameManager.map);
 
-        if(Drawer.init(map, gameManager, gameManager.player )){
+        if(Drawer.init(map, gameManager, GameManager.player)){
             System.out.println("initialize drawer successful");
         } else System.out.println("fail to initialize drawer");
 
@@ -64,7 +61,23 @@ public class Controller extends AnimationTimer {
         GameStatus.setStage(stage);
 
         playing = new Playing();
-        menu  = new Menu();
+        menu = new Menu();
+        lose = new Lose();
+        win = new Win();
+        try{
+            playing.load();
+            menu.load();
+            lose.load();
+            win.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        menu.use();
+    }
+
+    public static void restart(){
+        GameManager.restart();
     }
 
     @Override
@@ -89,11 +102,6 @@ public class Controller extends AnimationTimer {
              *      + Quit
              */
             onMenu = false;
-            try {
-                menu.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
         }
         else if(onPause){
@@ -116,11 +124,7 @@ public class Controller extends AnimationTimer {
              *      + Replay
              *      + Quit
              */
-            try {
-                lose.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
         }
         else if (player.isWin()){
             /**
@@ -145,6 +149,10 @@ public class Controller extends AnimationTimer {
              *      + Pause
              */
             GameManager.update();
+
+           if (player.isLose()) lose.use();
+           else if (player.isWin()) win.use();
+
             Drawer.draw();
         }
 

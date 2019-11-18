@@ -51,4 +51,8 @@ public class BulletManager {
     public static void reset(){
         bulletList.clear();
     }
+
+    public static void restart(){
+        reset();
+    }
 }

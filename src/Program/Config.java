@@ -20,6 +20,9 @@ public class Config {
     public static final int GAME_FPS = 30;
     public static final double COUNT = 1000000000.0/GAME_FPS;
 
+    public static final int defaultPlayerGold = 300;
+    public static final int defaultPlayerHealth = 10;
+
     private Config(){
     }
 }

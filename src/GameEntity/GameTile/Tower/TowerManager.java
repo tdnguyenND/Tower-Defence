@@ -88,4 +88,8 @@ public class TowerManager implements TowerProperty{
             tower.update();
         }
     }
+
+    public static void restart(){
+        reset();
+    }
 }

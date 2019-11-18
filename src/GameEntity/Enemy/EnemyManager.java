@@ -119,4 +119,11 @@ public class EnemyManager {
             }
         }
     }
+
+    public static void restart(){
+        listEnemy.clear();
+        currentWave = 0;
+        currentEnemyInWave = 0;
+        counter = 0;
+    }
 }

@@ -21,8 +21,6 @@ public class Menu extends GameStatus {
     public void load() {
 
         //Drawer.setGraphicsContext(canvas.getGraphicsContext2D());
-
-        Scene scene = new Scene(root, Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
         root.setBackground(Background.EMPTY);
         root.setStyle("-fx-background-image: url('data/images/background-01.png');");
 
@@ -35,11 +33,7 @@ public class Menu extends GameStatus {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 Controller.onPlay = true;
-                try {
-                    Controller.playing.load();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Controller.playing.use();
             }
         });
 
@@ -54,7 +48,5 @@ public class Menu extends GameStatus {
         });
 
         root.getChildren().addAll(play_btn, quit_btn);
-
-        stage.setScene(scene);
     }
 }

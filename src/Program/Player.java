@@ -1,15 +1,13 @@
 package Program;
 
-import javafx.scene.layout.BorderPane;
-
 public class Player {
-    private double health = 100;
+    private double health;
     private boolean lose;
     private boolean win;
     private int gold;
 
     public Player(){
-        this.health = 50;
+        this.health = 20;
     }
 
     public void beAttacked(){
@@ -19,10 +17,6 @@ public class Player {
 
     public boolean isWin() {
         return win;
-    }
-
-    public void setWin(boolean win) {
-        this.win = win;
     }
 
     public boolean isLose(){
@@ -51,5 +45,12 @@ public class Player {
                 "health=" + health +
                 ", lose=" + lose +
                 '}';
+    }
+
+    public void restart(){
+        health = Config.defaultPlayerHealth;
+        gold = Config.defaultPlayerGold;
+        win = false;
+        lose = false;
     }
 }
