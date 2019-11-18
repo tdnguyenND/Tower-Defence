@@ -176,7 +176,7 @@ public class Playing extends GameStatus {
 
         upgradeBtn.setId("upgrade");
         upgradeBtn.setStyle("-fx-background-image: url('/data/image/upgrade-06.png'); -fx-background-size: 100% 100%");
-        upgradeBtn.setPrefSize(50, 35);
+        upgradeBtn.setPrefSize(35, 35);
         upgradeBtn.setLayoutY(555);
         upgradeBtn.setLayoutX(215);
         upgradeBtn.setMnemonicParsing(false);
@@ -187,12 +187,14 @@ public class Playing extends GameStatus {
     }
 
     private void loadSwitchTypeButton(){
-        switchTypeBtn = new Button("switch");
+        switchTypeBtn = new Button();
 
         switchTypeBtn.setId("switch");
 
-        switchTypeBtn.setLayoutY(500);
-        switchTypeBtn.setLayoutX(400);
+        switchTypeBtn.setStyle("-fx-background-image: url('/data/image/switch-06.png'); -fx-background-size: 100% 100%");
+        switchTypeBtn.setLayoutY(555);
+        switchTypeBtn.setLayoutX(260);
+        switchTypeBtn.setPrefSize(35, 35);
         switchTypeBtn.setMnemonicParsing(false);
         switchTypeBtn.setOnMouseClicked(InputManager::switchType);
         switchTypeBtn.setVisible(false);
@@ -201,9 +203,12 @@ public class Playing extends GameStatus {
     }
 
     private void loadSwitchMusicButton(){
-        switchMusicBtn = new Button("change music");
-        switchMusicBtn.setLayoutX(0);
-        switchMusicBtn.setLayoutY(500);
+        switchMusicBtn = new Button();
+
+        switchMusicBtn.setStyle("-fx-background-image: url('/data/image/changemusic-06.png'); -fx-background-size: 100% 100%");
+        switchMusicBtn.setLayoutX(20);
+        switchMusicBtn.setLayoutY(510);
+        switchMusicBtn.setPrefSize(35, 35);
         switchMusicBtn.setMnemonicParsing(false);
         switchMusicBtn.setOnMouseClicked(InputManager::switchMusic);
 

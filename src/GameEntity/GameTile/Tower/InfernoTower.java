@@ -4,7 +4,9 @@ import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import Map.Grid;
+import javafx.scene.image.Image;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +28,10 @@ public class InfernoTower extends Tower{
         listTarget = new HashSet<>();
         currentAttackDuplicate = 0;
         switchType();
+
+        File file = new File("src/data/image/inferno-tower-02.png");
+        String localURL = file.toURI().toString();
+        image = new Image(localURL);
     }
 
     public int getCurrentAttackDuplicate() {
