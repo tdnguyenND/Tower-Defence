@@ -3,7 +3,6 @@ package Program.GameStatus;
 import Program.Controller;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 

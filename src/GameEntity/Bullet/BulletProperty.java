@@ -1,30 +1,30 @@
 package GameEntity.Bullet;
 
-public interface BulletProperty{
-	double NORMAL_BULLET_SPEED = 10;
-    double NORMAL_BULLET_DAMAGE = 30;
-    double NORMAL_BULLET_WIDTH = 9;
-    double NORMAL_BULLET_HEIGHT = 9;
-    double NORMAL_BULLET_DMG_ADDITION = 10;
+public class BulletProperty{
+	static final double NORMAL_BULLET_SPEED = 10;
+    static final double NORMAL_BULLET_DAMAGE = 30;
+    static final double NORMAL_BULLET_WIDTH = 9;
+    static final double NORMAL_BULLET_HEIGHT = 9;
+    static final double NORMAL_BULLET_DMG_ADDITION = 10;
 
-    double MACHINE_GUN_BULLET_SPEED = 15;
-    double MACHINE_GUN_BULLET_DAMAGE = 20;
-    double MACHINE_GUN_BULLET_WIDTH = 6;
-    double MACHINE_GUN_BULLET_HEIGHT = 6;
-    double MACHINE_GUN_BULLET_DMG_ADDITION = 7;
+    static final double MACHINE_GUN_BULLET_SPEED = 15;
+    static final double MACHINE_GUN_BULLET_DAMAGE = 20;
+    static final double MACHINE_GUN_BULLET_WIDTH = 6;
+    static final double MACHINE_GUN_BULLET_HEIGHT = 6;
+    static final double MACHINE_GUN_BULLET_DMG_ADDITION = 7;
 
-    double SNIPER_BULLET_SPEED = 15;
-    double SNIPER_BULLET_DAMAGE = 50;
-    double SNIPER_BULLET_WIDTH = 12;
-    double SNIPER_BULLET_HEIGHT = 12;
-    double SNIPER_BULLET_DMG_ADDITION = 13;
+    static final double SNIPER_BULLET_SPEED = 15;
+    static final double SNIPER_BULLET_DAMAGE = 50;
+    static final double SNIPER_BULLET_WIDTH = 12;
+    static final double SNIPER_BULLET_HEIGHT = 12;
+    static final double SNIPER_BULLET_DMG_ADDITION = 13;
 
-    double INFERNO_BULLET_TYPE1_DAMAGE = 23;
-    double INFERNO_BULLET_TYPE2_MIN_DAMAGE = 15;
-    double INFERNO_BULLET_TYPE2_MAX_DAMAGE = 70;
-    double INFERNO_BULLET_WIDTH = 10;
-    double INFERNO_BULLET_HEIGHT = 10;
-    double INFERNO_BULLET_TYPE1_DMG_ADDITION = 5;
-    double INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION = 2;
-    double INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION = 10;
+    static final double INFERNO_BULLET_TYPE1_DAMAGE = 23;
+    static final double INFERNO_BULLET_TYPE2_MIN_DAMAGE = 15;
+    static final double INFERNO_BULLET_TYPE2_MAX_DAMAGE = 70;
+    static final double INFERNO_BULLET_WIDTH = 10;
+    static final double INFERNO_BULLET_HEIGHT = 10;
+    static final double INFERNO_BULLET_TYPE1_DMG_ADDITION = 5;
+    static final double INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION = 2;
+    static final double INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION = 10;
 }

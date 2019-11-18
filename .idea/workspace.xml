@@ -3,25 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="8307b7ab-02d3-4543-bebe-6ce573f0bb46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/logo_square_90-4-removebg-preview.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Music/MusicManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Lose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Lose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Playing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Win$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Win$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Win.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Win.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/playingState.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/playingState.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/playingState.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/InputManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/InputManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawGameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/MachineGunBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/MachineGunBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/NormalBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/SniperBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/SniperBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music/MusicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/MusicConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Music/MusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music/MusicManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Lose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Lose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/GameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/GameStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Playing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Win.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Win.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/playingState.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/InputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -176,8 +184,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java</url>
-          <line>52</line>
+          <line>51</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Program/InputManager.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Program/InputManager.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -186,6 +204,7 @@
         <watch expression="mapFile.toURI().toString()" language="JAVA" />
         <watch expression="pauseBtn.onMouseClickedProperty()" language="JAVA" />
         <watch expression="pauseBtn.eventHandlerProperties" language="JAVA" />
+        <watch expression="selected.getContain()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

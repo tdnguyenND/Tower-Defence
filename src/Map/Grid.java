@@ -2,7 +2,6 @@ package Map;
 
 import GameEntity.GameObject;
 import Program.Config;
-import Program.GameManager;
 import Program.Position;
 
 public class Grid {

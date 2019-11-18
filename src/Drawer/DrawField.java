@@ -2,7 +2,6 @@ package Drawer;
 
 import Map.*;
 import Program.Config;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class DrawField extends Drawer {

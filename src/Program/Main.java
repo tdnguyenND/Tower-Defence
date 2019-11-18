@@ -12,11 +12,6 @@ public class Main extends Application {
         Controller controller = new Controller(primaryStage);
 
         controller.start();
-        /**
-         * TODO:
-         *  - Add event handler
-         */
-
         primaryStage.show();
     }
     public static void main(String[] args) {

@@ -1,6 +1,5 @@
 package GameEntity.GameTile.Tower;
 
-import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.BulletManager;
 import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;

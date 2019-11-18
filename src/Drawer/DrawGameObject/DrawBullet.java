@@ -2,7 +2,6 @@ package Drawer.DrawGameObject;
 
 import GameEntity.Bullet.Bullet;
 import GameEntity.Bullet.InfernoBullet;
-import Program.Config;
 import javafx.scene.paint.Color;
 
 public class DrawBullet extends DrawEntity{

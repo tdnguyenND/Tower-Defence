@@ -2,8 +2,6 @@ package GameEntity.Bullet;
 
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameTile.Tower.InfernoTower;
-import GameEntity.GameTile.Tower.Tower;
-import GameEntity.GameTile.Tower.TowerProperty;
 
 public class InfernoBullet extends Bullet{
     public boolean isUsed;

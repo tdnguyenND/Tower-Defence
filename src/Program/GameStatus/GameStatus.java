@@ -18,7 +18,6 @@ public abstract class GameStatus {
     public GameStatus(){
         root = new Pane();
         scene = new Scene(root, Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
-       // canvas = new Canvas(Config.FIELD_WIDTH, Config.FIELD_HEIGHT);
     }
 
     public static void setStage(Stage stage) {

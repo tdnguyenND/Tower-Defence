@@ -15,13 +15,16 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 public class Playing extends GameStatus {
-    Button pauseBtn;
-    Button sellBtn;
-    Button infernoBtn;
-    Button normalBtn;
-    Button sniperBtn;
-    Button smallerBtn;
-    Button x2SpeedBtn;
+    private Button pauseBtn;
+    private Button sellBtn;
+    private Button infernoBtn;
+    private Button normalBtn;
+    private Button sniperBtn;
+    private Button smallerBtn;
+    private Button x2SpeedBtn;
+    private Button upgradeBtn;
+    private Button switchTypeBtn;
+    private Button switchMusicBtn;
 
     @Override
     public void load() throws IOException {
@@ -32,14 +35,16 @@ public class Playing extends GameStatus {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 InputManager.MouseHandling(mouseEvent);
-                if (InputManager.selected != null && InputManager.selected.getContain() instanceof Tower){
+                if (InputManager.selected != null && InputManager.selected.getContain() != null && InputManager.selected.getContain() instanceof Tower){
                     /**
                      * TODO: display upgrade btn
                      */
+                    upgradeBtn.setVisible(true);
                     if (InputManager.selected.getContain() instanceof InfernoTower){
                         /**
                          * TODO: display switch type button
                          */
+                        switchTypeBtn.setVisible(true);
                     }
                 }
                 else {
@@ -47,6 +52,8 @@ public class Playing extends GameStatus {
                      * TODO:
                      *  -hide upgrade and switch btn
                      */
+                    upgradeBtn.setVisible(false);
+                    switchTypeBtn.setVisible(false);
                 }
             }
         });
@@ -62,6 +69,9 @@ public class Playing extends GameStatus {
 
         loadSellButton();
         loadPauseButton();
+        loadUpgradeButton();
+        loadSwitchTypeButton();
+        loadSwitchMusicButton();
 
         root.getChildren().add(canvas);
     }
@@ -152,4 +162,41 @@ public class Playing extends GameStatus {
 
     }
 
+    private void loadUpgradeButton(){
+        upgradeBtn = new Button("upgrade");
+
+        upgradeBtn.setId("upgrade");
+
+        upgradeBtn.setLayoutY(500);
+        upgradeBtn.setLayoutX(300);
+        upgradeBtn.setMnemonicParsing(false);
+        upgradeBtn.setOnMouseClicked(InputManager::upgrade);
+        upgradeBtn.setVisible(false);
+
+        root.getChildren().add(upgradeBtn);
+    }
+
+    private void loadSwitchTypeButton(){
+        switchTypeBtn = new Button("switch");
+
+        switchTypeBtn.setId("switch");
+
+        switchTypeBtn.setLayoutY(500);
+        switchTypeBtn.setLayoutX(400);
+        switchTypeBtn.setMnemonicParsing(false);
+        switchTypeBtn.setOnMouseClicked(InputManager::switchType);
+        switchTypeBtn.setVisible(false);
+
+        root.getChildren().add(switchTypeBtn);
+    }
+
+    private void loadSwitchMusicButton(){
+        switchMusicBtn = new Button("change music");
+        switchMusicBtn.setLayoutX(0);
+        switchMusicBtn.setLayoutY(500);
+        switchMusicBtn.setMnemonicParsing(false);
+        switchMusicBtn.setOnMouseClicked(InputManager::switchMusic);
+
+        root.getChildren().add(switchMusicBtn);
+    }
 }

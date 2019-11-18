@@ -37,7 +37,7 @@ public class InputManager{
 
         selected = map.map[j - 1][i - 1];
 
-        if(! selected.isFilled()){
+        if(!selected.isFilled()){
             buyTower(i, j);
         }
         else{
@@ -60,7 +60,7 @@ public class InputManager{
 
     public static void chooseTypeTower(MouseEvent event) {
         towerType = ((Button)event.getSource()).getId();
-        chooseTypeTower = !chooseTypeTower;
+        chooseTypeTower = true;
     }
 
     public static void buyTower(int i, int j){
@@ -68,6 +68,7 @@ public class InputManager{
             chooseTypeTower = false;
             TowerManager.createTower(towerType, map.map[j - 1][i -1]);
         }
+        removeSelected();
     }
 
     public static void wantToSellTower(MouseEvent mouseEvent) {
@@ -104,5 +105,9 @@ public class InputManager{
 
     public static void switchMusic(MouseEvent mouseEvent){
         MusicManager.switchVersion();
+    }
+
+    public static void removeSelected(){
+        selected = null;
     }
 }

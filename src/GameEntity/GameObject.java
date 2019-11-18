@@ -1,7 +1,6 @@
 package GameEntity;
 
 import Program.Position;
-import javafx.geometry.Pos;
 
 import javafx.scene.paint.Color;
 

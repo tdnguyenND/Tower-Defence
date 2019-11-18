@@ -4,7 +4,6 @@ import Drawer.Drawer;
 import Map.Map;
 import Program.GameStatus.*;
 import javafx.animation.AnimationTimer;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 

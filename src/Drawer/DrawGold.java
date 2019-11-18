@@ -1,7 +1,5 @@
 package Drawer;
 
-
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class DrawGold extends Drawer {
