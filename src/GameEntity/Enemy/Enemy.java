@@ -20,7 +20,7 @@ public abstract class Enemy extends GameObject {
 
     private int currentIndex;//current index in Map.data.road
 
-    private static int[] direction;
+    private int[] direction;
 
     private boolean destroy;
 
@@ -28,7 +28,7 @@ public abstract class Enemy extends GameObject {
     private static Player player;
     private static Map map;
 
-    public static int[] getDirection() {
+    public int[] getDirection() {
         return direction;
     }
 

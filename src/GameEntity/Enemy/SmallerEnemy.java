@@ -10,7 +10,7 @@ public class SmallerEnemy extends Enemy{
         super(EnemyConfig.SMALLER_ENEMY_HEALTH, EnemyConfig.SMALLER_ENEMY_ARMOR,
                 EnemyConfig.SMALLER_ENEMY_SPEED, EnemyConfig.SMALLER_ENEMY_WIDTH,
                 EnemyConfig.SMALLER_ENEMY_HEIGHT, EnemyConfig.SMALLER_ENEMY_REWARD);
-        File file = new File("G:/documents/oop/java program/Tower-Defence/image/smaller-enemy.png");
+        File file = new File("image/smaller-enemy.png");
         String localURL = file.toURI().toString();
         image = new Image(localURL);
     }

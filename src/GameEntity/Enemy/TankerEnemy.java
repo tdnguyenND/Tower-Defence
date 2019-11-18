@@ -10,7 +10,7 @@ public class TankerEnemy extends Enemy{
         super(EnemyConfig.TANKER_ENEMY_HEALTH, EnemyConfig.TANKER_ENEMY_ARMOR,
                 EnemyConfig.TANKER_ENEMY_SPEED, EnemyConfig.TANKER_ENEMY_WIDTH,
                 EnemyConfig.TANKER_ENEMY_HEIGHT, EnemyConfig.TANKER_ENEMY_REWARD);
-        File file = new File("G:/documents/oop/java program/Tower-Defence/image/tanker-enemy.png");
+        File file = new File("image/tanker-enemy.png");
         String localURL = file.toURI().toString();
         image = new Image(localURL);
     }
