@@ -82,8 +82,8 @@ public class Playing extends GameStatus {
 
         x2SpeedBtn.setPrefSize(35, 35);
         x2SpeedBtn.setStyle("-fx-background-image: url('/data/image/x2-06.png'); -fx-background-size: 100% 100%");
-        x2SpeedBtn.setLayoutX(120);
-        x2SpeedBtn.setLayoutY(510.0);
+        x2SpeedBtn.setLayoutX(250);
+        x2SpeedBtn.setLayoutY(555.0);
         x2SpeedBtn.setOnMouseClicked(InputManager::doubleSpeed);
         x2SpeedBtn.setMnemonicParsing(false);
 
@@ -96,7 +96,7 @@ public class Playing extends GameStatus {
         normalBtn.setPrefSize(120, 40);
         normalBtn.setStyle("-fx-background-image: url('/data/image/normal-05.png'); -fx-background-size: 100% 100%");
         normalBtn.setId("NormalTower");
-        normalBtn.setLayoutX(170.0);
+        normalBtn.setLayoutX(150.0);
         normalBtn.setLayoutY(510.0);
         normalBtn.setMnemonicParsing(false);
         normalBtn.setOnMouseClicked(InputManager::chooseTypeTower);
@@ -109,7 +109,7 @@ public class Playing extends GameStatus {
         smallerBtn.setPrefSize(120, 40);
         smallerBtn.setStyle("-fx-background-image: url('/data/image/macgun-05.png'); -fx-background-size: 100% 100%");
         smallerBtn.setId("SmallerTower");
-        smallerBtn.setLayoutX(590.0);
+        smallerBtn.setLayoutX(600);
         smallerBtn.setLayoutY(510.0);
         smallerBtn.setMnemonicParsing(false);
         smallerBtn.setOnMouseClicked(InputManager::chooseTypeTower);
@@ -122,7 +122,7 @@ public class Playing extends GameStatus {
         sniperBtn.setPrefSize(120, 40);
         sniperBtn.setStyle("-fx-background-image: url('/data/image/sniper-05.png'); -fx-background-size: 100% 100%");
         sniperBtn.setId("SniperTower");
-        sniperBtn.setLayoutX(310.0);
+        sniperBtn.setLayoutX(300.0);
         sniperBtn.setLayoutY(510.0);
         sniperBtn.setMnemonicParsing(false);
         sniperBtn.setOnMouseClicked(InputManager::chooseTypeTower);
@@ -149,7 +149,7 @@ public class Playing extends GameStatus {
 
         sellBtn.setStyle("-fx-background-image: url('/data/image/sell-06.png'); -fx-background-size: 100% 100%");
         sellBtn.setPrefSize(35, 35);
-        sellBtn.setLayoutX(120);
+        sellBtn.setLayoutX(350);
         sellBtn.setLayoutY(555.0);
         sellBtn.setMnemonicParsing(false);
         sellBtn.setOnMouseClicked(InputManager::wantToSellTower);
@@ -162,7 +162,7 @@ public class Playing extends GameStatus {
 
         pauseBtn.setStyle("-fx-background-image: url('/data/image/pause-06.png'); -fx-background-size: 100% 100%");
         pauseBtn.setPrefSize(35, 35);
-        pauseBtn.setLayoutX(170);
+        pauseBtn.setLayoutX(300);
         pauseBtn.setLayoutY(555.0);
         pauseBtn.setMnemonicParsing(false);
         pauseBtn.setOnMouseClicked(Controller::pause);
@@ -178,7 +178,7 @@ public class Playing extends GameStatus {
         upgradeBtn.setStyle("-fx-background-image: url('/data/image/upgrade-06.png'); -fx-background-size: 100% 100%");
         upgradeBtn.setPrefSize(35, 35);
         upgradeBtn.setLayoutY(555);
-        upgradeBtn.setLayoutX(215);
+        upgradeBtn.setLayoutX(400);
         upgradeBtn.setMnemonicParsing(false);
         upgradeBtn.setOnMouseClicked(InputManager::upgrade);
         upgradeBtn.setVisible(false);
@@ -193,7 +193,7 @@ public class Playing extends GameStatus {
 
         switchTypeBtn.setStyle("-fx-background-image: url('/data/image/switch-06.png'); -fx-background-size: 100% 100%");
         switchTypeBtn.setLayoutY(555);
-        switchTypeBtn.setLayoutX(260);
+        switchTypeBtn.setLayoutX(450);
         switchTypeBtn.setPrefSize(35, 35);
         switchTypeBtn.setMnemonicParsing(false);
         switchTypeBtn.setOnMouseClicked(InputManager::switchType);
@@ -206,8 +206,8 @@ public class Playing extends GameStatus {
         switchMusicBtn = new Button();
 
         switchMusicBtn.setStyle("-fx-background-image: url('/data/image/changemusic-06.png'); -fx-background-size: 100% 100%");
-        switchMusicBtn.setLayoutX(20);
-        switchMusicBtn.setLayoutY(510);
+        switchMusicBtn.setLayoutX(150);
+        switchMusicBtn.setLayoutY(555);
         switchMusicBtn.setPrefSize(35, 35);
         switchMusicBtn.setMnemonicParsing(false);
         switchMusicBtn.setOnMouseClicked(InputManager::switchMusic);

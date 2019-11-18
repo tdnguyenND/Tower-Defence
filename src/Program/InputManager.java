@@ -78,6 +78,8 @@ public class InputManager{
     private static void sellTower(int i, int j) {
         sellTower = false;
         TowerManager.removeTower(map.map[j - 1][i -1]);
+        selected.setContain(null);
+        selected.setFilled(false);
     }
 
     public static void doubleSpeed(MouseEvent mouseEvent){
