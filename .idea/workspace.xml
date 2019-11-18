@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/image/background-03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/inferno-05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/inferno-tower-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/lose-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/macgun-tower-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/normal-tower-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/pause-06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/playagain-04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/sell-06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/smaller-tower-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/towerRound_roofB_W.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleB_E.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleC_W.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/towerRound_sampleD_E.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/upgrade-06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/win-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/x2-06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/field.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/macgun-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/macgun-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/normal-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/normal-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/sniper-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/sniper-05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGameObject/DrawEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Drawer/DrawGold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/BossEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/NormalEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/SmallerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/TankerEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/BossEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/NormalEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/SmallerEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/TankerEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/background-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/background-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,15 +157,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="mapFile.toURI().toString()" language="JAVA" />
