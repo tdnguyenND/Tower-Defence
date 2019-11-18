@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/image/background-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/background-03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer/DrawGameObject/DrawTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/NormalTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SmallerTower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/SniperTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
