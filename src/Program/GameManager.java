@@ -52,12 +52,15 @@ public class GameManager {
     public static void update(){
         long currentTime = System.nanoTime();
         if (currentTime - previousTime > updateLoop){
-            currentTick = (currentTime - previousTime)/updateLoop;
-            previousTick += currentTick;
+            currentTick += (currentTime - previousTime)/updateLoop;
             previousTime = currentTime;
-            EnemyManager.update(previousTick);
             TowerManager.update();
-            BulletManager.update();
+
+            while (previousTick < currentTick){
+                previousTick ++;
+                EnemyManager.update(previousTick);
+                BulletManager.update(previousTick);
+            }
         }
     }
 

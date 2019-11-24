@@ -7,7 +7,7 @@ public class BulletProperty{
     static final double NORMAL_BULLET_HEIGHT = 9;
     static final double NORMAL_BULLET_DMG_ADDITION = 10;
 
-    static final double MACHINE_GUN_BULLET_SPEED = 15;
+    static final double MACHINE_GUN_BULLET_SPEED = 12;
     static final double MACHINE_GUN_BULLET_DAMAGE = 20;
     static final double MACHINE_GUN_BULLET_WIDTH = 6;
     static final double MACHINE_GUN_BULLET_HEIGHT = 6;
@@ -27,4 +27,6 @@ public class BulletProperty{
     static final double INFERNO_BULLET_TYPE1_DMG_ADDITION = 5;
     static final double INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION = 2;
     static final double INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION = 10;
+
+    static final int updateLoop = 20;
 }

@@ -21,13 +21,12 @@ public class InfernoBullet extends Bullet{
         this.target = target;
         this.tower = tower;
         this.position = tower.getLocation().clone();
-        calculateVector();
         destroy = false;
         isUsed = false;
     }
 
     @Override
-    public void update() {
+    public void update(long currentTick) {
         if (isUsed) doDestroy();
         else {
             doDamage();

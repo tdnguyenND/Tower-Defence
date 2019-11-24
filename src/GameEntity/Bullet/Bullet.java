@@ -3,6 +3,7 @@ package GameEntity.Bullet;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameObject;
 import GameEntity.GameTile.Tower.Tower;
+import Program.GameManager;
 import Program.Position;
 
 public abstract class Bullet extends GameObject {
@@ -12,6 +13,12 @@ public abstract class Bullet extends GameObject {
     protected Tower tower;
     protected double dx;
     protected double dy;
+
+    private double realX;
+    private double realY;
+
+    private long previousTick;
+    private int updatingCycle;
 
     protected boolean destroy;
 
@@ -33,6 +40,10 @@ public abstract class Bullet extends GameObject {
         this.position = tower.getLocation().clone();
         calculateVector();
         destroy = false;
+        realX = position.getX();
+        realY = position.getY();
+        this.previousTick = GameManager.getCurrentTick();
+        this.updatingCycle = (int)(BulletProperty.updateLoop/this.speed);
     }
 
     @Override
@@ -47,38 +58,46 @@ public abstract class Bullet extends GameObject {
     public void calculateVector() {
         double radian = Math.atan2(target.getLocation().getX() - position.getX(),
                                    target.getLocation().getY() - position.getY());
-        this.dx = Math.sin(radian) * speed;
-        this.dy = Math.cos(radian) * speed;
+        this.dx = Math.sin(radian);
+        this.dy = Math.cos(radian);
     }
 
     public void move(){
-        position.setX(position.getX() + (int)dx);
-        position.setY(position.getY() + (int)dy);
+        this.realX += dx;
+        this.realY += dy;
+        position.setX((int)(realX));
+        position.setY((int)(realY));
     }
 
     public boolean isHit(){
-        return (position.distance(target.getLocation()) <= target.getWidth());
+        return (position.equals(target.getLocation()));
     }
 
     public void doDamage(){
             target.beAttacked(damage);
     }
 
-    public void update(){
+    public void update(long currentTick){
         /**
          * TODO: - move
          *       - check isHit -> do dmg, doDes
          *       - check out of range -> do destroy
          */
-        calculateVector();
-        move();
-        if(isHit()){
-            setLocation(target.getLocation());
-            doDamage();
-            doDestroy();
+        if (currentTick - previousTick > this.updatingCycle ){
+            while (previousTick < currentTick){
+                calculateVector();
+                move();
+                if(isHit()){
+                    setLocation(target.getLocation());
+                    doDamage();
+                    doDestroy();
+                }
+                else if(position.distance(tower.getLocation()) > tower.getRange())
+                    doDestroy();
+                previousTick += this.updatingCycle;
+            }
+            previousTick = currentTick;
         }
-        else if(position.distance(tower.getLocation()) > tower.getRange())
-            doDestroy();
     }
 
     public boolean isDestroy() {

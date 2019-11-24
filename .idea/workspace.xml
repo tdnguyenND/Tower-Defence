@@ -3,29 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/GameEntity/Enemy/EnemyManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Map/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tower-Defence/Program/GameStatus/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Enemy/EnemyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Lose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Lose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/GameStatus/Win.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameStatus/Win.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/InputManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +141,8 @@
       <workItem from="1574515322275" duration="2585000" />
       <workItem from="1574557818966" duration="1399000" />
       <workItem from="1574582342636" duration="5459000" />
-      <workItem from="1574598294977" duration="623000" />
+      <workItem from="1574598294977" duration="1321000" />
+      <workItem from="1574606315215" duration="1372000" />
     </task>
     <servers />
   </component>
@@ -188,26 +171,16 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Program/InputManager.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Program/InputManager.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Program/Controller.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="89" />
+          <url>file://$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="EnemyManager.listEnemy" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

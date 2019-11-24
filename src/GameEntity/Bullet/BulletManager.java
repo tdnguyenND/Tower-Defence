@@ -41,9 +41,9 @@ public class BulletManager {
         bulletList.remove(bullet);
     }
 
-    public static void update(){
+    public static void update(long currentTick){
         if(!bulletList.isEmpty()){
-            for(Bullet bullet: bulletList) bullet.update();
+            for(Bullet bullet: bulletList) bullet.update(currentTick);
             bulletList.removeIf(Bullet::isDestroy);
         }
     }
