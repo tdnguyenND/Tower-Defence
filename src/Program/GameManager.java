@@ -10,11 +10,21 @@ public class GameManager {
     public static Player player;
     //private GraphicsContext graphicsContext;
 
+    private static long previousTime;
+    private static long previousTick;
+    private static long currentTick;// use tick as game's time
+    public static long updateLoop;
+
+    public static long getCurrentTick() {
+        return currentTick;
+    }
+
     public GameManager(){
         map = new Map();
         player = new Player();
         player.setGold(Config.defaultPlayerGold);
     }
+
     public boolean init(){
         /**
          *  TODO:
@@ -29,13 +39,26 @@ public class GameManager {
          *   - BulletManager.init
          *   - TowerManager.init
          */
+        updateLoop = Config.updateLoop;
         return EnemyManager.init(player, map) && TowerManager.init(player)  && BulletManager.init();
     }
 
+    public static void setStart(){
+        currentTick = 0;
+        previousTick = 0;
+        previousTime = System.nanoTime();
+    }
+
     public static void update(){
-        EnemyManager.update();
-        TowerManager.update();
-        BulletManager.update();
+        long currentTime = System.nanoTime();
+        if (currentTime - previousTime > updateLoop){
+            currentTick = (currentTime - previousTime)/updateLoop;
+            previousTick += currentTick;
+            previousTime = currentTime;
+            EnemyManager.update(previousTick);
+            TowerManager.update();
+            BulletManager.update();
+        }
     }
 
     public static void restart(){
@@ -43,5 +66,6 @@ public class GameManager {
         TowerManager.restart();
         BulletManager.restart();
         player.restart();
+        setStart();
     }
 }

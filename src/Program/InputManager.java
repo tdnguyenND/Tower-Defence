@@ -85,11 +85,11 @@ public class InputManager{
     public static void doubleSpeed(MouseEvent mouseEvent){
         if(x2Speed){
             x2Speed = false;
-            Controller.COUNT = Controller.COUNT * 2;
+            GameManager.updateLoop = GameManager.updateLoop * 2;
         }
         else{
             x2Speed = true;
-            Controller.COUNT = Controller.COUNT / 2;
+            GameManager.updateLoop = GameManager.updateLoop / 2;
         }
     }
 

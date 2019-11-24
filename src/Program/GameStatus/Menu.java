@@ -1,6 +1,7 @@
 package Program.GameStatus;
 
 import Program.Controller;
+import Program.GameManager;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -26,6 +27,7 @@ public class Menu extends GameStatus {
                 Controller.onPlay = true;
                 Controller.onMenu = false;
                 Controller.playing.use();
+                GameManager.setStart();
             }
         });
 

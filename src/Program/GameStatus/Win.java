@@ -20,6 +20,8 @@ public class Win extends GameStatus {
         Button next_btn = new Button("replay");
         next_btn.setLayoutX(300);
         next_btn.setLayoutY(300);
+
+        next_btn.setStyle("-fx-background-image: url('/data/image/playagain-04.png')");
         next_btn.setPrefSize(196, 50);
         next_btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -35,6 +37,8 @@ public class Win extends GameStatus {
         Button quit_btn = new Button("Quit");
         quit_btn.setLayoutX(300);
         quit_btn.setLayoutY(400);
+        quit_btn.setPrefSize(196, 50);
+        quit_btn.setStyle("-fx-background-image: url('/data/image/exit-04.png')");
         quit_btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {

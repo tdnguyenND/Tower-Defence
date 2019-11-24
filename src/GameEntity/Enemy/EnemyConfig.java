@@ -29,6 +29,9 @@ public class EnemyConfig {
     static final double BOSS_ENEMY_HEIGHT = 50;
     static final int BOSS_ENEMY_REWARD = 70;
 
-    static final int defaultCounter = 20;
-    static final int waveCounter = 200;// time between two ways
+    static final int loop = 12;
+
+    static final int defaultCounter = 20 * loop;
+    static final int waveCounter = 200 * loop;// time between two ways
+
 }

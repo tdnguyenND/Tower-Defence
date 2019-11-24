@@ -18,6 +18,12 @@ public class EnemyManager {
     private static int currentWave;
     private static int currentEnemyInWave;
 
+    private static long previousTick;
+
+    public static long getPreviousTick() {
+        return previousTick;
+    }
+
     public static boolean init(Player _player, Map _map){
         /**
          * TODO:
@@ -28,6 +34,7 @@ public class EnemyManager {
         boolean success = true;
         player = _player;
         map = _map;
+        previousTick = 0;
 
         Enemy.init(map, player);
 
@@ -75,48 +82,52 @@ public class EnemyManager {
         addEnemy(newEnemy);
     }
 
-    public static void update(){
+    public static void update(long currentTick){
         /**
          * TODO:
          *  - Create new Enemy
          *  - Update all Enemy
          */
-        counter++;
-        if (!listEnemy.isEmpty()){
-            for (Enemy enemy: listEnemy) enemy.update();
-            listEnemy.removeIf(Enemy::isDestroy);
-        }
-        if (counter >= EnemyConfig.defaultCounter){
-            if (currentEnemyInWave < EnemyData.wave[currentWave].length){
-                switch (EnemyData.wave[currentWave][currentEnemyInWave]){
-                    case 1:
-                        createNormalEnemy();
-                        break;
-                    case 2:
-                        createSmallerEnemy();
-                        break;
-                    case 3:
-                        createTankerEnemy();
-                        break;
-                    case 4:
-                        createBossEnemy();
-                        break;
-                }
-                currentEnemyInWave++;
-                counter = 0;
-            }
-            else {
-                currentWave++;
-                if (currentWave >= EnemyData.wave.length){
-                    currentWave = 0;
-                    currentEnemyInWave = 0;
-                    counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+        long countOfUpdate = currentTick - previousTick;
+        while (countOfUpdate-- > 0){
+            previousTick++;
+            counter++;
+            if (counter >= EnemyConfig.defaultCounter){
+                if (currentEnemyInWave < EnemyData.wave[currentWave].length){
+                    switch (EnemyData.wave[currentWave][currentEnemyInWave]){
+                        case 1:
+                            createNormalEnemy();
+                            break;
+                        case 2:
+                            createSmallerEnemy();
+                            break;
+                        case 3:
+                            createTankerEnemy();
+                            break;
+                        case 4:
+                            createBossEnemy();
+                            break;
+                    }
+                    currentEnemyInWave++;
+                    counter = 0;
                 }
                 else {
-                    currentEnemyInWave = 0;
-                    counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+                    currentWave++;
+                    if (currentWave >= EnemyData.wave.length){
+                        currentWave = 0;
+                        currentEnemyInWave = 0;
+                        counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+                    }
+                    else {
+                        currentEnemyInWave = 0;
+                        counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
+                    }
                 }
             }
+        }
+        if (!listEnemy.isEmpty()){
+            for (Enemy enemy: listEnemy) enemy.update(currentTick);
+            listEnemy.removeIf(Enemy::isDestroy);
         }
     }
 

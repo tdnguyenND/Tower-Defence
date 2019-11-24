@@ -17,7 +17,7 @@ public class Controller extends AnimationTimer {
     public static boolean onMenu;
     public static boolean onPause;
     public static boolean onPlay;
-    public static double COUNT = 1000000000.0/Config.GAME_FPS;
+    public static double COUNT = Config.COUNT;
 
     private Stage stage;
 
@@ -145,7 +145,8 @@ public class Controller extends AnimationTimer {
         long time = System.nanoTime() - previousTime;
 
         if (time < COUNT) try{
-            Thread.sleep((long)(COUNT - time)/1000000);
+            long delay = (long)((COUNT - time)/1000000);
+            Thread.sleep(delay);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

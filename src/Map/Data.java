@@ -54,8 +54,6 @@ public class Data {
             map[startX][startY] = 0;
             line = findLine(map, startX, startY);
             size = line.size();
-
-            Log.log(line);
         }catch (FileNotFoundException ex){
             System.out.println("File not exist");;
         }

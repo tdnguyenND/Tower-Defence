@@ -2,9 +2,9 @@ package GameEntity.Enemy;
 
 import Debugger.Log;
 import GameEntity.GameObject;
+import Program.GameManager;
 import Program.Player;
 import Map.*;
-import Program.Position;
 
 public abstract class Enemy extends GameObject {
     /**
@@ -27,6 +27,8 @@ public abstract class Enemy extends GameObject {
     // all Enemy use the same player and map
     private static Player player;
     private static Map map;
+    private long previousTick;
+    private int updatingCycle;
 
     public int[] getDirection() {
         return direction;
@@ -50,8 +52,10 @@ public abstract class Enemy extends GameObject {
         this.position = map.startPoint.getCenter().clone();
         this.currentIndex = 0;
         this.direction = new int[2];
-        updateDirection();
-        destroy = false;
+        this.updateDirection();
+        this.destroy = false;
+        this.previousTick = EnemyManager.getPreviousTick();
+        this.updatingCycle = (int)(EnemyConfig.loop/this.speed);
     }
 
     public static boolean init(Map _map, Player _player){
@@ -100,7 +104,7 @@ public abstract class Enemy extends GameObject {
         }
     }
 
-    public void update(){
+    public void update(long currentTick){
 
         /**
          * TODO:
@@ -119,30 +123,23 @@ public abstract class Enemy extends GameObject {
              */
             doDestroy();
         }
-        else if (position.over(map.map[Data.line.get(currentIndex + 1).get(0)][Data.line.get(currentIndex + 1).get(1)].getCenter(), direction)){
-            Position target = map.map[Data.line.get(currentIndex + 1).get(0)][Data.line.get(currentIndex + 1).get(1)].getCenter();
-            position.setX(target.getX());
-            position.setY(target.getY());
-            currentIndex++;
-            if (currentIndex >= Data.size - 1){
-                /**
-                 * TODO:
-                 *  -do damage
-                 *  -do destroy
-                 */
+        else while (currentTick - previousTick > updatingCycle){
+            if (position.equals(map.finishPoint.getCenter())){
                 doDamage();
                 doDestroy();
+                break;
             }
-            else {
-                updateDirection();
-                move();
-            }
+            move();
+            previousTick += updatingCycle;
         }
-        else move();
     }
 
     public void move(){
-        setLocation(this.position.getX() + (int)speed*direction[0], this.position.getY() + (int)speed * direction[1]);
+        setLocation(this.position.getX() + direction[0], this.position.getY() + direction[1]);
+        if (position.equals(map.map[Data.line.get(currentIndex + 1).get(0)][Data.line.get(currentIndex + 1).get(1)].getCenter())) {
+            currentIndex++;
+            if (currentIndex < Data.size - 1)updateDirection();
+        }
     }
 
     public void setLocation(int x, int y){
