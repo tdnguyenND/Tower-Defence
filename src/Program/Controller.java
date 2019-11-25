@@ -110,6 +110,7 @@ public class Controller extends AnimationTimer {
              *      + Replay
              *      + Quit
              */
+            lose.use();
 
         }
         else if (player.isWin()){
@@ -119,11 +120,7 @@ public class Controller extends AnimationTimer {
              *      Such as: Drawer.drawWinScreen
              *  - Create Button: like Lose Screen
              */
-            try {
-                win.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            win.use();
         }
         else if(onPlay) {
             /**

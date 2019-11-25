@@ -15,9 +15,9 @@ public class Win extends GameStatus {
          * -TODO : "you Win"
          */
         root.setBackground(Background.EMPTY);
-        root.setStyle("-fx-background-image: url('/data/images/background-01.png');");
+        root.setStyle("-fx-background-image: url('/data/image/win-01.png');");
 
-        Button next_btn = new Button("replay");
+        Button next_btn = new Button();
         next_btn.setLayoutX(300);
         next_btn.setLayoutY(300);
 

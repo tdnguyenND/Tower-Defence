@@ -22,7 +22,7 @@ public class Config {
     public static final long updateLoop = 2500000;
 
     public static final int defaultPlayerGold = 300;
-    public static final int defaultPlayerHealth = 10;
+    public static final int defaultPlayerHealth = 1;
 
     private Config(){
     }

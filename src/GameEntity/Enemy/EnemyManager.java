@@ -93,7 +93,10 @@ public class EnemyManager {
         while (countOfUpdate-- > 0){
             previousTick++;
             counter++;
-            if (counter >= EnemyConfig.defaultCounter){
+            if (currentWave >= EnemyData.wave.length){
+                if (listEnemy.isEmpty()) player.win();
+            }
+            else if (counter >= EnemyConfig.defaultCounter){
                 if (currentEnemyInWave < EnemyData.wave[currentWave].length){
                     switch (EnemyData.wave[currentWave][currentEnemyInWave]){
                         case 1:
@@ -114,12 +117,7 @@ public class EnemyManager {
                 }
                 else {
                     currentWave++;
-                    if (currentWave >= EnemyData.wave.length){
-                        currentWave = 0;
-                        currentEnemyInWave = 0;
-                        counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
-                    }
-                    else {
+                    if (currentWave < EnemyData.wave.length){
                         currentEnemyInWave = 0;
                         counter = EnemyConfig.defaultCounter - EnemyConfig.waveCounter;
                     }

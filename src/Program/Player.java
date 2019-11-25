@@ -43,6 +43,10 @@ public class Player {
         return health;
     }
 
+    public void win(){
+        win = true;
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }

@@ -15,7 +15,7 @@ public class Lose extends GameStatus {
          */
         root.setBackground(Background.EMPTY);
 
-        root.setStyle("-fx-background-image: url('/data/images/background-01.png')");
+        root.setStyle("-fx-background-image: url('/data/image/lose-01.png')");
         Button replay_btn = new Button("-");
         replay_btn.setLayoutX(300);
         replay_btn.setLayoutY(300);
