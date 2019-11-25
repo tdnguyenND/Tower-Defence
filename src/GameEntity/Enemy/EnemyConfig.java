@@ -30,6 +30,7 @@ public class EnemyConfig {
     static final int BOSS_ENEMY_REWARD = 70;
 
     static final int loop = 12;
+    static final int enemyAttackTimeSet = 200;
 
     static final int defaultCounter = 20 * loop;
     static final int waveCounter = 200 * loop;// time between two ways

@@ -16,6 +16,8 @@ public abstract class Enemy extends GameObject {
     private double armor;
     private double speed;
 
+    private double maxHp;
+
     private int reward;
 
     private int currentIndex;//current index in Map.data.road
@@ -29,6 +31,8 @@ public abstract class Enemy extends GameObject {
     private static Map map;
     private long previousTick;
     private int updatingCycle;
+
+    private int attackCountDown;
 
     public int[] getDirection() {
         return direction;
@@ -56,6 +60,8 @@ public abstract class Enemy extends GameObject {
         this.destroy = false;
         this.previousTick = EnemyManager.getPreviousTick();
         this.updatingCycle = (int)(EnemyConfig.loop/this.speed);
+        this.attackCountDown = 0;
+        this.maxHp = this.health;
     }
 
     public static boolean init(Map _map, Player _player){
@@ -85,7 +91,11 @@ public abstract class Enemy extends GameObject {
             Log.log(e);
         }
         return success;
-    };
+    }
+
+    public double getHealthRate(){
+        return this.health / maxHp;
+    }
 
     public void updateDirection(){
         int inCol = Data.line.get(currentIndex + 1).get(0) - Data.line.get(currentIndex).get(0);
@@ -124,6 +134,7 @@ public abstract class Enemy extends GameObject {
             doDestroy();
         }
         else while (currentTick - previousTick > updatingCycle){
+            if (attackCountDown > 0) attackCountDown--;
             if (position.equals(map.finishPoint.getCenter())){
                 doDamage();
                 doDestroy();
@@ -169,6 +180,11 @@ public abstract class Enemy extends GameObject {
             doDestroy();
             player.earnMoney(this.reward);
         }
+        attackCountDown = EnemyConfig.enemyAttackTimeSet;
+    }
+
+    public int getAttackCountDown() {
+        return attackCountDown;
     }
 
     public boolean isDestroy() {

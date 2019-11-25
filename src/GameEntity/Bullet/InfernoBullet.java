@@ -17,7 +17,7 @@ public class InfernoBullet extends Bullet{
         else {
             damage = Math.min(BulletProperty.INFERNO_BULLET_TYPE2_MAX_DAMAGE + (tower.getLevel() - 1) * BulletProperty.INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION , BulletProperty.INFERNO_BULLET_TYPE2_MIN_DAMAGE + tower.getCurrentAttackDuplicate() * 5 + (tower.getLevel() - 1) * BulletProperty.INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION);
         }
-        this.damage = damage * 1.0/tower.getAttackRate();
+        this.damage = damage * 1.0/tower.getAttackRate()/10;
         this.target = target;
         this.tower = tower;
         this.position = tower.getLocation().clone();
