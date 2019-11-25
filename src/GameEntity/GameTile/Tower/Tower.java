@@ -6,6 +6,7 @@ import GameEntity.Enemy.Enemy;
 import GameEntity.Enemy.EnemyManager;
 import GameEntity.GameObject;
 import Map.Grid;
+import Program.GameManager;
 
 public abstract class Tower extends GameObject{
     protected int range;
@@ -18,6 +19,8 @@ public abstract class Tower extends GameObject{
 
     protected boolean destroy;
     private int level;
+
+    private long previousTick;
 
     public int getRange(){
         return this.range;
@@ -34,6 +37,7 @@ public abstract class Tower extends GameObject{
         this.destroy = false;
         this.target = null;
         this.level = 1;
+        this.previousTick = GameManager.getPreviousTick();
     }
 
     public int getAttackRate() {
@@ -64,28 +68,34 @@ public abstract class Tower extends GameObject{
     }
 
     //update lastAttacked, update target and fire a bullet
-    public void update(){
-        //update lastAttacked
-        if (target != null)  lastAttacked ++;
-        else lastAttacked = 0;
+    public void update(long currentTick){
 
         //update target
         checkRange();
 
-        //fire a bullet
-        if(lastAttacked > attackRate && target != null){
-            lastAttacked = 0;
-            if(this instanceof NormalTower){
-                BulletManager.addBullet("NormalBullet", target, this);
-            }
-            if(this instanceof SmallerTower){
-                BulletManager.addBullet("MachineGunBullet", target, this);
-            }
-            if(this instanceof SniperTower){
-                BulletManager.addBullet("SniperBullet", target, this);
-            }
-            if (this instanceof InfernoTower){
-                BulletManager.addBullet("InfernoBullet", target, this);
+        if (currentTick - previousTick > TowerProperty.updatingCycle) {
+            while (previousTick < currentTick) {
+                //update lastAttacked
+                previousTick += TowerProperty.updatingCycle;
+                if (target != null) lastAttacked++;
+                else lastAttacked = 0;
+
+                //fire a bullet
+                if (lastAttacked > attackRate && target != null) {
+                    lastAttacked = 0;
+                    if (this instanceof NormalTower) {
+                        BulletManager.addBullet("NormalBullet", target, this);
+                    }
+                    if (this instanceof SmallerTower) {
+                        BulletManager.addBullet("MachineGunBullet", target, this);
+                    }
+                    if (this instanceof SniperTower) {
+                        BulletManager.addBullet("SniperBullet", target, this);
+                    }
+                    if (this instanceof InfernoTower) {
+                        BulletManager.addBullet("InfernoBullet", target, this);
+                    }
+                }
             }
         }
     }

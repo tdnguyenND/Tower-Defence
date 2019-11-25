@@ -4,9 +4,11 @@
     <list default="true" id="4a9cdf31-3119-41f3-b689-2ce4468b3442" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/BulletProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/Bullet/InfernoBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/InfernoTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEntity/GameTile/Tower/TowerProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/GameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,7 +144,8 @@
       <workItem from="1574557818966" duration="1399000" />
       <workItem from="1574582342636" duration="5459000" />
       <workItem from="1574598294977" duration="1321000" />
-      <workItem from="1574606315215" duration="1372000" />
+      <workItem from="1574606315215" duration="1627000" />
+      <workItem from="1574651330460" duration="549000" />
     </task>
     <servers />
   </component>

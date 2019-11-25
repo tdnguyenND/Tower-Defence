@@ -83,9 +83,9 @@ public class TowerManager implements TowerProperty{
         towerList.clear();
     }
 
-    public static void update(){
+    public static void update(long currentTick){
         for (Tower tower : towerList){
-            tower.update();
+            tower.update(currentTick);
         }
     }
 

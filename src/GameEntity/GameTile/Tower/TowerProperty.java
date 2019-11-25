@@ -19,8 +19,9 @@ public interface TowerProperty {
     int SNIPER_TOWER_WIDTH = 45;
     int SNIPER_TOWER_HEIGHT = 45;
 
+    int updatingCycle = 10;
+
     int INFERNO_TYPE1_RANGE = 160;
-    int INFERNO_TYPE2_RANGE = 150;
     int INFERNO_ATTACK_RATE = 10;
     int INFERNO_TOWER_COST = 250;
     int INFERNO_TOWER_WIDTH = 40;

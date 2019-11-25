@@ -111,7 +111,7 @@ public class InfernoTower extends Tower{
     }
 
     @Override
-    public void update() {
+    public void update(long currentTick) {
         if (type == 1) type1Update();
         else type2Update();
     }

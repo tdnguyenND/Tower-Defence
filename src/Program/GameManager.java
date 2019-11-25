@@ -12,11 +12,10 @@ public class GameManager {
 
     private static long previousTime;
     private static long previousTick;
-    private static long currentTick;// use tick as game's time
     public static long updateLoop;
 
-    public static long getCurrentTick() {
-        return currentTick;
+    public static long getPreviousTick() {
+        return previousTick;
     }
 
     public GameManager(){
@@ -44,7 +43,6 @@ public class GameManager {
     }
 
     public static void setStart(){
-        currentTick = 0;
         previousTick = 0;
         previousTime = System.nanoTime();
     }
@@ -52,12 +50,12 @@ public class GameManager {
     public static void update(){
         long currentTime = System.nanoTime();
         if (currentTime - previousTime > updateLoop){
-            currentTick += (currentTime - previousTime)/updateLoop;
+            long tick = previousTick + (currentTime - previousTime)/updateLoop;
             previousTime = currentTime;
-            TowerManager.update();
 
-            while (previousTick < currentTick){
+            while (previousTick < tick){
                 previousTick ++;
+                TowerManager.update(previousTick);
                 EnemyManager.update(previousTick);
                 BulletManager.update(previousTick);
             }

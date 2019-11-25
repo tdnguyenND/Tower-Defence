@@ -42,7 +42,7 @@ public abstract class Bullet extends GameObject {
         destroy = false;
         realX = position.getX();
         realY = position.getY();
-        this.previousTick = GameManager.getCurrentTick();
+        this.previousTick = GameManager.getPreviousTick();
         this.updatingCycle = (int)(BulletProperty.updateLoop/this.speed);
     }
 
