@@ -3,12 +3,14 @@ package GameEntity.Bullet;
 import GameEntity.Enemy.Enemy;
 import GameEntity.GameTile.Tower.InfernoTower;
 import GameEntity.GameTile.Tower.Tower;
+import Program.GameManager;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class BulletManager {
     public static Set<Bullet> bulletList;
+    private static long previousTick;
 
     public BulletManager() {
     }
@@ -42,8 +44,9 @@ public class BulletManager {
     }
 
     public static void update(long currentTick){
+        previousTick = currentTick;
         if(!bulletList.isEmpty()){
-            for(Bullet bullet: bulletList) bullet.update(currentTick);
+            for(Bullet bullet: bulletList) bullet.update(previousTick);
             bulletList.removeIf(Bullet::isDestroy);
         }
     }
@@ -54,5 +57,6 @@ public class BulletManager {
 
     public static void restart(){
         reset();
+        previousTick = GameManager.getPreviousTick();
     }
 }

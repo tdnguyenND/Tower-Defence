@@ -63,6 +63,8 @@ public class GameManager {
     }
 
     public static void restart(){
+        previousTick = 0;
+        previousTime = System.nanoTime();
         EnemyManager.restart();
         TowerManager.restart();
         BulletManager.restart();

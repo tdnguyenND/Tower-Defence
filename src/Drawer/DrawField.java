@@ -1,7 +1,9 @@
 package Drawer;
 
+import GameEntity.GameTile.Tower.Tower;
 import Map.*;
 import Program.Config;
+import Program.InputManager;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
@@ -31,6 +33,12 @@ public class DrawField extends Drawer {
                 }
                 graphicsContext.fillRect(j * Config.GRID_WIDTH, i * Config.GRID_HEIGHT, Config.GRID_WIDTH, Config.GRID_HEIGHT);
             }
+        }
+        if (InputManager.selected != null && InputManager.selected.getContain() != null){
+            graphicsContext.setStroke(Color.BLACK);
+            int range = ((Tower)(InputManager.selected.getContain())).getRange();
+            graphicsContext.strokeOval(InputManager.selected.getCenter().getY() - range, InputManager.selected.getCenter().getX() - range,
+                    range * 2, range * 2);
         }
     }
 }

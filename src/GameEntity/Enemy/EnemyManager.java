@@ -2,6 +2,7 @@ package GameEntity.Enemy;
 
 import Debugger.Log;
 import Map.Map;
+import Program.GameManager;
 import Program.Player;
 
 import java.util.ArrayList;
@@ -136,5 +137,6 @@ public class EnemyManager {
         currentWave = 0;
         currentEnemyInWave = 0;
         counter = 0;
+        previousTick = GameManager.getPreviousTick();
     }
 }
