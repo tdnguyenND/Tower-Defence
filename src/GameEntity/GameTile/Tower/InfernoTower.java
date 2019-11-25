@@ -45,19 +45,23 @@ public class InfernoTower extends Tower{
     public void switchType(){
         if (type == 1) {
             type = 2;
+            listTarget.clear();
             target = null;
         }
         else {
             type = 1;
-            listTarget.clear();
+            currentAttackDuplicate = 0;
         }
     }
 
-    public void type1CheckRange(){
+    public void type1CheckRange(long currentTick){
         if (target != null) {
             if (target.isDestroy()) target = null;
             else{
-                currentAttackDuplicate++;
+                if (currentTick - previousTick > TowerProperty.updatingCycle){
+                    currentAttackDuplicate += (currentTick - previousTick)/TowerProperty.updatingCycle;
+                    previousTick = currentTick;
+                }
                 double distance = target.getLocation().distance(this.position);
                 if (distance > range) target = null;
             }
@@ -90,13 +94,11 @@ public class InfernoTower extends Tower{
 
     @Override
     public void checkRange() {
-        if (type == 1) type1CheckRange();
-        else type2CheckRange();
     }
 
-    public void type2Update(){
+    public void type2Update(long currentTick){
 
-        checkRange();
+        type2CheckRange();
 
         for(Enemy enemy:listTarget){
             BulletManager.addBullet("InfernoBullet", enemy, this);
@@ -104,15 +106,15 @@ public class InfernoTower extends Tower{
         lastAttacked = 0;
     }
 
-    public void type1Update(){
-        checkRange();
+    public void type1Update(long currentTick){
+        type1CheckRange(currentTick);
         if (target != null)
             BulletManager.addBullet("InfernoBullet", target, this);
     }
 
     @Override
     public void update(long currentTick) {
-        if (type == 1) type1Update();
-        else type2Update();
+        if (type == 1) type1Update(currentTick);
+        else type2Update(currentTick);
     }
 }

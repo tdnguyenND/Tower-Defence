@@ -20,7 +20,7 @@ public abstract class Tower extends GameObject{
     protected boolean destroy;
     private int level;
 
-    private long previousTick;
+    protected long previousTick;
 
     public int getRange(){
         return this.range;

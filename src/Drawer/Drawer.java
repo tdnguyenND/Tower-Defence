@@ -13,13 +13,13 @@ public class Drawer {
 
     public static boolean init(Map map, GameManager gameManager, Player _player){
         player = _player;
-        return DrawField.init(map) && DrawEntity.init(gameManager);
+        return DrawField.init(map) && DrawEntity.init(gameManager) && DrawPlayer.init();
     }
 
     public static void draw(){
         DrawField.draw();
         DrawEntity.draw();
-        DrawGold.draw();
+        DrawPlayer.draw();
     }
 
     public static void setGraphicsContext(GraphicsContext graphicsContext) {

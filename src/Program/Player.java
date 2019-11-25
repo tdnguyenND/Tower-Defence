@@ -1,7 +1,7 @@
 package Program;
 
 public class Player {
-    private double health;
+    private int health;
     private boolean lose;
     private boolean win;
     private int gold;
@@ -37,6 +37,14 @@ public class Player {
 
     public void setGold(int gold) {
         this.gold = gold;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override

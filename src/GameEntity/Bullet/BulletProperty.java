@@ -20,11 +20,11 @@ public class BulletProperty{
     static final double SNIPER_BULLET_DMG_ADDITION = 13;
 
     static final double INFERNO_BULLET_TYPE1_DAMAGE = 23;
-    static final double INFERNO_BULLET_TYPE2_MIN_DAMAGE = 15;
+    static final double INFERNO_BULLET_TYPE2_MIN_DAMAGE = 3;
     static final double INFERNO_BULLET_TYPE2_MAX_DAMAGE = 70;
     static final double INFERNO_BULLET_WIDTH = 10;
     static final double INFERNO_BULLET_HEIGHT = 10;
-    static final double INFERNO_BULLET_TYPE1_DMG_ADDITION = 5;
+    static final double INFERNO_BULLET_TYPE1_DMG_ADDITION = 1;
     static final double INFERNO_BULLET_TYPE2_MIN_DMG_ADDITION = 2;
     static final double INFERNO_BULLET_TYPE3_MAX_DMG_ADDITION = 10;
 
